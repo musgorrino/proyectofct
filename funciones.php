@@ -112,42 +112,42 @@ function alta_alumno()
 
 
     $dni = recogedni($_POST["dni"]);
-    var_dump($dni);
+
     if ($dni == 1) {
         return "Por favor introduzca un dni con el formato adecuado";
     }
     $nombre = recogvarc($_POST["nombre"]);
-    var_dump($nombre);
+
     if ($nombre == 1) {
         return "Nombre vacio o con caracteres numericos";
     }
     $apellidos = recogvarc($_POST["apellidos"]);
-    var_dump($apellidos);
+
     if ($apellidos == 1) {
         return "Apellidos vacios o con caracteres numericos";
     }
     $fechanac = recoger($_POST["fechanac"]);
-    var_dump($fechanac);
+
     if ($fechanac == 1) {
         return "Campo fecha vacio";
     }
     $telefono = recogernum($_POST["telefono"]);
-    var_dump($telefono);
+
     if ($telefono == 1) {
         return "Campo telefono vacio o con caracteres no numericos";
     }
     $email = recoger($_POST["email"]);
-    var_dump($email);
+
     if ($email == 1) {
         return "Campo email vacio";
     }
     $euskera = recoger($_POST["euskera"]);
-    var_dump($euskera);
+
     if ($euskera == 1) {
         return "Seleccion eleccion idioma euskera no completada";
     }
     $carnet = recoger($_POST["carnet"]);
-    var_dump($carnet);
+
     if ($carnet == 1) {
         return "Seleccion carnet no completada";
     }
@@ -158,7 +158,7 @@ function alta_alumno()
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "')";
     } else {
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
-        var_dump($query);
+
     }
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
     return "Alumno insertado correctamente";
@@ -169,32 +169,34 @@ function alta_alumno()
         $query = "describe ".$nombretabla;
         $r = mysqli_query($conexion, $query);
         $_fila = mysqli_fetch_assoc($r);
-        $datos = array();
+        $tabla = array();
         while ($_fila) {
-            var_dump($_fila["Field"]);
-            $datos[] = $_fila["Field"];
+
+            $tabla[] = $_fila["Field"];
             $_fila = mysqli_fetch_assoc($r);
         }
-        var_dump($datos);
+        crear_tablas($tabla,$nombretabla);
+
     }
 
     function crear_tablas($array,$nombretabla)
     {
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from '".$nombretabla."'";
+        echo $recogida;
         $datos = mysqli_query($conexion, $recogida);
-        $totalfilas = mysqli_num_rows($datos);
+
 
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
     </h3>
         <table border=1>
             <tr><?php foreach ($array as $i) {
-                    echo "<td>$i</td>";
-                } ?></tr>
+                    ?><td><?php echo $i?></td>";
+               <?php } ?></tr>
             <?php
-            if ($totalfilas > 0)
-            {
+
+
             $_fila = mysqli_fetch_assoc($datos);
             while ($_fila)
             {
@@ -210,7 +212,7 @@ function alta_alumno()
 
                 $_fila = mysqli_fetch_assoc($datos);
                 }
-                }
+
                 ?>
         </table>
         <?php
