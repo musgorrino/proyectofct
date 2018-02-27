@@ -160,7 +160,7 @@ function alta_alumno()
     else
     {
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
-        var_dump($query);
+        echo var_dump($query);
     }
     $r=mysqli_query ($conexion,$query) or die(mysqli_error());
     var_dump($r);
