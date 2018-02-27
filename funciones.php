@@ -110,7 +110,7 @@ function login($usuario,$contrasena)
 function alta_alumno()
 {
 
-
+var_dump($_POST["dni"]);
      $dni = recogedni($_POST["dni"]);
     if($dni==1)
     {
