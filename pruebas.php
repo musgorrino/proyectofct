@@ -35,7 +35,7 @@ $_POST["otros"]="prueba1";*/
 $query="describe alumnos";
 $r=mysqli_query($conexion,$query);
 $_fila=mysqli_fetch_assoc($r);
-$datos=array();
+$tabla=array();
 while ($_fila)
 {
 

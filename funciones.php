@@ -182,18 +182,17 @@ function alta_alumno()
     function crear_tablas($array,$nombretabla)
     {
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
-        $recogida = "select * from '".$nombretabla."'";
-        echo $recogida;
-        $datos = mysqli_query($conexion, $recogida);
+        $recogida = "select * from ".$nombretabla;
+        $datos = mysqli_query($conexion,$recogida);
 
 
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
     </h3>
         <table border=1>
-            <tr><?php foreach ($array as $i) {
-                    ?><td><?php echo $i?></td>";
-               <?php } ?></tr>
+            <thead><?php foreach ($array as $i) {
+                    ?><th><?php echo ucfirst($i);?></th>
+               <?php } ?></thead>
             <?php
 
 
