@@ -6,7 +6,7 @@ include "funciones.php";
  * Date: 27/02/2018
  * Time: 10:02
  */
-if (isset($_POST["enviar"]))
+/*if (isset($_POST["enviar"]))
 {
     alta_alumno();
 }
@@ -30,7 +30,18 @@ $_POST["email"]="ajksdfhakjdfn";
 $_POST["euskera"]="no";
 $_POST["carnet"]="no";
 $_POST["otros"]="prueba1";*/
-echo"<input type='submit' name='enviar' value='enviar'></form>";
-
+//echo"<input type='submit' name='enviar' value='enviar'></form>";
+$conexion=conectar("localhost","root","","mydb");
+$query="describe alumnos";
+$r=mysqli_query($conexion,$query);
+$_fila=mysqli_fetch_assoc($r);
+$datos=array();
+while ($_fila)
+{
+    var_dump($_fila["Field"]);
+    $datos[]=$_fila["Field"];
+    $_fila=mysqli_fetch_assoc($r);
+}
+var_dump($datos);
 
 ?>
