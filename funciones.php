@@ -206,14 +206,18 @@ var_dump($_POST["dni"]);
         <?php
         if ($totalfilas>0){
         $_fila=mysqli_fetch_assoc($datos);
+        echo $fila["nombre"];
         while ($_fila)
         {
 
             ?>
             <tr>
                 <?php foreach ($array as $i)
-            {?>
-                <td><?php echo $_fila[$i];
+            {
+
+                $valor=$i;
+                echo $valor;?>
+                <td><?php echo $_fila[$valor];
             } ?></td>
             <tr>
                 <?php
