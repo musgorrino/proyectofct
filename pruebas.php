@@ -6,6 +6,10 @@ include "funciones.php";
  * Date: 27/02/2018
  * Time: 10:02
  */
+if (isset($_POST["nombre"]))
+{
+    echo "existe ";
+}
 $_POST["nombre"]="david";
 $_POST["apellidos"]="montero";
 $_POST["dni"]="72827642m";
