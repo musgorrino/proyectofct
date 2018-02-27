@@ -6,10 +6,11 @@ include "funciones.php";
  * Date: 27/02/2018
  * Time: 10:02
  */
-if (isset($_POST["nombre"]))
+if (isset($_POST["enviar"]))
 {
-    echo "existe ";
+    alta_alumno(); 
 }
+echo "<form method='post' action='pruebas.php'>";
 $_POST["nombre"]="david";
 $_POST["apellidos"]="montero";
 $_POST["dni"]="72827642m";
@@ -19,6 +20,7 @@ $_POST["email"]="ajksdfhakjdfn";
 $_POST["euskera"]="no";
 $_POST["carnet"]="no";
 $_POST["otros"]="prueba1";
-alta_alumno();
+echo"<input type='submit' name='enviar' value='enviar'></form>";
+
 
 ?>
