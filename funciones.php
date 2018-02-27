@@ -112,18 +112,49 @@ function alta_alumno()
 
 
      $dni = recogedni($_POST["dni"]);
-
+    if($dni==1)
+    {
+        return "Por favor introduzca un dni con el formato adecuado";
+    }
      $nombre = recogvarc($_POST["nombre"]);
+    if($dni==1)
+    {
+        return "Nombre vacio o con caracteres numericos";
+    }
      $apellidos = recogvarc($_POST["apellidos"]);
+    if($dni==1)
+    {
+        return "Apellidos vacios o con caracteres numericos";
+    }
      $fechanac = recoger($_POST["fecha"]);
+    if($dni==1)
+    {
+        return "Campo fecha vacio";
+    }
      $telefono = recogernum($_POST["telefono"]);
+    if($dni==1)
+    {
+        return "Campo telefono vacio o con caracteres no numericos";
+    }
      $email = recoger($_POST["email"]);
+    if($dni==1)
+    {
+        return "Campo email vacio";
+    }
      $euskera = recoger($_POST["euskera"]);
+    if($dni==1)
+    {
+        return "Seleccion eleccion idioma euskera no completada";
+    }
      $carnet = recoger($_POST["carnet"]);
+    if($dni==1)
+    {
+        return "Seleccion carnet no completada";
+    }
      $otros = recoger($_POST["otros"]);
 
     $conexion=conectar("localhost","root","","bd");
-    $query="insert into usuario (nombre,contrasena,dni,usuario,apellidos,direccion,sexo,telefijo,telemovil) values('".$_POST["nombre"]."','".$_POST["pass"]."','".$_POST["dni"]."','".$_POST["usuario"]."','".$_POST["apellidos"]."','".$_POST["direccion"]."','".$_POST["sexo"]."',".$_POST["telefono_fijo"].",".$_POST["telefono_movil"].")";
+    $query="insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('".$_POST["nombre"]."','".$_POST["apellidos"]."','".$_POST["dni"]."','".$_POST["fechanac"]."','".$_POST["telefono"]."','".$_POST["email"]."','".$_POST["euskera"]."',".$_POST["carnet"].",".$_POST["otros"].")";
 
     $r=mysqli_query ($conexion,$query) /*or die(mysqli_error())*/;
 
