@@ -31,6 +31,17 @@ $_POST["euskera"]="no";
 $_POST["carnet"]="no";
 $_POST["otros"]="prueba1";*/
 //echo"<input type='submit' name='enviar' value='enviar'></form>";
-coger_tablas();
+$conexion=conectar("localhost","root","","mydb");
+$query="describe alumnos";
+$r=mysqli_query($conexion,$query);
+$_fila=mysqli_fetch_assoc($r);
+$datos=array();
+while ($_fila)
+{
+    var_dump($_fila["Field"]);
+    $datos[]=$_fila["Field"];
+    $_fila=mysqli_fetch_assoc($r);
+}
+var_dump($datos);
 
 ?>
