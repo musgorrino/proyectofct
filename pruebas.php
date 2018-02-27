@@ -14,7 +14,7 @@ echo "<form method='post' action='pruebas.php'>";
 ?>
 <input type="hidden" name="nombre" value="david">
 <input type="hidden" name="apellidos" value="montero">
-<input type="hidden" name="dni" value="72827642m">
+<input type="hidden" name="dni" value="72827642M">
 <input type="hidden" name="fechanac" value="07101994">
 <input type="hidden" name="telefono" value="123456789">
 <input type="hidden" name="email" value="sdgsfsdf">
