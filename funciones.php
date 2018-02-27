@@ -94,8 +94,8 @@ function poner_datos($dato)
 }
 function login($usuario,$contrasena)
 {
-    $conexion=conectar("localhost","root","","asociaciones");
-    $query="select usuario, contrasena from usuario where usuario='".$usuario."' and contrasena='".$contrasena."'";
+    $conexion=conectar("localhost","root","","mydb");
+    $query="select usuario, password from usuarios where usuario='".$usuario."' and password='".$contrasena."'";
     $r=mysqli_query ($conexion,$query);
     $totalfilas=mysqli_num_rows($r);
     if($totalfilas==1)
@@ -110,22 +110,126 @@ function login($usuario,$contrasena)
 function alta_alumno()
 {
 
-
+var_dump($_POST["dni"]);
      $dni = recogedni($_POST["dni"]);
-
+    var_dump($dni);
+    if($dni==1)
+    {
+        return "Por favor introduzca un dni con el formato adecuado";
+    }
      $nombre = recogvarc($_POST["nombre"]);
+    var_dump($nombre);
+    if($nombre==1)
+    {
+        return "Nombre vacio o con caracteres numericos";
+    }
      $apellidos = recogvarc($_POST["apellidos"]);
-     $fechanac = recoger($_POST["fecha"]);
+    var_dump($apellidos);
+    if($apellidos==1)
+    {
+        return "Apellidos vacios o con caracteres numericos";
+    }
+     $fechanac = recoger($_POST["fechanac"]);
+    var_dump($fechanac);
+    if($fechanac==1)
+    {
+        return "Campo fecha vacio";
+    }
      $telefono = recogernum($_POST["telefono"]);
+    var_dump($telefono);
+    if($telefono==1)
+    {
+        return "Campo telefono vacio o con caracteres no numericos";
+    }
      $email = recoger($_POST["email"]);
+    var_dump($email);
+    if($email==1)
+    {
+        return "Campo email vacio";
+    }
      $euskera = recoger($_POST["euskera"]);
+    var_dump($euskera);
+    if($euskera==1)
+    {
+        return "Seleccion eleccion idioma euskera no completada";
+    }
      $carnet = recoger($_POST["carnet"]);
+    var_dump($carnet);
+    if($carnet==1)
+    {
+        return "Seleccion carnet no completada";
+    }
      $otros = recoger($_POST["otros"]);
 
-    $conexion=conectar("localhost","root","","bd");
-    $query="insert into usuario (nombre,contrasena,dni,usuario,apellidos,direccion,sexo,telefijo,telemovil) values('".$_POST["nombre"]."','".$_POST["pass"]."','".$_POST["dni"]."','".$_POST["usuario"]."','".$_POST["apellidos"]."','".$_POST["direccion"]."','".$_POST["sexo"]."',".$_POST["telefono_fijo"].",".$_POST["telefono_movil"].")";
+    $conexion=conectar("localhost","root","","mydb");
+    if($otros==1) {
+        $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "')";
+    }
+    else
+    {
+        $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
+        var_dump($query);
+    }
+    $r=mysqli_query($conexion,$query); /*or die(mysqli_error())*/
+    var_dump($r);
 
-    $r=mysqli_query ($conexion,$query) /*or die(mysqli_error())*/;
+    function coger_tablas()
+    {
+        $conexion=conectar("localhost","root","","mydb");
+        $query="describe alumnos";
+        $r=mysqli_query($conexion,$query);
+        $_fila=mysqli_fetch_assoc($r);
+        $datos=array();
+        while ($_fila)
+        {
+            var_dump($_fila["Field"]);
+            $datos[]=$_fila["Field"];
+            $_fila=mysqli_fetch_assoc($r);
+        }
+        var_dump($datos);
+    }
+    function crear_tablas($array)
+    {
+        $conexion=mysqli_connect("localhost","root","","mydb");
+        $recogida="select * from mydb.alumnos";
+        $datos=mysqli_query($conexion,$recogida);
+        $totalfilas= mysqli_num_rows($datos);
 
+?>      <h3>
+        alumnos
+    </h3>
+        <table border=1>
+            <tr><?php foreach ($array as $i)
+                {
+                echo "<td>$i</td>";
+                }?></tr>
+        <?php
+        if ($totalfilas>0){
+        $_fila=mysqli_fetch_assoc($datos);
+        echo $fila["nombre"];
+        while ($_fila)
+        {
+
+            ?>
+            <tr>
+                <?php foreach ($array as $i)
+            {
+
+                $valor=$i;
+                echo $valor;?>
+                <td><?php echo $_fila[$valor];
+            } ?></td>
+            <tr>
+                <?php
+
+                $_fila=mysqli_fetch_assoc($datos);
+                }
+                }
+                ?>
+        </table>
+        <?php
+        mysqli_close($conexion);
+
+    }
 
 }
