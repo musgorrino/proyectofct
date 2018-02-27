@@ -190,9 +190,9 @@ function alta_alumno()
         <?php echo strtoupper($nombretabla);?>
     </h3>
         <table border=1>
-            <tr><?php foreach ($array as $i) {
-                    ?><td><?php echo $i;?></td>
-               <?php } ?></tr>
+            <thead><?php foreach ($array as $i) {
+                    ?><th><?php echo ucfirst($i);?></th>
+               <?php } ?></thead>
             <?php
 
 
