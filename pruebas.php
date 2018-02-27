@@ -42,6 +42,33 @@ while ($_fila)
     $datos[]=$_fila["Field"];
     $_fila=mysqli_fetch_assoc($r);
 }
-var_dump($datos);
+var_dump($datos);?>
+<table border=1>
+            <tr><?php foreach ($datos as $i)
+                {
+                echo "<td>$i</td>";
+                }?></tr>
+<?php
+$conexion=mysqli_connect("localhost","root","","mydb");
+$recogida="select * from mydb.alumnos";
+$datos=mysqli_query($conexion,$recogida);
+$totalfilas= mysqli_num_rows($datos);
+if ($totalfilas>0){
+$_fila=mysqli_fetch_assoc($datos);
+while ($_fila)
+{
 
 ?>
+<tr>
+    <?php foreach ($datos as $i)
+    {?>
+    <td><?php echo $_fila[$i];
+        } ?></td>
+<tr>
+    <?php
+
+    $_fila=mysqli_fetch_assoc($datos);
+    }
+    }
+    ?>
+    </table>

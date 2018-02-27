@@ -95,7 +95,7 @@ function poner_datos($dato)
 function login($usuario,$contrasena)
 {
     $conexion=conectar("localhost","root","","mydb");
-    $query="select usuario, contrasena from usuario where usuario='".$usuario."' and contrasena='".$contrasena."'";
+    $query="select usuario, password from usuarios where usuario='".$usuario."' and password='".$contrasena."'";
     $r=mysqli_query ($conexion,$query);
     $totalfilas=mysqli_num_rows($r);
     if($totalfilas==1)
@@ -199,26 +199,29 @@ var_dump($_POST["dni"]);
         alumnos
     </h3>
         <table border=1>
-            <tr><td>codigo</td><td>Nombre</td><td>Apellidos</td><td>dni</td><td>fechanac</td><td>telefono</td><td>email</td><td>euskera</td><td>carnet</td><td>otros</td></tr>
+            <tr><?php foreach ($array as $i)
+                {
+                echo "<td>$i</td>";
+                }?></tr>
         <?php
         if ($totalfilas>0){
         $_fila=mysqli_fetch_assoc($datos);
+        echo $fila["nombre"];
         while ($_fila)
         {
-        ?>
+
+            ?>
             <tr>
-                <td><?php echo $_fila["codigo"];?></td>
-                <td><?php echo $_fila["nombre"];?></td>
-                <td><?php echo $_fila["apellidos"];?></td>
-                <td><?php echo $_fila["dni"];?></td>
-                <td><?php echo $_fila["fechanac"];?></td>
-                <td><?php echo $_fila["telefono"];?></td>
-                <td><?php echo $_fila["email"];?></td>
-                <td><?php echo $_fila["euskera"];?></td>
-                <td><?php echo $_fila["carnet"];?></td>
-                <td><?php echo $_fila["otros"];?></td>
+                <?php foreach ($array as $i)
+            {
+
+                $valor=$i;
+                echo $valor;?>
+                <td><?php echo $_fila[$valor];
+            } ?></td>
             <tr>
                 <?php
+
                 $_fila=mysqli_fetch_assoc($datos);
                 }
                 }
