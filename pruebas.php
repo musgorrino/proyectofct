@@ -6,7 +6,7 @@ include "funciones.php";
  * Date: 27/02/2018
  * Time: 10:02
  */
-if (isset($_POST["enviar"]))
+/*if (isset($_POST["enviar"]))
 {
     alta_alumno();
 }
@@ -30,7 +30,7 @@ $_POST["email"]="ajksdfhakjdfn";
 $_POST["euskera"]="no";
 $_POST["carnet"]="no";
 $_POST["otros"]="prueba1";*/
-echo"<input type='submit' name='enviar' value='enviar'></form>";
-
+//echo"<input type='submit' name='enviar' value='enviar'></form>";
+coger_tablas();
 
 ?>

@@ -180,7 +180,7 @@ var_dump($_POST["dni"]);
         $_fila=mysqli_fetch_assoc($r);
         while ($_fila)
         {
-           var_dump()
+            var_dump($_fila["Field"]);
             $_fila=mysqli_fetch_assoc($r);
         }
 
