@@ -94,7 +94,7 @@ function poner_datos($dato)
 }
 function login($usuario,$contrasena)
 {
-    $conexion=conectar("localhost","root","","asociaciones");
+    $conexion=conectar("localhost","root","","mydb");
     $query="select usuario, contrasena from usuario where usuario='".$usuario."' and contrasena='".$contrasena."'";
     $r=mysqli_query ($conexion,$query);
     $totalfilas=mysqli_num_rows($r);
@@ -161,7 +161,7 @@ var_dump($_POST["dni"]);
     }
      $otros = recoger($_POST["otros"]);
 
-    $conexion=conectar("localhost","root","","bd");
+    $conexion=conectar("localhost","root","","mydb");
     if($otros==1) {
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "')";
     }
@@ -170,7 +170,7 @@ var_dump($_POST["dni"]);
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
         var_dump($query);
     }
-    $r=mysqli_query ($conexion,$query) or die(mysqli_error());
+    $r=mysqli_query($conexion,$query); /*or die(mysqli_error())*/
     var_dump($r);
 
 
