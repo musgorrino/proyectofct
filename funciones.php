@@ -176,7 +176,14 @@ var_dump($_POST["dni"]);
     {
         $conexion=conectar("localhost","root","","mydb");
         $query="describe alumnos";
-        
+        $r=mysqli_query($conexion,$query);
+        $_fila=mysqli_fetch_assoc($r);
+        while ($_fila)
+        {
+           var_dump()
+            $_fila=mysqli_fetch_assoc($r);
+        }
+
     }
 
 }
