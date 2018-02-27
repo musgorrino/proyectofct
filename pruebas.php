@@ -23,7 +23,7 @@ echo "<form method='post' action='pruebas.php'>";
 <input type="hidden" name="otros" value="prueba1"><?php /*
 $_POST["nombre"]="david";
 $_POST["apellidos"]="montero";
-$_POST["dni"]="72827642m";
+$_POST["dni"]="72827642M";
 $_POST["fechanac"]="07101994";
 $_POST["telefono"]="123456789";
 $_POST["email"]="ajksdfhakjdfn";
