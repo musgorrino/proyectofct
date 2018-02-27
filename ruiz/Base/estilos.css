@@ -1,9 +1,39 @@
-#contenedor{width: 400px;
-			height: 400px;
-			border: solid;}
+#contenedor{width: 1200px;
+			height: 1000px;
+			margin: 0 auto;
+			border:solid;}
+			
+			#cabecera{width: 1200px;
+						height: 320px;
+						border-bottom:solid;}
+						
+				#login{width: 1200px;
+						height: 30px;
+						background-color: #C71585;
+						border-bottom:solid;}
+							
+				#logo{margin:0 auto;
+						width: 250px;
+						height: 200px;
+						border:solid; 
+						background-color: black}
+						
+				#menu{width: 1200px;
+						height: 80px;
+						background-color: green;
+						border-top:solid;
+						border-bottom:solid;}
+			
+			#contenido{width: 1200px;
+						height: 615px;
+						margin-top: 10px;
+						background-color: yellow;
+						border-top:solid;
+						border-bottom:solid;}
 
-#cabecera{}
-
-#contenido{}
-
-#pie{}
+			
+			#pie{width: 1200px;
+					height: 35px;
+					margin-top: 10px;
+					background-color: #C71585;
+					border-top:solid; }
