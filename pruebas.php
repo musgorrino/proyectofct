@@ -5,13 +5,15 @@
  * Date: 27/02/2018
  * Time: 10:02
  */
-$dni = recogedni($_POST["dni"]);
-$nombre = recogvarc($_POST["nombre"]);
-$apellidos = recogvarc($_POST["apellidos"]);
-$direcion = recoger($_POST["direccion"]);
-$sexo = recoger($_POST["sexo"]);
-$fijo = recogernum($_POST["telefono_fijo"]);
-$movil = recogernum($_POST["telefono_movil"]);
-$usuario = recoger($_POST["usuario"]);
-$contrasena = recoger($_POST["pass"]);
-$recontra = recoger($_POST["reppass"]);*/
+$_POST["nombre"]="david";
+$_POST["apellidos"]="montero";
+$_POST["dni"]="72827642m";
+$_POST["fechanac"]="07101994";
+$_POST["telefono"]="123456789";
+$_POST["email"]="ajksdfhakjdfn";
+$_POST["euskera"]="no";
+$_POST["carnet"]="no";
+$_POST["otros"]="prueba1";
+alta_alumno();
+
+?>
