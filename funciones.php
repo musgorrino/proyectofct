@@ -129,7 +129,7 @@ var_dump($_POST["dni"]);
     {
         return "Apellidos vacios o con caracteres numericos";
     }
-     $fechanac = recoger($_POST["fecha"]);
+     $fechanac = recoger($_POST["fechanac"]);
     var_dump($fechanac);
     if($fechanac==1)
     {
