@@ -10,7 +10,6 @@ function cabecera($titulo, $css)
   <link href="<?php echo $css ?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h1> Hola </h1>
 <?php
 }   
 ?>
