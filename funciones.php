@@ -172,6 +172,11 @@ var_dump($_POST["dni"]);
     }
     $r=mysqli_query($conexion,$query); /*or die(mysqli_error())*/
     var_dump($r);
-
+    function coger_tablas()
+    {
+        $conexion=conectar("localhost","root","","mydb");
+        $query="describe alumnos";
+        
+    }
 
 }
