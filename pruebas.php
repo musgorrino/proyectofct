@@ -31,20 +31,22 @@ $_POST["euskera"]="no";
 $_POST["carnet"]="no";
 $_POST["otros"]="prueba1";*/
 //echo"<input type='submit' name='enviar' value='enviar'></form>";
-$conexion=conectar("localhost","root","","mydb");
+/*$conexion=conectar("localhost","root","","mydb");
 $query="describe alumnos";
 $r=mysqli_query($conexion,$query);
 $_fila=mysqli_fetch_assoc($r);
 $datos=array();
 while ($_fila)
 {
-    var_dump($_fila["Field"]);
-    $datos[]=$_fila["Field"];
+
+    $tabla[]=$_fila["Field"];
     $_fila=mysqli_fetch_assoc($r);
 }
-var_dump($datos);?>
+?>
 <table border=1>
-            <tr><?php foreach ($datos as $i)
+            <tr><?php
+
+                foreach ($tabla as $i)
                 {
                 echo "<td>$i</td>";
                 }?></tr>
@@ -57,13 +59,13 @@ if ($totalfilas>0){
 $_fila=mysqli_fetch_assoc($datos);
 while ($_fila)
 {
-
 ?>
 <tr>
-    <?php foreach ($datos as $i)
-    {?>
-    <td><?php echo $_fila[$i];
-        } ?></td>
+    <?php foreach ($tabla as $i)
+    {
+        ?>
+    <td><?php echo $_fila[$i];?></td>
+       <?php } ?>
 <tr>
     <?php
 
@@ -71,4 +73,5 @@ while ($_fila)
     }
     }
     ?>
-    </table>
+    </table>*/
+coger_tablas("alumnos");
