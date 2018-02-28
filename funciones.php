@@ -306,4 +306,16 @@ function alta_alumno()
             $fila=mysqli_fetch_assoc($r);
         }
     }
-
+	/* Funcion para la select de los modificares automatico*/
+	function select_modificar($tabla){
+		$conexion=Conectarse("mydb"); 
+ 
+		$codigo=$_POST['codigo'];
+ 
+		$q = "select * from $tabla where codigo ='$codigo'";
+		$resultado = mysql_query($q,$conexion) or die(mysql_error());
+		$total= mysql_num_rows($resultado);
+ 
+	if ($total>0){
+		$fila = mysql_fetch_assoc($resultado);
+	}}
