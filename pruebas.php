@@ -31,7 +31,11 @@ $_POST["euskera"]="no";
 $_POST["carnet"]="no";
 $_POST["otros"]="prueba1";*/
 //echo"<input type='submit' name='enviar' value='enviar'></form>";
-/*$conexion=conectar("localhost","root","","mydb");
+
+
+/*
+ Prueba generacion listas dinamicas
+$conexion=conectar("localhost","root","","mydb");
 $query="describe alumnos";
 $r=mysqli_query($conexion,$query);
 $_fila=mysqli_fetch_assoc($r);
@@ -73,5 +77,14 @@ while ($_fila)
     }
     }
     ?>
-    </table>*/
-coger_tablas("alumnos");
+    </table>
+
+Prueba generacion selects dinamicas
+*/
+?>
+<select name="david">
+<?php
+generar_select("alumnos","nombre");
+?>
+</select>
+
