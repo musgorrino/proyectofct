@@ -13,16 +13,16 @@
 						background-color: #C71585;
 						/*border-bottom:solid;*/}
 							
-				#logo{margin:0 auto;
+				#logo{margin-top:10px;
 						width: 450px;
 						height: 200px;
-						/*border:solid;*/ 
+						background-color: #C71585;
 						}
+					
 						
 				#menu{margin: 0 auto;
 						width:1200px;
 						height:115px;
-						/*background-color: #C71585;*/
 						/*border-top:solid;
 						border-bottom:solid;*/}
 					
