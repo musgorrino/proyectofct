@@ -218,4 +218,16 @@ function alta_alumno()
         mysqli_close($conexion);
 
     }
+    function generar_select($tabla,$columna)
+    {
+        $conexion=mysqli_connect("localhost","root","","mydb");
+        $query="select codigo,".$columna." from ".$tabla;
+        $r=mysqli_query($conexion,$query);
+        $fila=mysqli_fetch_assoc($r);
+        while($fila)
+        {
+            ?><option value="<?php echo $fila["codigo"];?>" ><?php echo $fila[$columna];?></option><?php
+            $fila=mysqli_fetch_assoc($r);
+        }
+    }
 
