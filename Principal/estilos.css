@@ -5,19 +5,16 @@
 			/*border:solid;*/}
 			
 			#cabecera{width: 1200px;
-						height: 320px;
-						}
+						height: 320px;}
 						
 				#login{width: 1200px;
 						height: 35px;
 						background-color: #C71585;
 						/*border-bottom:solid;*/}
 							
-				#logo{margin-top:10px;
+				#logo{margin: 0auto;
 						width: 450px;
-						height: 200px;
-						background-color: #C71585;
-						}
+						height: 200px;}
 					
 						
 				#menu{margin: 0 auto;
@@ -52,7 +49,7 @@
 					
 			#contenido{width: 1200px;
 						height: 635px;
-						background-color: yellow;
+						/*background-color: yellow;*/
 					/*	border-top:solid;
 						border-bottom:solid;*/}
 

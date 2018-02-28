@@ -8,7 +8,7 @@ cabecera("Gestion FCT", "estilos.css");
 		<div id="login">
 		</div>
 		<div id="logo">
-			<img src="imagenes/logo.jpg">
+			<br/><img src="imagenes/logo.jpg">
 		</div>
 		
 		<div id="menu">
