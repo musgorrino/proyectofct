@@ -85,15 +85,16 @@ Prueba generacion selects dinamicas
 <select name="david">
 <?php
 $columna="nombre";
-$tabla="alumnos"
+$tabla="alumnos";
 $conexion=mysqli_connect("localhost","root","mudb");
 $query="select codigo,".$columna." from ".$tabla;
+echo $query;
 $r=mysqli_query($conexion,$query);
 $fila=mysqli_fetch_assoc($r);
 while($fila)
 {
     ?><option value="<?php echo $fila["codigo"];?>" ><?php echo $fila[$columna];?></option><?php
     $fila=mysqli_fetch_assoc($r);
-}
+}?>
 </select>
 
