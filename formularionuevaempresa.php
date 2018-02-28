@@ -1,6 +1,6 @@
 <html>
 <head>
-<h1>formulario nueva empresa</h1>
+<h1>nueva empresa</h1>
 </head>
 <body>
 <form action="" method="post">
@@ -139,7 +139,7 @@
 		</td>
 		</tr>
 </table>
-<input type="submit" value="enviar">
+<input type="submit" value="crear">
 </form>
 </body>
 </html>
