@@ -81,10 +81,9 @@ while ($_fila)
 
 Prueba generacion selects dinamicas
 */
+coger_tablas("grupo");
+
+
 ?>
-<select name="david">
-<?php
-generar_select("alumnos","nombre");
-?>
-</select>
+
 

@@ -5,6 +5,7 @@
  * Date: 27/02/2018
  * Time: 8:47
  */
+<<<<<<< HEAD
  
 function cabecera($titulo, $css)
 { 
@@ -20,6 +21,10 @@ function cabecera($titulo, $css)
 <?php
 }   
 
+=======
+/*Funcion para recoger el dni y comporbar que no esta vacio y el patron es correcto, devuelve un 1 si el campo esta vacio
+un 2 si el dni ya existe en la tabla alumnos y un 0 si el dni no existe, es necesario pasarle el dni como parametro*/
+>>>>>>> 6304c0157b39077afc88355f0b27e8935606bb25
 function recogedni($dni)
 {
     $dni=ltrim($dni);
@@ -30,12 +35,48 @@ function recogedni($dni)
     }
     else
     {
+        if(comprobarDnia($dni)==2)
+        {
+            return 2;
+        }
+        else
+        {
+            return 0;
+        }
 
 
-                return 0;
     }
 
 }
+/*funcion para comporbar si el dni existe en la tabla alumnos, devuelve un 2 si existe y un 0 si no existe,
+es necesario pasarle un dni como parametro*/
+function comprobarDnia($dni)
+{
+    $conexion=conectar("localhost","root","","mydb");
+    $query="select dni from alumnos where dni='".$dni."'";
+    $r=mysqli_query ($conexion,$query);
+    $totalfilas=mysqli_num_rows($r);
+    if($totalfilas>0 or !$totalfilas)
+    {
+        $fila=mysqli_fetch_assoc($r);
+        while ($fila)
+        {
+            if($fila["dni"]==$dni)
+            {
+                return 2;
+            }
+
+            $fila=mysqli_fetch_assoc($r);
+        }
+        return 0;
+    }
+    else
+    {
+        return 0;
+    }
+}
+/*Funcion para recoger un input en que solo puede haber caracteres alfabeticos, devuelve un 1 si esta vacio o tiene un
+caracter numerico y devuelve 0 si hay caracteres y son solo alfabeticos, es necesario pasarle el valor como parametro*/
 function recogvarc($valor)
 {
 
@@ -49,6 +90,8 @@ function recogvarc($valor)
         return 0;
     }
 }
+/*Funcion para recoger un input en que solo puede haber caracteres numericos, devuelve un 1 si esta vacio o tiene un
+caracter alfabetico y devuelve 0 si hay caracteres y son solo numericos,  es necesario pasarle el valor como parametro*/
 function recogernum($valor)
 {
     $valor2=ltrim($valor);
@@ -61,6 +104,8 @@ function recogernum($valor)
         return 0;
     }
 }
+/*Funcion para comporbar si el valor tiene datos, devuelve un 1 si esta vacio y un 0 si tiene datos,
+es necesario pasarle el valor como parametro*/
 function recoger($valor)
 {
     $valor2=ltrim($valor);
@@ -73,6 +118,8 @@ function recoger($valor)
         return 0;
     }
 }
+/*Funcion para comporbar si una variable contiene solo caracteres numericos, devuelve true si solo tiene valores numericos
+y false si no es asi,  es necesario pasarle el valor como parametro*/
 function comprobarnum($valor)
 {
     if(preg_match("/^[0-9]*$/",$valor))
@@ -84,6 +131,8 @@ function comprobarnum($valor)
         return false;
     }
 }
+/*Funcion para comporbar si una variable contiene solo caracteres alfabeticos, devuelve true si solo tiene valores alfabeticos
+y false si no es asi,  es necesario pasarle el valor como parametro*/
 function comprobarnonum($valor)
 {
 
@@ -95,11 +144,14 @@ function comprobarnonum($valor)
         return false;
     }
 }
+/* funcion para conectarme con la base de datos*/
 function conectar ($host,$user,$pass,$bd)
 {
     $conexion = mysqli_connect ($host, $user, $pass,$bd);
     return $conexion;
 }
+/*funcion para poner en el value de un input, en caso de que ese valor exista en el post anteriormente te lo pone
+en caso contrario no hace nada, es necesario pasarle el nombre que tendria en el post de existir*/
 function poner_datos($dato)
 {
     if(isset($_POST[$dato]))
@@ -107,6 +159,8 @@ function poner_datos($dato)
         return $_POST[$dato];
     }
 }
+/*Funcion para loguearte, devuelve true en caso de que haya coincidencias y false en caso contrario, es necesario pasarle
+el usuario y la contraseña como pametros.*/
 function login($usuario,$contrasena)
 {
     $conexion=conectar("localhost","root","","mydb");
@@ -122,6 +176,7 @@ function login($usuario,$contrasena)
         return false;
     }
 }
+/*Funcion para dar de alta un alumno*/
 function alta_alumno()
 {
 
@@ -178,6 +233,10 @@ function alta_alumno()
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
     return "Alumno insertado correctamente";
 }
+    /*Primera funcion para crear listados de tablas de forma dinamica, hace un describe de la tabla y se queda
+    con los nombres de las columnas guardados en un array, posteriormente llama a la segunda parte de la funcion para
+    que a partir de ese array genere la tabla entera,es la funcion a la que hay que llamar, solo tiene un unico parametro
+    y es el nombre de la tabla de la que se quiere hacer un listado*/
     function coger_tablas($nombretabla)
     {
         $conexion = conectar("localhost", "root", "", "mydb");
@@ -193,7 +252,7 @@ function alta_alumno()
         crear_tablas($tabla,$nombretabla);
 
     }
-
+/*Segunda funcion para crear listados de tablas, no es necesario llamar a esta*/
     function crear_tablas($array,$nombretabla)
     {
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
@@ -233,6 +292,8 @@ function alta_alumno()
         mysqli_close($conexion);
 
     }
+    /*funcion para generar un select dinamica, es necesario pasarle el nombre de la tabla de la que se quiere extraer datos y
+    la columna que se quiere mostrar en el select ambos como parmetros*/
     function generar_select($tabla,$columna)
     {
         $conexion=mysqli_connect("localhost","root","","mydb");
