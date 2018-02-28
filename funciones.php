@@ -5,7 +5,7 @@
  * Date: 27/02/2018
  * Time: 8:47
  */
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
  
 function cabecera($titulo, $css)
 { 
@@ -21,10 +21,10 @@ function cabecera($titulo, $css)
 <?php
 }   
 
-=======
+/*=======*/
 /*Funcion para recoger el dni y comporbar que no esta vacio y el patron es correcto, devuelve un 1 si el campo esta vacio
 un 2 si el dni ya existe en la tabla alumnos y un 0 si el dni no existe, es necesario pasarle el dni como parametro*/
->>>>>>> 6304c0157b39077afc88355f0b27e8935606bb25
+/*>>>>>>> 6304c0157b39077afc88355f0b27e8935606bb25*/
 function recogedni($dni)
 {
     $dni=ltrim($dni);
