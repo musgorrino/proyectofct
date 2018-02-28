@@ -13,7 +13,7 @@ include "funciones.php";
 				<label for="nombre">Nombre: </label>
 			</td>
 			<td>
-				<input type="text" name="nombre" value="" id="nombre">
+				<input type="text" name="nombre" value="<?php echo $Post['nombre']; ?>" id="nombre">
 			</td>
 		</tr>
 		<tr>
@@ -29,7 +29,8 @@ include "funciones.php";
 			</td>
 		</tr>
 </table>
-<input type="submit" value="crear">
+		<input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
+		<input type="submit" id="enviar" name="enviar" value="Guardar" />
 </form>
 </body>
 </html>

@@ -13,7 +13,7 @@ include "funciones.php";
 				<label for="empresa">Empresa: </label>
 			</td>
 			<td>
-				<select id="empresa">
+				<select name="empresa" id="empresa">
 				<?php
 				generar_select('empresas','nombre')
 				?>
@@ -25,7 +25,7 @@ include "funciones.php";
 				<label for="alumnos">Alumno: </label>
 			</td>
 			<td>
-				<select id="alumnos">
+				<select name="alumnos" id="alumnos">
 				<?php
 				generar_select('alumnos','nombre')
 				?>
@@ -37,7 +37,7 @@ include "funciones.php";
 				<label for="curso">Curso: </label>
 			</td>
 			<td>
-				<input type="text" name="curso" value="" id="curso">
+				<input type="text" name="curso" value="<?php echo $Post['curso']; ?>" id="curso">
 			</td>
 		</tr>
 		<tr>
@@ -45,7 +45,7 @@ include "funciones.php";
 				<label for="horario">Horario: </label>
 			</td>
 			<td>
-				<input type="text" name="horario" value="" id="horario">
+				<input type="text" name="horario" value="<?php echo $Post['horario']; ?>" id="horario">
 			</td>
 		</tr>
 		<tr>
@@ -53,7 +53,7 @@ include "funciones.php";
 				<label for="observaciones">Observaciones: </label>
 			</td>
 			<td>
-				<textarea name="observaciones" id="observaciones"></textarea>
+				<textarea name="observaciones" id="observaciones"><?php echo $Post['observaciones']; ?></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -61,7 +61,7 @@ include "funciones.php";
 				<label for="trabajodesempenado">trabajo desempeñado: </label>
 			</td>
 			<td>
-				<textarea name="trabajodesempenado" id="trabajodesempenado"></textarea>
+				<textarea name="trabajodesempenado" id="trabajodesempenado"><?php echo $Post['trabajodesempenado']; ?></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -79,7 +79,8 @@ include "funciones.php";
 		</td>
 		</tr>
 </table>
-<input type="submit" value="crear">
+		<input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
+		<input type="submit" id="enviar" name="enviar" value="Guardar" />
 </form>
 </body>
 </html>
