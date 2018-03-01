@@ -302,7 +302,13 @@ function alta_alumno()
         <table border=1>
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
-               <?php } ?></thead>
+               <?php }
+                    if ($nombretabla=="profesores")
+                    {?>
+                        <th>Tutor de</th>
+                        <th>Tutor de practicas de</th>
+                    <?php}
+               ?></thead>
             <?php
 
 
@@ -339,7 +345,19 @@ function alta_alumno()
                     }
                     if($tutor=-1)
                     {?>
-                        <td><?php echo $_fila[$i]; ?></td><?php
+                        <td>No es tutor de ningun grupo</td><?php
+                    }
+                    else
+                    {?>
+                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
+                    }
+                    if($tutorprac=-1)
+                    {?>
+                        <td>No es tutor de practicas de ningun grupo</td><?php
+                    }
+                    else
+                    {?>
+                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
                     }
 
                 }
