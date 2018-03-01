@@ -95,9 +95,6 @@ while ($_fila) {
     $array[] = $_fila["Field"];
     $_fila = mysqli_fetch_assoc($r);
 }
-$conexion = mysqli_connect("localhost", "root", "", "mydb");
-$recogida = "select * from ".$nombretabla;
-$datos = mysqli_query($conexion,$recogida);
 if ($nombretabla=="profesor")
 {
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
@@ -105,21 +102,26 @@ if ($nombretabla=="profesor")
     $done = mysqli_query($conexion,$query);
     $grupo= mysqli_fetch_assoc($done);
     $j=array();
-    $j[]=array(
+    /*$j[]=array(
         "abreviatura"=>$grupo["abreviatura"],
         "tutorp"=>$grupo["tutor_practicas"],
         "tutor" =>$grupo["tutor"]
-    );
-   /* while($grupo)
+    );*/
+    var_dump($j);
+    while($grupo)
     {
         $j[]=array(
             "abreviatura"=>$grupo["abreviatura"],
             "tutorp"=>$grupo["tutor_practicas"],
             "tutor" =>$grupo["tutor"]
         );
-    }*/
-
+    }
+    mysqli_close($conexion);
 }
+$conexion = mysqli_connect("localhost", "root", "", "mydb");
+$recogida = "select * from ".$nombretabla;
+$datos = mysqli_query($conexion,$recogida);
+
 
 ?>      <h3>
     <?php echo strtoupper($nombretabla);?>
