@@ -144,6 +144,26 @@ function comprobarnonum($valor)
         return false;
     }
 }
+function poners($nombre,$valor)
+{
+    if(isset($_POST[$nombre]))
+    {
+        if($_POST[$nombre]==$valor)
+        {
+            return 'selected=selected';
+        }
+    }
+}
+function ponerc($nombre,$valor)
+{
+    if (isset($_POST[$nombre]))
+    {
+        if($_POST[$nombre]==$valor)
+        {
+            return 'checked="checked"';
+        }
+    }
+}
 /* funcion para conectarme con la base de datos*/
 function conectar ($host,$user,$pass,$bd)
 {

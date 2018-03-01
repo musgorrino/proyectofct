@@ -3,7 +3,7 @@ include("../../funciones/funciones.php");
 
 	cabecera("Modificar asignacion.","estilos.css");
 
-	$conexion=Conectarse("mydb"); 
+	$conexion=Conectar("localhost","root","","mydb"); 
  
 		$codigo=$_POST['codigo'];
  
