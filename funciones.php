@@ -283,9 +283,6 @@ function alta_alumno()
             $conexion = mysqli_connect("localhost", "root", "", "mydb");
             $query = "select abreviatura,tutor_practicas,tutor from grupos";
             $done = mysqli_query($conexion,$query);
-            $profesores=array();
-            $practicas=array();
-            $abreviatura=array();
             $grupo= mysqli_fetch_assoc($done);
             $j=array();
             while($grupo)
@@ -307,11 +304,13 @@ function alta_alumno()
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
                <?php }
-                    /*if ($nombretabla=="profesor")
-                    {*/?>
+
+                    if ($nombretabla=="profesor")
+                    {?>
                         <th>Tutor de</th>
                         <th>Tutor de practicas de</th>
-                    <?php/*}*/
+                    <?php
+                    }
                ?></thead>
             <?php
 
@@ -328,8 +327,8 @@ function alta_alumno()
                 } ?>
 
                 <?php
-                /*if($nombretabla="profesor")
-                {*/
+                if($nombretabla=="profesor")
+                {
                   foreach($j as $e)
                   {
                       if($_fila["codigo"]==$e["tutor"])
@@ -350,10 +349,11 @@ function alta_alumno()
                       }
 
                   }
-                ?><tr><?php
-                /*}*/
-                $_fila = mysqli_fetch_assoc($datos);
+
                 }
+                ?><tr><?php
+                $_fila = mysqli_fetch_assoc($datos);
+            }
 
                 ?>
         </table>
