@@ -278,7 +278,7 @@ function alta_alumno()
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from ".$nombretabla;
         $datos = mysqli_query($conexion,$recogida);
-        if ($nombretabla=="profesores")
+        if ($nombretabla=="profesor")
         {
             $conexion = mysqli_connect("localhost", "root", "", "mydb");
             $query = "select abreviatura,tutor_practicas,tutor from grupos";
@@ -303,7 +303,7 @@ function alta_alumno()
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
                <?php }
-                    if ($nombretabla=="profesores")
+                    if ($nombretabla=="profesor")
                     {?>
                         <th>Tutor de</th>
                         <th>Tutor de practicas de</th>
@@ -324,7 +324,7 @@ function alta_alumno()
                 } ?>
             <tr>
                 <?php
-                if($nombretabla="profesores")
+                if($nombretabla="profesor")
                 {
                     $contador=0;
                     $tutor=-1;
