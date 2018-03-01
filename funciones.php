@@ -325,7 +325,7 @@ function alta_alumno()
                     $tutorprac=-1;
                     foreach($profesores as $i)
                     {
-                        
+                       if
                     }
                 }
                 $_fila = mysqli_fetch_assoc($datos);
