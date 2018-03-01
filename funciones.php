@@ -144,6 +144,26 @@ function comprobarnonum($valor)
         return false;
     }
 }
+function poners($nombre,$valor)
+{
+    if(isset($_POST[$nombre]))
+    {
+        if($_POST[$nombre]==$valor)
+        {
+            return 'selected=selected';
+        }
+    }
+}
+function ponerc($nombre,$valor)
+{
+    if (isset($_POST[$nombre]))
+    {
+        if($_POST[$nombre]==$valor)
+        {
+            return 'checked="checked"';
+        }
+    }
+}
 /* funcion para conectarme con la base de datos*/
 function conectar ($host,$user,$pass,$bd)
 {
@@ -258,7 +278,23 @@ function alta_alumno()
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from ".$nombretabla;
         $datos = mysqli_query($conexion,$recogida);
+        if ($nombretabla=="profesores")
+        {
+            $conexion = mysqli_connect("localhost", "root", "", "mydb");
+            $query = "select abreviatura,tutor_practicas,tutor from grupos";
+            $done = mysqli_query($conexion,$query);
+            $profesores=array();
+            $practicas=array();
+            $abreviatura=array();
+            $grupo= mysqli_fetch_assoc($done);
+            while($grupo)
+            {
+                $abreviatura[]=$grupo["abreviatura"];
+                $practicas[]=$grupo["tutor_practicas"];
+                $profesores[]=$grupo["tutor"];
+            }
 
+        }
 
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
@@ -282,7 +318,16 @@ function alta_alumno()
                 } ?>
             <tr>
                 <?php
-
+                if($nombretabla="profesores")
+                {
+                    $contador=0;
+                    $tutor=-1;
+                    $tutorprac=-1;
+                    foreach($profesores as $i)
+                    {
+                       if
+                    }
+                }
                 $_fila = mysqli_fetch_assoc($datos);
                 }
 

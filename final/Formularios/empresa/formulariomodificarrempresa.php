@@ -1,8 +1,19 @@
-<html>
-<head>
-<h1>nueva empresa</h1>
-</head>
-<body>
+<?php 
+include("../../funciones/funciones.php");
+
+	cabecera("Modificar empresa.","estilos.css");
+
+	$conexion=Conectarse("mydb"); 
+ 
+		$codigo=$_POST['codigo'];
+ 
+			$q = "select * from empresas where codigo ='$codigo'";
+			$resultado = mysql_query($q,$conexion) or die(mysql_error());
+		$total= mysql_num_rows($resultado);
+ 
+	if ($total>0){
+		$fila = mysql_fetch_assoc($resultado);   
+?>
 <form action="" method="post">
 	<table>
 		<tr>
@@ -134,7 +145,7 @@
 					<input type="radio" name="convenio" value="si" id="conveniosi">
 				
 					<label for="conveniono">no </label>
-					<input type="radio" name="convenio" value="no" id="conveniono">
+					<input type="radio" name="convenio" value="no" id="conveniono" >
 				
 		</td>
 		</tr>
@@ -142,5 +153,10 @@
 		<input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
 		<input type="submit" id="enviar" name="enviar" value="Guardar" />
 </form>
+<?php
+}
+	mysql_free_result($resultado);
+		mysql_close($conexion);
+?>
 </body>
 </html>
