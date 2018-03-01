@@ -258,7 +258,7 @@ function alta_alumno()
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from ".$nombretabla;
         $datos = mysqli_query($conexion,$recogida);
-
+        
 
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
