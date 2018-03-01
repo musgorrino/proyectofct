@@ -105,6 +105,11 @@ if ($nombretabla=="profesor")
     $done = mysqli_query($conexion,$query);
     $grupo= mysqli_fetch_assoc($done);
     $j=array();
+    $j[]=array(
+        "abreviatura"=>$grupo["abreviatura"],
+        "tutorp"=>$grupo["tutor_practicas"],
+        "tutor" =>$grupo["tutor"]
+    );
    /* while($grupo)
     {
         $j[]=array(
