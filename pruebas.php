@@ -103,15 +103,15 @@ if ($nombretabla=="profesor")
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
     $query = "select abreviatura,tutor_practicas,tutor from grupos";
     $done = mysqli_query($conexion,$query);
-    $profesores=array();
-    $practicas=array();
-    $abreviatura=array();
     $grupo= mysqli_fetch_assoc($done);
-    /*while($grupo)
+    $j=array();
+    while($grupo)
     {
-        $abreviatura[]=$grupo["abreviatura"];
-        $practicas[]=$grupo["tutor_practicas"];
-        $profesores[]=$grupo["tutor"];
+        $j[]=array(
+            "abreviatura"=>$grupo["abreviatura"],
+            "tutorp"=>$grupo["tutor_practicas"],
+            "tutor" =>$grupo["tutor"]
+        );
     }
 
 }
