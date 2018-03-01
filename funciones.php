@@ -287,12 +287,13 @@ function alta_alumno()
             $practicas=array();
             $abreviatura=array();
             $grupo= mysqli_fetch_assoc($done);
-            while($grupo)
+            /*while($grupo)
             {
                 $abreviatura[]=$grupo["abreviatura"];
                 $practicas[]=$grupo["tutor_practicas"];
                 $profesores[]=$grupo["tutor"];
-            }
+                $grupo= mysqli_fetch_assoc($done);
+            }*/
 
         }
 
