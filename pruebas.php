@@ -82,19 +82,26 @@ while ($_fila)
 
 Prueba generacion selects dinamicas
 */
-/*coger_tablas("profesor");*/
-/*$j=array();
-while($grupo)
+?>
+<!--<form method="post" action="pruebas.php">
+<select name="david"><?php
+/*$columna="nombre";
+$tabla="alumnos";
+$conexion=mysqli_connect("localhost","root","","mydb");
+$query="select codigo,".$columna." from ".$tabla;
+$r=mysqli_query($conexion,$query);
+$fila=mysqli_fetch_assoc($r);
+while($fila)
 {
-    $j[]=array(
-        "abreviatura"=>$grupo["abreviatura"],
-        "tutorp"=>$grupo["tutor_practicas"],
-        "tutor" =>$grupo["tutor"]
-    );
-
-    $grupo= mysqli_fetch_assoc($done);
-}
-*/
-coger_tablas("profesor");
-
-
+    ?><option value="<?php echo $fila["codigo"];?>" ponert ><?php echo $fila[$columna];?></option><?php
+    $fila=mysqli_fetch_assoc($r);
+}?>
+</select>
+    <input type="submit" name="enviar" value="enviar">
+</form>
+<?php
+if(isset($_POST["enviar"]))
+{
+    var_dump($_POST["david"]);
+}*/
+coger_tablas($profesor);
