@@ -8,12 +8,13 @@ cabecera("Gestion FCT", "estilos.css");
 		<div id="login">
 		</div>
 		<div id="logo">
-			<br/><img src="../imagenes/logo.jpg">
+			<br/><img src="../imagenes/logo.png">
 		</div>
 		
 		<div id="menu">
 			
 				<ul>
+				<li class="espacio">----------------</li>
 				  <li><a href="#home">Familias Profesionales</a></li>
 				  <li><a href="#news">Ciclos Formativos</a></li>
 				  <li><a href="#contact">Grupos</a></li>
@@ -24,7 +25,7 @@ cabecera("Gestion FCT", "estilos.css");
 				  <li><a href="#about">Responsables</a></li>
 				</ul>				
 		</div>
-	
+		
 	</div>
 	
 <div id="contenido">
