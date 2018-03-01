@@ -278,7 +278,7 @@ function alta_alumno()
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from ".$nombretabla;
         $datos = mysqli_query($conexion,$recogida);
-        if ($nombretabla=="profesores")
+        if ($nombretabla=="profesor")
         {
             $conexion = mysqli_connect("localhost", "root", "", "mydb");
             $query = "select abreviatura,tutor_practicas,tutor from grupos";
@@ -302,7 +302,13 @@ function alta_alumno()
         <table border=1>
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
-               <?php } ?></thead>
+               <?php }
+                    if ($nombretabla=="profesor")
+                    {?>
+                        <th>Tutor de</th>
+                        <th>Tutor de practicas de</th>
+                    <?php}
+               ?></thead>
             <?php
 
 
@@ -318,15 +324,42 @@ function alta_alumno()
                 } ?>
             <tr>
                 <?php
-                if($nombretabla="profesores")
+                if($nombretabla="profesor")
                 {
                     $contador=0;
                     $tutor=-1;
                     $tutorprac=-1;
                     foreach($profesores as $i)
                     {
-                       if
+                       if($i=$_fila["codigo"])
+                       {
+                           $tutor=$i;
+                       }
                     }
+                    foreach($practicas as $i)
+                    {
+                        if($i=$_fila["codigo"])
+                        {
+                            $tutorprac=$i;
+                        }
+                    }
+                    if($tutor=-1)
+                    {?>
+                        <td>No es tutor de ningun grupo</td><?php
+                    }
+                    else
+                    {?>
+                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
+                    }
+                    if($tutorprac=-1)
+                    {?>
+                        <td>No es tutor de practicas de ningun grupo</td><?php
+                    }
+                    else
+                    {?>
+                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
+                    }
+
                 }
                 $_fila = mysqli_fetch_assoc($datos);
                 }
