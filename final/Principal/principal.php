@@ -10,8 +10,7 @@ cabecera("Gestion FCT", "estilos.css");
 		<div id="logo">
 			<img src="../imagenes/logo.png"> 
 		</div>
-		</br>
-		</br>
+		
 		<div id="menu">
 			
 				<ul>
@@ -28,6 +27,7 @@ cabecera("Gestion FCT", "estilos.css");
 		</div>
 		
 	</div>
+	
 	
 <div id="contenido">
 		</div>
