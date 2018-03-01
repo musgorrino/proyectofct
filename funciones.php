@@ -258,7 +258,23 @@ function alta_alumno()
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from ".$nombretabla;
         $datos = mysqli_query($conexion,$recogida);
-        
+        if ($nombretabla=="profesores")
+        {
+            $conexion = mysqli_connect("localhost", "root", "", "mydb");
+            $query = "select abreviatura,tutor_practicas,tutor from grupos";
+            $done = mysqli_query($conexion,$query);
+            $profesores=array();
+            $practicas=array();
+            $abreviatura=array();
+            $grupo= mysqli_fetch_assoc($done);
+            while($grupo)
+            {
+                $abreviatura[]=$grupo["abreviatura"];
+                $practicas[]=$grupo["tutor_practicas"];
+                $profesores[]=$grupo["tutor"];
+            }
+
+        }
 
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
@@ -268,7 +284,9 @@ function alta_alumno()
                     ?><th><?php echo ucfirst($i);?></th>
                <?php } ?></thead>
             <?php
-
+            $contador=0;
+            $tutor=-1;
+            $tutorprac=-1;
 
             $_fila = mysqli_fetch_assoc($datos);
             while ($_fila)
@@ -282,7 +300,10 @@ function alta_alumno()
                 } ?>
             <tr>
                 <?php
-
+                if($nombretabla="profesores")
+                {
+                    
+                }
                 $_fila = mysqli_fetch_assoc($datos);
                 }
 
