@@ -304,9 +304,7 @@ function alta_alumno()
                     ?><th><?php echo ucfirst($i);?></th>
                <?php } ?></thead>
             <?php
-            $contador=0;
-            $tutor=-1;
-            $tutorprac=-1;
+
 
             $_fila = mysqli_fetch_assoc($datos);
             while ($_fila)
@@ -322,7 +320,13 @@ function alta_alumno()
                 <?php
                 if($nombretabla="profesores")
                 {
-                    
+                    $contador=0;
+                    $tutor=-1;
+                    $tutorprac=-1;
+                    foreach($profesores as $i)
+                    {
+                        
+                    }
                 }
                 $_fila = mysqli_fetch_assoc($datos);
                 }
