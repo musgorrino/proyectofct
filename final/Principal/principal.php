@@ -8,24 +8,26 @@ cabecera("Gestion FCT", "estilos.css");
 		<div id="login">
 		</div>
 		<div id="logo">
-			<br/><img src="../imagenes/logo.jpg">
+			<img src="../imagenes/logo.png"> 
 		</div>
 		
 		<div id="menu">
 			
 				<ul>
-				  <li><a href="#home">Familias Profesionales</a></li>
-				  <li><a href="#news">Ciclos Formativos</a></li>
-				  <li><a href="#contact">Grupos</a></li>
-				  <li><a href="#about">Profesores</a></li>
-				  <li><a href="#home">Alumnos </a></li>
-				  <li><a href="#news">Asignaciones</a></li>
-				  <li><a href="#contact">Empresas</a></li>
-				  <li><a href="#about">Responsables</a></li>
+				<li class="espacio">----------------</li>
+				  <li><a href="#Familias">Familias Profesionales</a></li>
+				  <li><a href="#Ciclos">Ciclos Formativos</a></li>
+				  <li><a href="#Grupos">Grupos</a></li>
+				  <li><a href="#Profesores">Profesores</a></li>
+				  <li><a href="#Alumnos">Alumnos </a></li>
+				  <li><a href="#Asignaciones">Asignaciones</a></li>
+				  <li><a href="#Empresas">Empresas</a></li>
+				  <li><a href="#Responsables">Responsables</a></li>
 				</ul>				
 		</div>
-	
+		
 	</div>
+	
 	
 <div id="contenido">
 		</div>
