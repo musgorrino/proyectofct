@@ -330,7 +330,18 @@ function alta_alumno()
                            $tutor=$i;
                        }
                     }
-                    
+                    foreach($practicas as $i)
+                    {
+                        if($i=$_fila["codigo"])
+                        {
+                            $tutorprac=$i;
+                        }
+                    }
+                    if($tutor=-1)
+                    {?>
+                        <td><?php echo $_fila[$i]; ?></td><?php
+                    }
+
                 }
                 $_fila = mysqli_fetch_assoc($datos);
                 }
