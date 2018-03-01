@@ -41,7 +41,8 @@ include "funciones.php";
 			</td>
 		</tr>
 </table>
-<input type="submit" value="crear">
+		<input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
+		<input type="submit" id="enviar" name="enviar" value="Crear" />
 </form>
 </body>
 </html>

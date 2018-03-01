@@ -11,7 +11,7 @@
 </head>
 <body>
 	
-	<form action="./funciones.php" method="post">
+	<form action="login.php" method="post">
 		<h2> Gestión FCT </h2>
 		<input type="text" name="usuario" placeholder=" &#128590; usuario" size="30"/>
 		<input type="password" name="clave" placeholder="&#128272; Contraseña" size="30"/>
@@ -23,14 +23,14 @@
 			$clave=$_POST ['clave'];
 
 			$consulta="SELECT * FROM usuarios WHERE usuarios='$usuarios' and '$clave'";
-			$resultado=mysqli_query($conexion, $consulta);
+			$resultado=mysqli_query($consulta);
 
 			$filas=mysqli_num_rows ($resultado);
 			if ($filas>0) {
-				header:("location:principal.php")
+				header ("location:principal.php");
 			}
 			else {
-				echo "Error en la autentificación"
+				echo "Error en la autentificación";
 			}
 			mysqli_free_result($resultado);
 			mysqli_close($conexion);

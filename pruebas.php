@@ -1,5 +1,6 @@
 <?php
-include "funciones.php";
+/*include "funciones.php";*/
+include "prueba2.php";
 /*
  * Created by PhpStorm.
  * User: 2aasir11
@@ -81,7 +82,113 @@ while ($_fila)
 
 Prueba generacion selects dinamicas
 */
-coger_tablas("grupo");
+/*coger_tablas("profesor");*/
+
+$nombretabla="profesor";
+$conexion = conectar("localhost", "root", "", "mydb");
+$query = "describe ".$nombretabla;
+$r = mysqli_query($conexion, $query);
+$_fila = mysqli_fetch_assoc($r);
+$array = array();
+while ($_fila) {
+
+    $array[] = $_fila["Field"];
+    $_fila = mysqli_fetch_assoc($r);
+}
+$conexion = mysqli_connect("localhost", "root", "", "mydb");
+$recogida = "select * from ".$nombretabla;
+$datos = mysqli_query($conexion,$recogida);
+if ($nombretabla=="profesor")
+{
+    $conexion = mysqli_connect("localhost", "root", "", "mydb");
+    $query = "select abreviatura,tutor_practicas,tutor from grupos";
+    $done = mysqli_query($conexion,$query);
+    $grupo= mysqli_fetch_assoc($done);
+    $j=array();
+    while($grupo)
+    {
+        $j[]=array(
+            "abreviatura"=>$grupo["abreviatura"],
+            "tutorp"=>$grupo["tutor_practicas"],
+            "tutor" =>$grupo["tutor"]
+        );
+    }
+
+}
+
+?>      <h3>
+    <?php echo strtoupper($nombretabla);?>
+</h3>
+<table border=1>
+    <thead><?php foreach ($array as $i) {
+        ?><th><?php echo ucfirst($i);?></th>
+    <?php }
+    /*if ($nombretabla=="profesor")
+    {?>
+        <th>Tutor de</th>
+        <th>Tutor de practicas de</th>
+    <?php}*/
+    ?></thead>
+    <?php
+
+
+    $_fila = mysqli_fetch_assoc($datos);
+    while ($_fila)
+    {
+
+    ?>
+    <tr>
+        <?php foreach ($array as $i) {
+            ?>
+            <td><?php echo $_fila[$i]; ?></td><?php
+        } ?>
+    <tr>
+        <?php
+       /* if($nombretabla="profesor")
+        {
+            $contador=0;
+            $tutor=-1;
+            $tutorprac=-1;
+            foreach($profesores as $i)
+            {
+                if($i=$_fila["codigo"])
+                {
+                    $tutor=$i;
+                }
+            }
+            foreach($practicas as $i)
+            {
+                if($i=$_fila["codigo"])
+                {
+                    $tutorprac=$i;
+                }
+            }
+            if($tutor=-1)
+            {?>
+                <td>No es tutor de ningun grupo</td><?php
+            }
+            else
+            {?>
+                <td><?php echo $abreviatura[$tutor]; ?></td><?php
+            }
+            if($tutorprac=-1)
+            {?>
+                <td>No es tutor de practicas de ningun grupo</td><?php
+            }
+            else
+            {?>
+                <td><?php echo $abreviatura[$tutor]; ?></td><?php
+            }
+
+        }*/
+        $_fila = mysqli_fetch_assoc($datos);
+        }
+
+        ?>
+</table>
+<?php
+mysqli_close($conexion);
+
 
 
 ?>

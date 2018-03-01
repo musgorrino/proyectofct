@@ -144,6 +144,26 @@ function comprobarnonum($valor)
         return false;
     }
 }
+function poners($nombre,$valor)
+{
+    if(isset($_POST[$nombre]))
+    {
+        if($_POST[$nombre]==$valor)
+        {
+            return 'selected=selected';
+        }
+    }
+}
+function ponerc($nombre,$valor)
+{
+    if (isset($_POST[$nombre]))
+    {
+        if($_POST[$nombre]==$valor)
+        {
+            return 'checked="checked"';
+        }
+    }
+}
 /* funcion para conectarme con la base de datos*/
 function conectar ($host,$user,$pass,$bd)
 {
@@ -258,7 +278,23 @@ function alta_alumno()
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
         $recogida = "select * from ".$nombretabla;
         $datos = mysqli_query($conexion,$recogida);
+        if ($nombretabla=="profesor")
+        {
+            $conexion = mysqli_connect("localhost", "root", "", "mydb");
+            $query = "select abreviatura,tutor_practicas,tutor from grupos";
+            $done = mysqli_query($conexion,$query);
+            $profesores=array();
+            $practicas=array();
+            $abreviatura=array();
+            $grupo= mysqli_fetch_assoc($done);
+            while($grupo)
+            {
+                $abreviatura[]=$grupo["abreviatura"];
+                $practicas[]=$grupo["tutor_practicas"];
+                $profesores[]=$grupo["tutor"];
+            }
 
+        }
 
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
@@ -266,7 +302,13 @@ function alta_alumno()
         <table border=1>
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
-               <?php } ?></thead>
+               <?php }
+                    if ($nombretabla=="profesor")
+                    {?>
+                        <th>Tutor de</th>
+                        <th>Tutor de practicas de</th>
+                    <?php}
+               ?></thead>
             <?php
 
 
@@ -282,7 +324,43 @@ function alta_alumno()
                 } ?>
             <tr>
                 <?php
+                if($nombretabla="profesor")
+                {
+                    $contador=0;
+                    $tutor=-1;
+                    $tutorprac=-1;
+                    foreach($profesores as $i)
+                    {
+                       if($i=$_fila["codigo"])
+                       {
+                           $tutor=$i;
+                       }
+                    }
+                    foreach($practicas as $i)
+                    {
+                        if($i=$_fila["codigo"])
+                        {
+                            $tutorprac=$i;
+                        }
+                    }
+                    if($tutor=-1)
+                    {?>
+                        <td>No es tutor de ningun grupo</td><?php
+                    }
+                    else
+                    {?>
+                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
+                    }
+                    if($tutorprac=-1)
+                    {?>
+                        <td>No es tutor de practicas de ningun grupo</td><?php
+                    }
+                    else
+                    {?>
+                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
+                    }
 
+                }
                 $_fila = mysqli_fetch_assoc($datos);
                 }
 
@@ -307,15 +385,17 @@ function alta_alumno()
         }
     }
 	/* Funcion para la select de los modificares automatico*/
-	function select_modificar($tabla){
-		$conexion=Conectarse("mydb"); 
- 
-		$codigo=$_POST['codigo'];
- 
-		$q = "select * from $tabla where codigo ='$codigo'";
-		$resultado = mysql_query($q,$conexion) or die(mysql_error());
-		$total= mysql_num_rows($resultado);
- 
-	if ($total>0){
-		$fila = mysql_fetch_assoc($resultado);
-	}}
+	function select_modificar($tabla)
+    {
+        $conexion = Conectarse("mydb");
+
+        $codigo = $_POST['codigo'];
+
+        $q = "select * from $tabla where codigo ='$codigo'";
+        $resultado = mysqli_query($q, $conexion) or die(mysqli_error());
+        $total = mysqli_num_rows($resultado);
+
+        if ($total > 0) {
+            $fila = mysqli_fetch_assoc($resultado);
+        }
+    }
