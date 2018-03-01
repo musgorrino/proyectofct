@@ -142,7 +142,7 @@ if ($nombretabla=="profesor")
         } ?>
     <tr>
         <?php
-        if($nombretabla="profesor")
+       /* if($nombretabla="profesor")
         {
             $contador=0;
             $tutor=-1;
@@ -178,7 +178,7 @@ if ($nombretabla=="profesor")
                 <td><?php echo $abreviatura[$tutor]; ?></td><?php
             }
 
-        }
+        }*/
         $_fila = mysqli_fetch_assoc($datos);
         }
 
