@@ -15,3 +15,8 @@ FROM profesores p left outer join
 (familias_profesionales t) 
 ON p.codigo=t.coordinador
 
+/*
+
+/*Vista 3*/
+CREATE VIEW `ciclo`
+ AS SELECT c.*, p.nombre as 'Nombre Familia' FROM  ciclos_formativos c, familias_profesionales p where c.familia=p.codigo
