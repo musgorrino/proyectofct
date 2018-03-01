@@ -81,7 +81,7 @@ while ($_fila)
 
 Prueba generacion selects dinamicas
 */
-coger_tablas("g");
+coger_tablas("profesor");
 
 
 ?>
