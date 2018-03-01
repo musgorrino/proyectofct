@@ -1,5 +1,6 @@
 <?php
 /*include "funciones.php";*/
+include "prueba2.php";
 /*
  * Created by PhpStorm.
  * User: 2aasir11
