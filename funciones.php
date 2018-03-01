@@ -308,11 +308,11 @@ function alta_alumno()
                     ?><th><?php echo ucfirst($i);?></th>
                <?php }
                     /*if ($nombretabla=="profesor")
-                    {?>
+                    {*/?>
                         <th>Tutor de</th>
                         <th>Tutor de practicas de</th>
-                    <?php}
-               */?></thead>
+                    <?php/*}*/
+               ?></thead>
             <?php
 
 
@@ -326,45 +326,32 @@ function alta_alumno()
                     ?>
                     <td><?php echo $_fila[$i]; ?></td><?php
                 } ?>
-            <tr>
+
                 <?php
                 /*if($nombretabla="profesor")
-                {
-                    $contador=0;
-                    $tutor=-1;
-                    $tutorprac=-1;
-                    foreach($profesores as $i)
-                    {
-                       if($i=$_fila["codigo"])
-                       {
-                           $tutor=$i;
-                       }
-                    }
-                    foreach($practicas as $i)
-                    {
-                        if($i=$_fila["codigo"])
-                        {
-                            $tutorprac=$i;
-                        }
-                    }
-                    if($tutor=-1)
-                    {?>
-                        <td>No es tutor de ningun grupo</td><?php
-                    }
-                    else
-                    {?>
-                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
-                    }
-                    if($tutorprac=-1)
-                    {?>
-                        <td>No es tutor de practicas de ningun grupo</td><?php
-                    }
-                    else
-                    {?>
-                        <td><?php echo $abreviatura[$tutor]; ?></td><?php
-                    }
+                {*/
+                  foreach($j as $e)
+                  {
+                      if($_fila["codigo"]==$e["tutor"])
+                      {
+                           ?><td><?php echo $e["abreviatura"]; ?></td><?php
+                      }
+                      else
+                      {
+                          ?><td>No es tutor</td><?php
+                      }
+                      if($_fila["codigo"]==$e["tutorp"])
+                      {
+                          ?><td><?php echo $e["abreviatura"]; ?></td><?php
+                      }
+                      else
+                      {
+                          ?><td>No es tutor de practicas</td><?php
+                      }
 
-                }*/
+                  }
+                <tr>
+                /*}*/
                 $_fila = mysqli_fetch_assoc($datos);
                 }
 
