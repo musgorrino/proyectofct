@@ -393,3 +393,17 @@ function alta_alumno()
             $fila = mysqli_fetch_assoc($resultado);
         }
     }
+    /*funcion rediseñada para usarla cuando haya que modificar y queramos mantener los datos, hay que pasarla la tabla de la que se quiere hacer la lista desplegable, la columna que queremos que saque
+    y el nombre de la select*/
+function generar_selectmod($tabla,$columna,$nombreselect)
+{
+    $conexion=mysqli_connect("localhost","root","","mydb");
+    $query="select codigo,".$columna." from ".$tabla;
+    $r=mysqli_query($conexion,$query);
+    $fila=mysqli_fetch_assoc($r);
+    while($fila)
+    {
+        ?><option value="<?php echo $fila["codigo"];?>" <?php poners($nombreselect,$fila["codigo"]) ?>><?php echo $fila[$columna];?></option><?php
+        $fila=mysqli_fetch_assoc($r);
+    }
+}
