@@ -1,5 +1,5 @@
 <?php
-include "funciones.php";
+/*include "funciones.php";*/
 /*
  * Created by PhpStorm.
  * User: 2aasir11
@@ -82,6 +82,7 @@ while ($_fila)
 Prueba generacion selects dinamicas
 */
 /*coger_tablas("profesor");*/
+
 $nombretabla="profesor";
 $conexion = conectar("localhost", "root", "", "mydb");
 $query = "describe ".$nombretabla;
@@ -121,11 +122,11 @@ if ($nombretabla=="profesor")
     <thead><?php foreach ($array as $i) {
         ?><th><?php echo ucfirst($i);?></th>
     <?php }
-    if ($nombretabla=="profesor")
+    /*if ($nombretabla=="profesor")
     {?>
         <th>Tutor de</th>
         <th>Tutor de practicas de</th>
-    <?php}
+    <?php}*/
     ?></thead>
     <?php
 
