@@ -25,14 +25,25 @@ cabecera("Gestion FCT", "estilos.css");
 				  <li><a href="#Responsables">Responsables</a></li>
 				</ul>				
 		</div>
+		<center><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
+		<table border="4">
 		
+			
+		</table>
 	</div>
 	
 	
 <div id="contenido">
 		</div>
+		
 <div id="pie">
+		
+		<div id="copyright" class="container">
+			 <a href="principal.php" class="button">Volver al Inicio</a> 
+			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
+		
 		</div>
+	</div>
 </div>
 
 </body>

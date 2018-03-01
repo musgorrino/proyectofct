@@ -1,4 +1,8 @@
 body {background-color: black;}
+h3{
+	font-family: sans-serif;
+	color: #fff;
+	}
 #contenedor{width: 1200px;
 			height: 990px;
 			margin: 0 auto;
@@ -59,7 +63,7 @@ body {background-color: black;}
 					
 			#contenido{width: 1200px;
 						height: 635px;
-						background-color: yellow;
+						background-color: purple;
 					/*	border-top:solid;
 						border-bottom:solid;*/}
 
@@ -69,3 +73,22 @@ body {background-color: black;}
 					background-color: #800080;
 						border-radius: 10px;
 					/*border-top:solid;*/ }
+			#copyright
+	{
+		position: relative;
+		padding: 3em 0em;
+		border-top: 10px solid #303030;
+		letter-spacing: 1px;
+		text-align: center;
+		color: rgba(255,255,255,.4);
+	}
+	
+	#copyright .container
+	{
+	}
+	
+	#copyright a
+	{
+		text-decoration: none;
+		color: rgba(255,255,255,.4) !important;
+	}
