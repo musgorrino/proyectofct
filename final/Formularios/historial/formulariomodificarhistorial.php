@@ -1,11 +1,19 @@
-<?php
-include "funciones.php";
+<?php 
+include("../../funciones/funciones.php");
+
+	cabecera("Modificar historial de alumno.","estilos.css");
+
+	$conexion=Conectarse("mydb"); 
+ 
+		$codigo=$_POST['codigo'];
+ 
+			$q = "select * from historial_alumnos where codigo ='$codigo'";
+			$resultado = mysql_query($q,$conexion) or die(mysql_error());
+		$total= mysql_num_rows($resultado);
+ 
+	if ($total>0){
+		$fila = mysql_fetch_assoc($resultado);   
 ?>
-<html>
-<head>
-<h1>nueva entrada</h1>
-</head>
-<body>
 <form action="" method="post">
 	<table>
 		<tr>
@@ -44,5 +52,10 @@ include "funciones.php";
 		<input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
 		<input type="submit" id="enviar" name="enviar" value="Guardar" />
 </form>
+<?php
+}
+	mysql_free_result($resultado);
+		mysql_close($conexion);
+?>
 </body>
 </html>

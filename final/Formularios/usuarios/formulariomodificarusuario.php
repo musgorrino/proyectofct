@@ -1,8 +1,19 @@
-<html>
-<head>
-<h1>nuevo usuario</h1>
-</head>
-<body>
+<?php 
+include("../../funciones/funciones.php");
+
+	cabecera("Modificar usuario.","estilos.css");
+
+	$conexion=Conectarse("mydb"); 
+ 
+		$codigo=$_POST['codigo'];
+ 
+			$q = "select * from usuarios where codigo ='$codigo'";
+			$resultado = mysql_query($q,$conexion) or die(mysql_error());
+		$total= mysql_num_rows($resultado);
+ 
+	if ($total>0){
+		$fila = mysql_fetch_assoc($resultado);
+?>
 <form action="" method="post">
 	<table>
 		<tr>
@@ -25,5 +36,11 @@
 		<input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
 		<input type="submit" id="enviar" name="enviar" value="Guardar" />
 </form>
+<?php
+}
+	mysql_free_result($resultado);
+		mysql_close($conexion);
+?>
+
 </body>
 </html>
