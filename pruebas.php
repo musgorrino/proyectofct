@@ -110,11 +110,11 @@ if ($nombretabla=="profesor")
     var_dump($j);
     while($grupo)
     {
-        $j[]=array(
+       /* $j[]=array(
             "abreviatura"=>$grupo["abreviatura"],
             "tutorp"=>$grupo["tutor_practicas"],
             "tutor" =>$grupo["tutor"]
-        );
+        );*/echo "1";
     }
     mysqli_close($conexion);
 }
