@@ -350,7 +350,7 @@ function alta_alumno()
                       }
 
                   }
-                <tr>
+                ?><tr><?php
                 /*}*/
                 $_fila = mysqli_fetch_assoc($datos);
                 }
