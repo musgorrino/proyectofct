@@ -263,13 +263,30 @@ function alta_alumno()
 
     }
     $r = mysqli_query($conexion, $query);
+    $row=mysqli_affected_rows($r);
+    if($row==1)
+    {
+        $query2 = "select codigo from alumnos where dni='".$_POST["dni"]."'";
+        $r = mysqli_query($conexion, $query2); /*or die(mysqli_error())*/
+        $_fila = mysqli_fetch_assoc($r);
+        $codigoal=$_fila["codigo"];
+        $query="insert into historial_alumnos (grupo,alumno,curso)values ('".$_POST["grupo"]."','".$codigoal."','".$_POST["curso"]."')";
+        $r=mysqli_query($conexion,$query);
+        $row2=mysqli_affected_rows($r);
+        if ($row2==1)
+        {
+            return "Alumno insertado correctamente";
+        }
+       else
+       {
+           return "El alumno no ha podido ser insertado en el grupo";
+       }
+    }
+   else
+   {
+       return "ha habido un problema con la inserccion del alumno";
+   }
 
-    $query2 = "select codigo from alumnos where dni='".$_POST["dni"]."'";
-    $r = mysqli_query($conexion, $query2); /*or die(mysqli_error())*/
-    $_fila = mysqli_fetch_assoc($r);
-    $codigoal=$_fila["codigo"];
-    $query="insert into historial_alumnos (grupo,alumno,curso)values ('".$_POST["grupo"]."','".$codigoal."','".$_POST["curso"]."')";
-    $r=mysqli_query($conexion,$query);
     return "Alumno insertado correctamente";
 }
     /*Primera funcion para crear listados de tablas de forma dinamica, hace un describe de la tabla y se queda
@@ -513,6 +530,15 @@ values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularid
 
 
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
-    return "Empresa insertada correctamente";
+    $row=mysqli_affected_rows($r);
+    if ($row==1)
+    {
+        return "Empresa insertada correctamente";
+    }
+    else
+    {
+        return "ha habido un problema con la inserccion de la empresa";
+    }
+
 }
 
