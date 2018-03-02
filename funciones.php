@@ -243,6 +243,12 @@ function alta_alumno()
         return "Seleccion carnet no completada";
     }
     $otros = recoger($_POST["otros"]);
+    $grupo = recoger($_POST["grupo"]);
+
+    if ($grupo == 1) {
+        return "Grupo no seleccionado";
+    }
+    $carnet = recoger($_POST["carnet"]);
 
     $conexion = conectar("localhost", "root", "", "mydb");
     if ($otros == 1) {
@@ -251,7 +257,12 @@ function alta_alumno()
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
 
     }
-    $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
+    $r = mysqli_query($conexion, $query);
+    $query2 = "select codigo from alumnos where dni='".$_POST["dni"]."'";
+    $r = mysqli_query($conexion, $query2); /*or die(mysqli_error())*/
+    $_fila = mysqli_fetch_assoc($r);
+    $codigoal=$_fila["codigo"];
+    $query=
     return "Alumno insertado correctamente";
 }
     /*Primera funcion para crear listados de tablas de forma dinamica, hace un describe de la tabla y se queda
