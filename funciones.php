@@ -6,7 +6,6 @@
  * Time: 8:47
  */
 /*<<<<<<< HEAD*/
- 
 function cabecera($titulo, $css)
 { 
 ?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -19,8 +18,7 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
-}   
-
+}
 /*=======*/
 /*Funcion para recoger el dni y comporbar que no esta vacio y el patron es correcto, devuelve un 1 si el campo esta vacio
 un 2 si el dni ya existe en la tabla alumnos y un 0 si el dni no existe, es necesario pasarle el dni como parametro*/
