@@ -406,4 +406,97 @@ function generar_selectmod($tabla,$columna,$nombreselect)
     }
 }
 
+/*Funcion para dar de alta un alumno*/
+function alta_empresa()
+{
 
+
+
+    $nombre = recogvarc($_POST["nombre"]);
+
+    if ($nombre == 1) {
+        return "Nombre vacio o con caracteres numericos";
+    }
+    $nif = recoger($_POST["nif"]);
+
+    if ($nif == 1) {
+        return "Campo nif empresa vacio";
+    }
+    $titularidad = recogvarc($_POST["titularidad"]);
+
+    if ($titularidad == 1) {
+        return "Campo titularidad vacio o con numeros";
+    }
+
+    $direccion = recoger($_POST["direccion"]);
+
+    if ($direccion == 1) {
+        return "Campo direccion vacio";
+    }
+    $poblacion = recoger($_POST["poblacion"]);
+
+    if ($poblacion == 1) {
+        return "Campo poblacion vacio";
+    }
+    $provincia = recoger($_POST["provincia"]);
+
+    if ($provincia == 1) {
+        return "Campo provincia vacio";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $telefono = recogernum($_POST["telefono"]);
+
+    if ($telefono == 1) {
+        return "Telefono vacio o con caracteres aplfabeticos";
+    }
+    $fax = recogernum($_POST["fax"]);
+
+    if ($fax == 1) {
+        return "fax";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $cp = recoger($_POST["cp"]);
+
+    if ($cp == 1) {
+        return "Codigo postal vacio";
+    }
+    $otros = recoger($_POST["otros"]);
+
+    $conexion = conectar("localhost", "root", "", "mydb");
+    if ($otros == 1) {
+        $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "')";
+    } else {
+        $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
+
+    }
+    $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
+    return "Alumno insertado correctamente";
+}
