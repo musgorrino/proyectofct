@@ -405,3 +405,5 @@ function generar_selectmod($tabla,$columna,$nombreselect)
         $fila=mysqli_fetch_assoc($r);
     }
 }
+
+
