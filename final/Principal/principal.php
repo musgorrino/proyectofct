@@ -25,13 +25,33 @@ cabecera("Gestion FCT", "estilos.css");
 				  <li><a href="../responsables.php">Responsables</a></li>
 				</ul>				
 		</div>
-		<center><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
 		
-		<?php coger_tablas("alumnos")?>
 	</div>
 	
 	
 <div id="contenido">
+<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
+		
+		<?php coger_tablas("alumnos")?>
+		
+		<form action="" method="post">
+			<table class="modificar">
+				<tr>
+				<td><label for="codigo">Selecciona el codigo del alumno que deseas modificar:</label></td>
+					<td><select name="codigo" id="codigo">
+							<?php
+								generar_select('alumnos','codigo')
+							?>
+						</select>
+					</td>
+				</tr>
+				</tr>
+					<td>
+					<input type="submit" value="Modificar" name="modificar" />
+					</td>
+				</tr>
+		</table>
+		</form>
 		</div>
 		
 <div id="pie">
