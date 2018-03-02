@@ -45,7 +45,7 @@ if (isset($_POST["enviar"]))
     var_dump($insert);
     $conexion = conectar("localhost","root","","mydb");
     $r=mysqli_query($conexion,$insert);
-  
+
 
 
 
