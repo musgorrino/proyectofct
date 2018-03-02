@@ -451,52 +451,49 @@ function alta_empresa()
     $telefono = recogernum($_POST["telefono"]);
 
     if ($telefono == 1) {
-        return "Telefono vacio o con caracteres aplfabeticos";
+        return "Telefono vacio o con caracteres alfabeticos";
     }
     $fax = recogernum($_POST["fax"]);
 
     if ($fax == 1) {
-        return "fax";
+        return "Fax vacio o con caracteres alfabeticos";
     }
-    $cp = recoger($_POST["cp"]);
+    $personac = recoger($_POST["personacontacto"]);
 
-    if ($cp == 1) {
-        return "Codigo postal vacio";
+    if ($personac == 1) {
+        return "Persona contacto vacia";
     }
-    $cp = recoger($_POST["cp"]);
+    $actividempr = recoger($_POST["actividadempresa"]);
 
-    if ($cp == 1) {
-        return "Codigo postal vacio";
+    if ($actividempr == 1) {
+        return "Actividad empresa vacio";
     }
-    $cp = recoger($_POST["cp"]);
+    $numtrab = recoger($_POST["numtrabajadores"]);
 
-    if ($cp == 1) {
-        return "Codigo postal vacio";
+    if ($numtrab == 1) {
+        return "Numero trabajadores vacio";
     }
-    $cp = recoger($_POST["cp"]);
+    $kmscentro = recoger($_POST["kmscentro"]);
 
-    if ($cp == 1) {
-        return "Codigo postal vacio";
+    if ($kmscentro == 1) {
+        return "Kilometros hasta el centro vacio";
     }
-    $cp = recoger($_POST["cp"]);
+    $horariopracticas = recoger($_POST["horariopracticas"]);
 
-    if ($cp == 1) {
-        return "Codigo postal vacio";
+    if ($horariopracticas == 1) {
+        return "Horario practicas vacio";
     }
-    $cp = recoger($_POST["cp"]);
+    $convenio = recoger($_POST["convenio"]);
 
-    if ($cp == 1) {
-        return "Codigo postal vacio";
+    if ($convenio == 1) {
+        return "Convenio vacio";
     }
-    $otros = recoger($_POST["otros"]);
-
     $conexion = conectar("localhost", "root", "", "mydb");
-    if ($otros == 1) {
-        $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "')";
-    } else {
-        $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
 
-    }
+        $query = "insert into empresas (nombre,nif,titularidad,direccion,poblacion,provincia,cp,telefono,fax,personacontacto,actividadempresa,numtrabajadores,kmscentro,horariopracticas,convenio) 
+values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularidad"] . "','" . $_POST["direccion"] . "','" . $_POST["poblacion"] . "','" . $_POST["provincia"] . "','" . $_POST["cp"] . "','" . $_POST["telefono"] . "','" . $_POST["fax"] . "','" . $_POST["personacontacto"] . "','" . $_POST["actividadempresa"] . "','" . $_POST["numtrabajadores"] . "','" . $_POST["kmscentro"] . "','" . $_POST["horariopracticas"] . "','" . $_POST["convenio"] . "')";
+
+
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
-    return "Alumno insertado correctamente";
+    return "Empresa insertada correctamente";
 }
