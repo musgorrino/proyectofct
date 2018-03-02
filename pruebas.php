@@ -4,7 +4,7 @@ include "funciones.php";
 /*coger_tablas("profesor");*/
 if (isset($_POST["enviar"]))
 {
-    $insert="insert into prueba(";
+    $insert="insert into grupos(";
     $columnas=coger_nombres("grupos");
     $contador=0;
     foreach($columnas as $i)
@@ -41,7 +41,7 @@ if (isset($_POST["enviar"]))
 
     }
     $insert=$insert.");";
-    
+
     var_dump($insert);
     $conexion = conectar("localhost","root","","mydb");
     $r=mysqli_query($conexion,$insert);
