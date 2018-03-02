@@ -246,4 +246,51 @@ function alta_alumno()
             $fila=mysqli_fetch_assoc($r);
         }
     }
+	
+	function ver_contenido($tabla,$titulo,$descripcion){
+	?>
+		<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
+		
+		<?php coger_tablas("$tabla")?>
+		</br></br>
+		<div id="modificar">
+		<form action="" method="post">
+			<table class="modificar" width=100%>
+				<tr>
+				<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas modificar:</strong></td>
+					<td><select name="codigo">
+							<?php
+								generar_select($tabla,'codigo')
+							?>
+						</select>
+					</td>
+					<td>
+					  <input type="submit" value="Modificar">
+					</td>
+				</tr>
+		</table>
+		</form>
+		</div>
+		</br></br>
+		<div id="borrar">
+			<table class="borrar">
+				<tr>
+				<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas eliminar:</strong><td>
+					<td><select name="codigo">
+							<?php
+								generar_select($tabla,'codigo')
+							?>
+						</select>
+					</td>
+					<td>
+					  <input type="submit" value="Borrar">
+					</td>
+				</tr>
+		</table>
+		
+		</div>
+	<?php
+	}
+	?>
+	
 

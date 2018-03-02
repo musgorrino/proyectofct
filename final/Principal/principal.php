@@ -30,47 +30,9 @@ cabecera("Gestion FCT", "estilos.css");
 	
 	
 <div id="contenido">
-<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
-		
-		<?php coger_tablas("alumnos")?>
-		</br></br>
-		<div id="modificar">
-		<form action="" method="post">
-			<table class="modificar" width=100%>
-				<tr>
-				<td><strong>Selecciona el codigo del alumno que deseas modificar:</strong></td>
-					<td><select name="codigo">
-							<?php
-								generar_select('alumnos','codigo')
-							?>
-						</select>
-					</td>
-					<td>
-					  <input type="submit" value="Modificar">
-					</td>
-				</tr>
-		</table>
-		</form>
-		</div>
-		</br></br>
-		<div id="borrar">
-		<form action="" method="post">
-			<table class="borrar">
-				<tr>
-				<td><strong>Selecciona el codigo del alumno que deseas eliminar:</strong><td>
-					<td><select name="codigo">
-							<?php
-								generar_select('alumnos','codigo')
-							?>
-						</select>
-					</td>
-					<td>
-					  <input type="submit" value="Borrar">
-					</td>
-				</tr>
-		</table>
-		</form>
-		</div>
+<?php
+  ver_contenido("alumnos","Alumnos","los alumnos");
+?>
 		</div>
 		
 <div id="pie">
