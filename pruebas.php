@@ -5,8 +5,8 @@ include "funciones.php";
 if (isset($_POST["enviar"]))
 {
     $insert="insert into prueba";
-     echo count($_POST);
-     
+
+     for($i=0;$i<$)
 
 }
 
