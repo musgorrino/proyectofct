@@ -64,6 +64,8 @@ h3{
 			#contenido{width: 1200px;
 						height: 635px;
 						background-color: purple;
+						border-top-left-radius: 10px;
+						border-top-right-radius: 10px;
 					/*	border-top:solid;
 						border-bottom:solid;*/}
 
