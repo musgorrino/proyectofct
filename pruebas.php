@@ -6,7 +6,6 @@ if (isset($_POST["enviar"]))
 {
     $insert="insert into prueba";
 
-     for($i=0;$i<$)
 
 }
 
