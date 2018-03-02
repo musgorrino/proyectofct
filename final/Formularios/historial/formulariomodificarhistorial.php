@@ -23,7 +23,7 @@ include("../../funciones/funciones.php");
 			<td>
 				<select id="grupo">
 				<?php
-				generar_select('grupos','abreviatura')
+				generar_selectmod('grupos','abreviatura')
 				?>
 				</select>
 			</td>
@@ -35,7 +35,7 @@ include("../../funciones/funciones.php");
 			<td>
 				<select id="alumnos">
 				<?php
-				generar_select('alumnos','nombre')
+				generar_selectmod('alumnos','nombre')
 				?>
 				</select>
 			</td>
