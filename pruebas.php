@@ -30,6 +30,7 @@ if (isset($_POST["enviar"]))
     {
         if ($i!="codigo")
         {
+            
             if ($contados != 1) {
                 $insert = $insert . ",'" . $_POST[$i] . "'";
             } else {
