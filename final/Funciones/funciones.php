@@ -203,7 +203,8 @@ function alta_alumno()
         ?>      <h3>
         <?php echo strtoupper($nombretabla);?>
     </h3>
-        <table border=1>
+	<div id="scrollmenu">
+        <table>
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
                <?php } ?></thead>
@@ -228,6 +229,7 @@ function alta_alumno()
 
                 ?>
         </table>
+		</div>
         <?php
         mysqli_close($conexion);
 
