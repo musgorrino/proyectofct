@@ -263,11 +263,13 @@ function alta_alumno()
 
     }
     $r = mysqli_query($conexion, $query);
+
     $query2 = "select codigo from alumnos where dni='".$_POST["dni"]."'";
     $r = mysqli_query($conexion, $query2); /*or die(mysqli_error())*/
     $_fila = mysqli_fetch_assoc($r);
     $codigoal=$_fila["codigo"];
-    $query=""
+    $query="insert into historial_alumnos (grupo,alumno,curso)values ('".$_POST["grupo"]."','".$codigoal."','".$_POST["curso"]."')";
+    $r=mysqli_query($conexion,$query);
     return "Alumno insertado correctamente";
 }
     /*Primera funcion para crear listados de tablas de forma dinamica, hace un describe de la tabla y se queda
