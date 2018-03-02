@@ -6,15 +6,40 @@ if (isset($_POST["enviar"]))
 {
     $insert="insert into prueba()";
     $columnas=coger_nombres("grupos");
+    $contado=0;
     foreach($columnas as $i)
     {
         if ($i!="codigo")
         {
-            $insert=$insert.",".$i;
+            if($contador!=1)
+            {
+                $insert=$insert.",".$i;
+            }
+            else
+            {
+                $insert=$insert.$i;
+            }
+
         }
+
+        $contador++;
     }
     $insert=$insert.") values(";
-    
+    $contados=0;
+    foreach($columnas as $i)
+    {
+        if($contados!=1)
+        {
+            $insert=$insert.",'".$_POST[$i]."'";
+        }
+        else
+        {
+            $insert=$insert."'".$_POST[$i]."'";
+        }
+        $contados++;
+    }
+    $insert=$insert.")";
+    var_dump($insert);
 
 }
 
