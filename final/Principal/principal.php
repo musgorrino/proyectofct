@@ -27,7 +27,7 @@ cabecera("Gestion FCT", "estilos.css");
 		</div>
 		<center><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
 		
-		<?php coger_tablas("empresas")?>
+		<?php coger_tablas("alumnos")?>
 	</div>
 	
 	

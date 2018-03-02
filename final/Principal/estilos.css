@@ -71,7 +71,7 @@ h3{
 					/*	border-top:solid;
 						border-bottom:solid;*/}
 
-							#scrollmenu {background-color: purple;
+							#scrollmenu {background-color: p #cc00cc;;
 								overflow: auto;
 								white-space: nowrap;}
 
@@ -88,7 +88,7 @@ h3{
 								color: black;
 								}
 							#scrollmenu td {
-								background-color: #ff66ff;
+								/*background-color:*/
 								text-align: center;
 								padding: 30px;}
 							
