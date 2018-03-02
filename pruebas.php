@@ -51,5 +51,6 @@ if (isset($_POST["enviar"]))
     <input type="hidden" name="denominacion" value="3">
     <input type="hidden" name="ciclo" value="4">
     <input type="hidden" name="tutor" value="4">
+    <input type="hidden" name="tutor_practicas" value="5">
     <input type="submit" name="enviar" value="enviar">
 </form>
