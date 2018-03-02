@@ -4,8 +4,17 @@ include "funciones.php";
 /*coger_tablas("profesor");*/
 if (isset($_POST["enviar"]))
 {
-    $insert="insert into prueba";
-var_dump(coger_tablas("grupos"));
+    $insert="insert into prueba()";
+    $columnas=coger_nombres("grupos");
+    foreach($columnas as $i)
+    {
+        if ($i!="codigo")
+        {
+            $insert=$insert.",".$i;
+        }
+    }
+    $insert=$insert.") values(";
+    
 
 }
 
