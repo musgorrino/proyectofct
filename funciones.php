@@ -406,7 +406,7 @@ function generar_selectmod($tabla,$columna,$nombreselect)
     }
 }
 
-/*Funcion para dar de alta un alumno*/
+/*Funcion para dar de alta una empresa*/
 function alta_empresa()
 {
 
@@ -497,3 +497,4 @@ values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularid
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
     return "Empresa insertada correctamente";
 }
+
