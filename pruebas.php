@@ -4,7 +4,8 @@ include "funciones.php";
 /*coger_tablas("profesor");*/
 if (isset($_POST["enviar"]))
 {
-    ob_get_length($_POST);
+    
+    count($_POST);
     var_dump($_POST);
 }
 
