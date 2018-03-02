@@ -4,9 +4,9 @@ include "funciones.php";
 /*coger_tablas("profesor");*/
 if (isset($_POST["enviar"]))
 {
-    $insert="insert into prueba()";
+    $insert="insert into prueba(";
     $columnas=coger_nombres("grupos");
-    $contado=0;
+    $contador=0;
     foreach($columnas as $i)
     {
         if ($i!="codigo")
@@ -28,26 +28,28 @@ if (isset($_POST["enviar"]))
     $contados=0;
     foreach($columnas as $i)
     {
-        if($contados!=1)
+        if ($i!="codigo")
         {
-            $insert=$insert.",'".$_POST[$i]."'";
-        }
-        else
-        {
-            $insert=$insert."'".$_POST[$i]."'";
+            if ($contados != 1) {
+                $insert = $insert . ",'" . $_POST[$i] . "'";
+            } else {
+                $insert = $insert . "'" . $_POST[$i] . "'";
+            }
         }
         $contados++;
+
     }
-    $insert=$insert.")";
+    $insert=$insert.");";
     var_dump($insert);
 
 }
 
 ?>
 <form method="post" action="pruebas.php">
-    <input type="hidden" name="cosa1" value="1">
-    <input type="hidden" name="cosa2" value="2">
-    <input type="hidden" name="cosa3" value="3">
-    <input type="hidden" name="cosa4" value="4">
+    <input type="hidden" name="abreviatura" value="1">
+    <input type="hidden" name="codigo" value="2">
+    <input type="hidden" name="denominacion" value="3">
+    <input type="hidden" name="ciclo" value="4">
+    <input type="hidden" name="tutor" value="4">
     <input type="submit" name="enviar" value="enviar">
 </form>
