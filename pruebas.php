@@ -4,9 +4,10 @@ include "funciones.php";
 /*coger_tablas("profesor");*/
 if (isset($_POST["enviar"]))
 {
-    
-    count($_POST);
-    var_dump($_POST);
+    $insert="insert into prueba";
+     echo count($_POST);
+     
+
 }
 
 ?>
