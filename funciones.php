@@ -541,4 +541,18 @@ values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularid
     }
 
 }
+function coger_nombres($nombretabla)
+{
+    $conexion = conectar("localhost", "root", "", "mydb");
+    $query = "describe ".$nombretabla;
+    $r = mysqli_query($conexion, $query);
+    $_fila = mysqli_fetch_assoc($r);
+    $tabla = array();
+    while ($_fila) {
 
+        $tabla[] = $_fila["Field"];
+        $_fila = mysqli_fetch_assoc($r);
+    }
+    return $tabla;
+
+}
