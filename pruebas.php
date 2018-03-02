@@ -30,7 +30,7 @@ if (isset($_POST["enviar"]))
     {
         if ($i!="codigo")
         {
-            
+
             if ($contados != 1) {
                 $insert = $insert . ",'" . $_POST[$i] . "'";
             } else {
@@ -42,6 +42,8 @@ if (isset($_POST["enviar"]))
     }
     $insert=$insert.");";
     var_dump($insert);
+    $conexion = conectar("localhost","root","","mydb");
+    $r=mysqli_query($conexion,$insert);
 
 }
 
@@ -50,8 +52,8 @@ if (isset($_POST["enviar"]))
     <input type="hidden" name="abreviatura" value="1">
     <input type="hidden" name="codigo" value="2">
     <input type="hidden" name="denominacion" value="3">
-    <input type="hidden" name="ciclo" value="4">
-    <input type="hidden" name="tutor" value="4">
-    <input type="hidden" name="tutor_practicas" value="5">
+    <input type="hidden" name="ciclo" value="1">
+    <input type="hidden" name="tutor" value="1">
+    <input type="hidden" name="tutor_practicas" value="1">
     <input type="submit" name="enviar" value="enviar">
 </form>
