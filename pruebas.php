@@ -5,7 +5,7 @@ include "funciones.php";
 if (isset($_POST["enviar"]))
 {
     $insert="insert into prueba";
-
+var_dump(coger_tablas("grupos"));
 
 }
 
