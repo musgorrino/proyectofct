@@ -1,4 +1,6 @@
-body {background-color: black;}
+
+body {background-color: black;
+		font-family: sans-serif;}
 h3{
 	font-family: sans-serif;
 	color: #fff;
@@ -69,12 +71,35 @@ h3{
 					/*	border-top:solid;
 						border-bottom:solid;*/}
 
-			
+							#scrollmenu {background-color: purple;
+								overflow: auto;
+								white-space: nowrap;}
+
+							#scrollmenu table {display: inline-block;
+								color: black;
+								text-align: center;
+								padding: 15px;
+								text-decoration: none;}
+								
+							#scrollmenu th{
+								text-align: center;
+								padding: 30px;
+								background-color: white;
+								color: black;
+								}
+							#scrollmenu td {
+								background-color: #ff66ff;
+								text-align: center;
+								padding: 30px;}
+							
+							#scrollmenu tr:hover {background-color:white;}
+										
 			#pie{width: 1200px;
 					height: 35px;
 					background-color: #800080;
 						border-radius: 10px;
 					/*border-top:solid;*/ }
+					
 			#copyright
 	{
 		position: relative;
@@ -94,3 +119,4 @@ h3{
 		text-decoration: none;
 		color: rgba(255,255,255,.4) !important;
 	}
+
