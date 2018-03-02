@@ -495,5 +495,5 @@ values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularid
 
 
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
-    return "Alumno insertado correctamente";
+    return "Empresa insertada correctamente";
 }
