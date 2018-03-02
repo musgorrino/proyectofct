@@ -490,7 +490,8 @@ function alta_empresa()
     }
     $conexion = conectar("localhost", "root", "", "mydb");
 
-        $query = "insert into empresas (nombre,nif,titularidad,direccion,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
+        $query = "insert into empresas (nombre,nif,titularidad,direccion,poblacion,provincia,cp,telefono,fax,personacontacto,actividadempresa,numtrabajadores,kmscentro,horariopracticas,convenio) 
+values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularidad"] . "','" . $_POST["direccion"] . "','" . $_POST["poblacion"] . "','" . $_POST["provincia"] . "','" . $_POST["cp"] . "','" . $_POST["telefono"] . "','" . $_POST["fax"] . "','" . $_POST["personacontacto"] . "','" . $_POST["actividadempresa"] . "','" . $_POST["numtrabajadores"] . "','" . $_POST["kmscentro"] . "','" . $_POST["horariopracticas"] . "','" . $_POST["convenio"] . "')";
 
 
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
