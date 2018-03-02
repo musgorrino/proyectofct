@@ -4,7 +4,7 @@ h3{
 	color: #fff;
 	}
 #contenedor{width: 1200px;
-			height: 990px;
+			height: 1300px;
 			margin: 0 auto;
 			/*border:solid;*/}
 			
@@ -62,7 +62,7 @@ h3{
 						#menu li.espacio{color:#800080;}
 					
 			#contenido{width: 1200px;
-						height: 635px;
+						height: 935px;
 						background-color: purple;
 						border-top-left-radius: 10px;
 						border-top-right-radius: 10px;
