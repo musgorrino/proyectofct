@@ -204,7 +204,7 @@ function alta_alumno()
         <?php echo strtoupper($nombretabla);?>
     </h3>
 	<div id="scrollmenu">
-        <table border=1>
+        <table>
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
                <?php } ?></thead>

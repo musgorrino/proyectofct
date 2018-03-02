@@ -243,6 +243,17 @@ function alta_alumno()
         return "Seleccion carnet no completada";
     }
     $otros = recoger($_POST["otros"]);
+    $grupo = recoger($_POST["grupo"]);
+
+    if ($grupo == 1) {
+        return "Grupo no seleccionado";
+    }
+    $curso=recoger($_POST["curso"]);
+    if ($curso==1)
+    {
+        return "Curso no seleccionado";
+    }
+    $carnet = recoger($_POST["carnet"]);
 
     $conexion = conectar("localhost", "root", "", "mydb");
     if ($otros == 1) {
@@ -251,7 +262,31 @@ function alta_alumno()
         $query = "insert into alumnos (nombre,apellidos,dni,fechanac,telefono,email,euskera,carnet,otros) values('" . $_POST["nombre"] . "','" . $_POST["apellidos"] . "','" . $_POST["dni"] . "','" . $_POST["fechanac"] . "','" . $_POST["telefono"] . "','" . $_POST["email"] . "','" . $_POST["euskera"] . "','" . $_POST["carnet"] . "','" . $_POST["otros"] . "')";
 
     }
-    $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
+    $r = mysqli_query($conexion, $query);
+    $row=mysqli_affected_rows($r);
+    if($row==1)
+    {
+        $query2 = "select codigo from alumnos where dni='".$_POST["dni"]."'";
+        $r = mysqli_query($conexion, $query2); /*or die(mysqli_error())*/
+        $_fila = mysqli_fetch_assoc($r);
+        $codigoal=$_fila["codigo"];
+        $query="insert into historial_alumnos (grupo,alumno,curso)values ('".$_POST["grupo"]."','".$codigoal."','".$_POST["curso"]."')";
+        $r=mysqli_query($conexion,$query);
+        $row2=mysqli_affected_rows($r);
+        if ($row2==1)
+        {
+            return "Alumno insertado correctamente";
+        }
+       else
+       {
+           return "El alumno no ha podido ser insertado en el grupo";
+       }
+    }
+   else
+   {
+       return "ha habido un problema con la inserccion del alumno";
+   }
+
     return "Alumno insertado correctamente";
 }
     /*Primera funcion para crear listados de tablas de forma dinamica, hace un describe de la tabla y se queda
@@ -406,7 +441,7 @@ function generar_selectmod($tabla,$columna,$nombreselect)
     }
 }
 
-/*Funcion para dar de alta un alumno*/
+/*Funcion para dar de alta una empresa*/
 function alta_empresa()
 {
 
@@ -495,5 +530,15 @@ values('" . $_POST["nombre"] . "','" . $_POST["nif"] . "','" . $_POST["titularid
 
 
     $r = mysqli_query($conexion, $query); /*or die(mysqli_error())*/
-    return "Empresa insertada correctamente";
+    $row=mysqli_affected_rows($r);
+    if ($row==1)
+    {
+        return "Empresa insertada correctamente";
+    }
+    else
+    {
+        return "ha habido un problema con la inserccion de la empresa";
+    }
+
 }
+
