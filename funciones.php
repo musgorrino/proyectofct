@@ -248,6 +248,11 @@ function alta_alumno()
     if ($grupo == 1) {
         return "Grupo no seleccionado";
     }
+    $curso=recoger($_POST["curso"]);
+    if ($curso==1)
+    {
+        return "Curso no seleccionado";
+    }
     $carnet = recoger($_POST["carnet"]);
 
     $conexion = conectar("localhost", "root", "", "mydb");
@@ -262,7 +267,7 @@ function alta_alumno()
     $r = mysqli_query($conexion, $query2); /*or die(mysqli_error())*/
     $_fila = mysqli_fetch_assoc($r);
     $codigoal=$_fila["codigo"];
-    $query=
+    $query=""
     return "Alumno insertado correctamente";
 }
     /*Primera funcion para crear listados de tablas de forma dinamica, hace un describe de la tabla y se queda
