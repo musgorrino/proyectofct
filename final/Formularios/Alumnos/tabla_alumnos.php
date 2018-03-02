@@ -1,7 +1,7 @@
 <?php 
-include("funciones.php");
+include("../../funciones/funciones.php");
 
-	cabecera("Modificar asignacion.","estilos.css");
+	cabecera("Alumnos.","estilos.css");
 ?>
 <?php 
 coger_tablas('alumnos');
@@ -28,6 +28,6 @@ coger_tablas('alumnos');
 		</tr>
 </table>
 </form>
-<button><a href="">nuevo</a></button>
+<button><a href="insertar_alumnos.php">nuevo</a></button>
 </body>
 </html>

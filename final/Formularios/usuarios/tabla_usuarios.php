@@ -1,10 +1,10 @@
 <?php 
-include("funciones.php");
+include("../../funciones/funciones.php");
 
-	cabecera("Modificar asignacion.","estilos.css");
+	cabecera("Usuarios.","estilos.css");
 ?>
 <?php 
-coger_tablas('alumnos');
+coger_tablas('usuarios');
 ?>
 <form action="" method="post">
 <table>
@@ -15,7 +15,7 @@ coger_tablas('alumnos');
 			<td>
 				<select name="codigo" id="codigo">
 				<?php
-				generar_select('alumnos','codigo')
+				generar_select('usuarios','codigo')
 				?>
 				</select>
 			</td>
@@ -28,6 +28,6 @@ coger_tablas('alumnos');
 		</tr>
 </table>
 </form>
-<button><a href="">nuevo</a></button>
+<button><a href="insertar_usuarios.php">nuevo</a></button>
 </body>
 </html>
