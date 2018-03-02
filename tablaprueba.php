@@ -8,17 +8,18 @@ coger_tablas('alumnos');
 ?>
 <form action="" method="post">
 <table>
-		<tr>
-			<td>
-				<label for="codigo">codigo: </label>
-			</td>
-			<td>
+		
+<tr><td><label for="codigo">Introduce el nombre del alumno que deseas modificar:</label></td>
+<td>
 				<select name="codigo" id="codigo">
 				<?php
 				generar_select('alumnos','codigo')
 				?>
 				</select>
-			</td>
+</td>
+</tr>
+
+		<tr>
 			<td>
 			<input type="submit" value="modificar" name="enviar" />
 			</td>
