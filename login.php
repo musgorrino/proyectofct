@@ -7,10 +7,11 @@
 <head>
 	<title> Acceso a Gestion FCT </title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="estilo.css">
+	<link rel="stylesheet" href="./estilos/estilo.css">
 </head>
 <body>
 	
+	<center><img src="./estilos/images/logo.png" alt="Logo Egibide"></center>
 	<form action="login.php" method="post">
 		<h2> Gestión FCT </h2>
 		<input type="text" name="usuario" placeholder=" &#128590; usuario" size="30"/>
@@ -41,3 +42,5 @@
 	
 </body>
 </html>
+
+
