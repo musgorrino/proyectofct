@@ -31,7 +31,7 @@ include("../../funciones/funciones.php");
 			<td>
 				<select id="empresa">
 				<?php
-				generar_select('empresas','nombre')
+				generar_selectmod('empresas','nombre')
 				?>
 				</select>
 			</td>

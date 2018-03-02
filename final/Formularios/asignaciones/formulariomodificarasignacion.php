@@ -23,7 +23,7 @@ include("../../funciones/funciones.php");
 			<td>
 				<select name="empresa" id="empresa">
 				<?php
-				generar_select('empresas','nombre')
+				generar_selectmod('empresas','nombre')
 				?>
 				</select>
 			</td>
@@ -35,7 +35,7 @@ include("../../funciones/funciones.php");
 			<td>
 				<select name="alumnos" id="alumnos">
 				<?php
-				generar_select('alumnos','nombre')
+				generar_selectmod('alumnos','nombre')
 				?>
 				</select>
 			</td>
@@ -79,10 +79,10 @@ include("../../funciones/funciones.php");
 			<td>
 				
 					<label for="contratacionsi">si </label>
-					<input type="radio" name="contratacionsi" value="si" id="contratacionsi">
+					<input type="radio" <?php ponerc('contratacion','si')?> name="contratacion" value="si" id="contratacionsi">
 				
 					<label for="contratacionno">no </label>
-					<input type="radio" name="contratacionno" value="no" id="contratacionno">
+					<input type="radio" <?php ponerc('contratacion','no')?> name="contratacion" value="no" id="contratacionno">
 				
 		</td>
 		</tr>

@@ -142,10 +142,10 @@ include("../../funciones/funciones.php");
 			<td>
 				
 					<label for="conveniosi">si </label>
-					<input type="radio" name="convenio" value="si" id="conveniosi">
+					<input type="radio" <?php ponerc('convenio','si')?> name="convenio" value="si" id="conveniosi">
 				
 					<label for="conveniono">no </label>
-					<input type="radio" name="convenio" value="no" id="conveniono" >
+					<input type="radio" <?php ponerc('convenio','no')?> name="convenio" value="no" id="conveniono" >
 				
 		</td>
 		</tr>
