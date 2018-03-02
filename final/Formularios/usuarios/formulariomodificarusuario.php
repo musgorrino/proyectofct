@@ -3,16 +3,7 @@ include("../../funciones/funciones.php");
 
 	cabecera("Modificar usuario.","estilos.css");
 
-	$conexion=Conectarse("mydb"); 
- 
-		$codigo=$_POST['codigo'];
- 
-			$q = "select * from usuarios where codigo ='$codigo'";
-			$resultado = mysql_query($q,$conexion) or die(mysql_error());
-		$total= mysql_num_rows($resultado);
- 
-	if ($total>0){
-		$fila = mysql_fetch_assoc($resultado);
+	select_modificar('usuarios');
 ?>
 <form action="" method="post">
 	<table>
