@@ -247,7 +247,7 @@ function alta_alumno()
         }
     }
 	
-	function ver_contenido($tabla,$titulo,$descripcion){
+	function ver_contenido($tabla,$titulo,$descripcion,$insertar){
 	?>
 		<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
 		
@@ -269,7 +269,6 @@ function alta_alumno()
 					</td>
 				</tr>
 		</table>
-		</form>
 		</div>
 		</br></br>
 		<div id="borrar">
@@ -287,8 +286,20 @@ function alta_alumno()
 					</td>
 				</tr>
 		</table>
-		
 		</div>
+		</br></br>
+		<div id="insertar">
+			<table >
+				<tr>
+				<td><strong>Haz click en "insertar" si deseas insertar un <?php echo $insertar ?> nuevo</strong><td>
+					
+					<td>
+					  <input type="submit" value="Insertar">
+					</td>
+				</tr>
+			</table>
+		</div>
+		</form>
 	<?php
 	}
 	

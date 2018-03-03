@@ -1,7 +1,7 @@
 <?php 
 include("../funciones/funciones.php");
  
-cabecera("Gestion FCT", "estilos.css");
+cabecera("Gestion FCT", "estilo.css");
 ?>
 <div id="contenedor">
 	<div id="cabecera">
@@ -21,7 +21,7 @@ cabecera("Gestion FCT", "estilos.css");
 	
 	<div id="contenido">
 		<?php
-		  ver_contenido("alumnos","Alumnos","los alumnos");
+		  ver_contenido("alumnos","Alumnos","los alumnos","alumno");
 		?>
 	</div>
 		
