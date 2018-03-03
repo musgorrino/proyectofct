@@ -10,28 +10,17 @@ cabecera("Gestion FCT", "estilo.css");
 		<div id="logo">
 			<img src="../imagenes/logo.png"> 
 		</div>
-		
 		<div id="menu">
-			
-				<?php menu();?>				
+			<?php ver_menu();?>				
 		</div>
-		
 	</div>
-	
 	
 	<div id="contenido">
-		<?php
-		  ver_contenido("alumnos","Alumnos","los alumnos","alumno");
-		?>
+		<?php ver_contenido("alumnos","Alumnos","los alumnos","alumno");?>
 	</div>
 		
-<div id="pie">
-		
-		<div id="copyright" class="container">
-			 <a href="principal.php" class="button">Volver al Inicio</a> 
-			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
-		
-		</div>
+	<div id="pie">
+		<?php ver_pie(); ?>
 	</div>
 </div>
 
