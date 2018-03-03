@@ -1,7 +1,7 @@
 <?php 
 include("../funciones/funciones.php");
  
-cabecera("Gestion FCT", "estilos.css");
+cabecera("Gestion FCT", "estilo.css");
 ?>
 <div id="contenedor">
 	<div id="cabecera">

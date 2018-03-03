@@ -200,9 +200,7 @@ function alta_alumno()
         $datos = mysqli_query($conexion,$recogida);
 
 
-        ?>   <h3>&nbsp;&nbsp;&nbsp;&nbsp;
-        <?php echo strtoupper($nombretabla);?>
-    </h3>
+        ?>   
 	<div id="scrollmenu">
         <table>
             <thead><?php foreach ($array as $i) {
@@ -268,7 +266,9 @@ function alta_alumno()
 	function ver_contenido($tabla,$titulo,$descripcion,$insertar){
 	?>
 		<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
-		
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
+        <?php echo strtoupper($titulo);?>
+    </h3>
 		<?php coger_tablas("$tabla")?>
 		</br></br>
 		<div id="modificar">
@@ -309,7 +309,7 @@ function alta_alumno()
 		<div id="insertar">
 				<table>
 					<tr>
-					<td><strong>Haz click en "insertar" si deseas insertar un <?php echo $insertar ?> nuevo</strong><td>
+					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 						<td>
 						  <input type="submit" value="Insertar">
 						</td>
