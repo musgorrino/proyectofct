@@ -29,11 +29,11 @@ cabecera("Gestion FCT", "estilos.css");
 	</div>
 	
 	
-<div id="contenido">
-<?php
-  ver_contenido("alumnos","Alumnos","los alumnos");
-?>
-		</div>
+	<div id="contenido">
+		<?php
+		  ver_contenido("alumnos","Alumnos","los alumnos");
+		?>
+	</div>
 		
 <div id="pie">
 		
