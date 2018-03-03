@@ -6,15 +6,15 @@ h3{
 	color: #fff;
 	}
 
-	#contenedor{width: 1300px;
+	#contenedor{width: 1200px;
 				height: 1300px;
 				margin: 0 auto;
 				/*border:solid;*/}
 				
-				#cabecera{width: 1300px;
+				#cabecera{width: 1200px;
 							height: 320px;}
 							
-					#login{width: 1300px;
+					#login{width: 1200px;
 							height: 35px;
 							background-color: #800080;
 							border-radius: 10px;
@@ -26,7 +26,7 @@ h3{
 						
 							
 					#menu{margin: 0 auto;
-							width:1300px;
+							width:1200px;
 							height:115px;
 							/*border-top:solid;
 							border-bottom:solid;*/}
@@ -57,7 +57,7 @@ h3{
 							
 							#menu li.espacio{color:#800080;}
 						
-				#contenido{width: 1300px;
+				#contenido{width: 1200px;
 							height: 935px;
 							background-color: purple;
 							border-top-left-radius: 10px;
@@ -135,7 +135,7 @@ h3{
 								
 								#borrar:hover {background-color:white;}
 								
-				#pie{width: 1300px;
+				#pie{width: 1200px;
 						height: 35px;
 						background-color: #800080;
 							border-radius: 10px;
