@@ -65,7 +65,7 @@ h3{
 						    /*border-top:solid;
 							border-bottom:solid;*/}
 
-								#scrollmenu {background-color: #cc00cc;
+								#scrollmenu {background-color: #b300b3 ;
 									overflow: auto;
 									white-space: nowrap;
 									margin-left:15px;
@@ -99,7 +99,7 @@ h3{
 								#scrollmenu tr:hover {background-color:white;}
 								
 								#modificar{margin: 0 auto;
-								background-color: #cc00cc;
+								background-color: #b300b3  ;
 								padding: 15px;
 								margin-left:15px;
 								margin-right:15px;
@@ -118,7 +118,7 @@ h3{
 								}
 								
 								#borrar{margin: 0 auto;
-								background-color: #cc00cc;
+								background-color:  #b300b3;
 								padding: 15px;
 								margin-left:15px;
 								margin-right:15px;
@@ -141,7 +141,7 @@ h3{
 								#borrar:hover {background-color:white;}
 								
 								#insertar {margin: 0 auto;
-								background-color: #cc00cc;
+								background-color:  #b300b3;
 								padding: 15px;
 								margin-left:15px;
 								margin-right:15px;
