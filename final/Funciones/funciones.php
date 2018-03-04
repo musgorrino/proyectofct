@@ -250,7 +250,7 @@ function alta_alumno()
 	function ver_menu(){
 	?>
 		<ul>
-				<li class="espacio">----------------</li>
+				<li class="espacio">---------</li>
 				  <li><a href="familias.php">Familias Profesionales</a></li>
 				  <li><a href="ciclos.php">Ciclos Formativos</a></li>
 				  <li><a href="grupos.php">Grupos</a></li>
@@ -259,6 +259,7 @@ function alta_alumno()
 				  <li><a href="asignaciones.php">Asignaciones</a></li>
 				  <li><a href="empresas.php">Empresas</a></li>
 				  <li><a href="responsables.php">Responsables</a></li>
+				  <li><a href="usuarios.php">Usuarios</a></li>
 				</ul>
 	<?php
 	}
