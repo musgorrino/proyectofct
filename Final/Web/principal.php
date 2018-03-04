@@ -37,8 +37,8 @@ cabecera("Gestion FCT", "estilo.css");
 		
 <div id="pie">
 		
-		<div id="copyright" class="container">
-			 <a href="principal.php" class="button">Volver al Inicio</a> 
+		<div id="copyright" 
+			 <a href="principal.php">Volver al Inicio</a> 
 			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
 		
 		</div>
