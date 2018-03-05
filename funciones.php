@@ -769,7 +769,7 @@ function coger_nombres($nombretabla)
         {
             if($contador!=1)
             {
-                $query=$query." AND ".$i.;
+                $query=$query." AND ".$i." LIKE ";
             }
             else
             {
