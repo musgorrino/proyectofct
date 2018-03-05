@@ -1,5 +1,6 @@
 <?php 
 include("../funciones.php");
+include("../funciones_insertar.php");
  
 cabecera("Gestion FCT", "estilo.css");
 ?>
