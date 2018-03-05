@@ -1,8 +1,8 @@
 <?php
-include "funciones.php";
-
+include "../funciones.php";
+generar_insert("grupos")
 /*coger_tablas("profesor");*/
-if (isset($_POST["enviar"]))
+/*if (isset($_POST["enviar"]))
 {
     $insert="insert into grupos(";
     $columnas=coger_nombres("grupos");
@@ -28,16 +28,26 @@ if (isset($_POST["enviar"]))
     $contados=0;
     foreach($columnas as $i)
     {
-        if ($i!="codigo")
+        $comp=comprobar_dato($i);
+        if($comp=="hecho")
         {
+            if ($i!="codigo")
+            {
 
-            if ($contados != 1) {
-                $insert = $insert . ",'" . $_POST[$i] . "'";
-            } else {
-                $insert = $insert . "'" . $_POST[$i] . "'";
+                if ($contados != 1) {
+                    $insert = $insert . ",'" . $_POST[$i] . "'";
+                } else {
+                    $insert = $insert . "'" . $_POST[$i] . "'";
+                }
             }
+            $contados++;
         }
-        $contados++;
+        else
+        {
+            echo $comp;
+            return $comp;
+        }
+
 
     }
     $insert=$insert.");";
@@ -49,13 +59,13 @@ if (isset($_POST["enviar"]))
 
 
 
-}
+}*/
 
 ?>
 <form method="post" action="pruebas.php">
     <input type="hidden" name="abreviatura" value="1">
     <input type="hidden" name="codigo" value="2">
-    <input type="hidden" name="denominacion" value="3">
+    <input type="hidden" name="denominacion" value="">
     <input type="hidden" name="ciclo" value="1">
     <input type="hidden" name="tutor" value="1">
     <input type="hidden" name="tutor_practicas" value="1">

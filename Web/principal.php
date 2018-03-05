@@ -19,7 +19,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	
-	<div  id="contenido2">
+	<div  id="contenidoprincipal">
 		
 		<center><h1>ONGI ETORRI </h1>
 		<h3>Mediante el navegador de la parte superior puede acceder a el apartado que deseé.</h3></center>
