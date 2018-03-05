@@ -796,10 +796,10 @@ function coger_nombres($nombretabla)
 
 
         }
-<<<<<<< HEAD
+
     }
-=======
-    }
+
+    
     function preparar_busqueda($tabla,$datos)
     {
         $nombres=coger_nombres($tabla);
