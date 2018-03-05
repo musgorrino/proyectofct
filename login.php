@@ -18,24 +18,24 @@
 	<form action="login.php" method="post">
 		<h2> Gestión FCT </h2>
 		<input type="text" name="usuario" placeholder=" &#128590; usuario" size="30"/>
-		<input type="password" name="codigo" placeholder="&#128272; Contraseña" size="30"/>
+		<input type="password" name="contrasena" placeholder="&#128272; Contrasena" size="30"/>
 		<input type="submit" name="enviar" value="Acceder"/>
 
 	</form>
 		<?php
         if (isset($_POST["enviar"]))
             {
-                $usuarios=$_POST ['usuario'];
-			$clave=$_POST ['codigo'];
+                $usuario=$_POST ['usuario'];
+			$contrasena=$_POST ['contrasena'];
 
-			/*$consulta="SELECT * FROM usuarios WHERE usuarios='$usuarios' and '$codigo'";
+			/*$consulta="SELECT * FROM usuarios WHERE usuarios='$usuario' and '$contrasena'";
 			$resultado=mysqli_query($consulta);
 
 			$filas=mysqli_num_rows ($resultado);*/
-			$login=login($usuarios,$clave);
+			$login=login($usuario,$contrasena);
 			if ($login) {
-				//header ("location:../final/principal/principal.php");
-                echo "hecho";
+				header ("location:../final/principal/principal.php");
+                
 			}
 			else {
 				echo "Error en la autentificación";
