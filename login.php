@@ -25,7 +25,7 @@
 		<?php
         if (isset($_POST["enviar"]))
             {
-                $usuarios=$_POST ['usuarios'];
+                $usuarios=$_POST ['usuario'];
 			$clave=$_POST ['codigo'];
 
 			/*$consulta="SELECT * FROM usuarios WHERE usuarios='$usuarios' and '$codigo'";
