@@ -33,14 +33,14 @@ function recogedni($dni)
     }
     else
     {
-        if(comprobarDnia($dni)==2)
+        /*if(comprobarDnia($dni)==2)
         {
             return 2;
         }
         else
-        {
+        {*/
             return 0;
-        }
+        //}
 
 
     }
@@ -651,4 +651,45 @@ function coger_nombres($nombretabla)
 	
 	<?php
 	}
+	function comprobar_dato($columna)
+    {
+        switch ($columna)
+        {
+            case "nombre":
+                $nom=recogvarc($_POST["nombre"]);
+                if ($nom==1)
+                {
+                    return "Nombre vacio o con caracteres numericos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "apellidos":
+                $ape=recogvarc($_POST["apellidos"]);
+                if ($ape==1)
+                {
+                    return "Apellido vacio o con caracteres numericos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "dni":
+                $dni=recogedni($_POST["dni"]);
+                if($dni==1)
+                {
+                    return "Dni vacio o patron incorrecto";
+                }
+                elseif ($dni==2)
+                {
+                    return "El dni ya existe en nuestra base de datos";
+                }
+
+
+
+        }
+    }
 	?>
