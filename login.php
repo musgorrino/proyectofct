@@ -3,8 +3,7 @@
 	include("../funciones.php");
 =======
 	include("funciones.php");
->>>>>>> 6fc429dfb60d5310ef3457cd59e2e75212f64deb
-?>
+
 <!DOCTYPE html>
 
 <html lang="es">
