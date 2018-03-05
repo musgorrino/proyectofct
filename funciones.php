@@ -556,3 +556,99 @@ function coger_nombres($nombretabla)
     return $tabla;
 
 }
+// FUNCIONES DE LA WEB //
+
+	function logo($ruta){
+	?>
+		<a href="principal.php"><img src="<?php echo $ruta?>" alt="logo"></a>
+	<?php	
+	}
+		
+	// FUNCION QUE MUESTRA EL MENU DE LA WEB //						
+	function ver_menu(){
+	?>
+		<ul>
+				<li class="espacio">---------</li>
+				  <li><a href="familias.php">Familias Profesionales</a></li>
+				  <li><a href="ciclos.php">Ciclos Formativos</a></li>
+				  <li><a href="grupos.php">Grupos</a></li>
+				  <li><a href="profesores.php">Profesores</a></li>
+				  <li><a href="alumnos.php">Alumnos </a></li>
+				  <li><a href="asignaciones.php">Asignaciones</a></li>
+				  <li><a href="empresas.php">Empresas</a></li>
+				  <li><a href="responsables.php">Responsables</a></li>
+				  <li><a href="usuarios.php">Usuarios</a></li>
+				</ul>
+	<?php
+	}
+	// FUNCION QUE MUESTRA EL CONTENIDO DE LA WEB						
+	function ver_contenido($tabla,$titulo,$descripcion,$insertar){
+	?>
+		<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
+        <?php echo strtoupper($titulo);?>
+    </h3>
+		<?php coger_tablas("$tabla")?>
+		</br></br>
+		<div id="modificar">
+			<form action="" method="post">
+				<table class="modificar" width=100%>
+					<tr>
+						<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas modificar:</strong></td>
+						<td><select name="codigo">
+								<?php
+									generar_select($tabla,'codigo')
+								?>
+							</select>
+						</td>
+						<td>
+						  <input type="submit" value="Modificar">
+						</td>
+					</tr>
+				</table>
+		</div>
+		</br></br>
+		<div id="borrar">
+				<table class="borrar">
+					<tr>
+						<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas eliminar:</strong><td>
+						<td><select name="codigo">
+								<?php
+									generar_select($tabla,'codigo')
+								?>
+							</select>
+						</td>
+						<td>
+						  <input type="submit" value="Borrar">
+						</td>
+					</tr>
+				</table>
+		</div>
+		</br></br>
+		<div id="insertar">
+				<table>
+					<tr>
+					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
+						<td>
+						  <input type="submit" value="Insertar">
+						</td>
+					</tr>
+				</table>
+			</form>	
+		</div>
+		
+	<?php
+	}
+	// FUNCION QUE MUESTRA EL PIE DE LA WEB
+	function ver_pie(){
+	?>
+		<div id="copyright" class="container">
+			 <a href="principal.php" class="button">Volver al Inicio</a> 
+			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
+		
+		</div>
+	</div>	
+	
+	<?php
+	}
+	?>

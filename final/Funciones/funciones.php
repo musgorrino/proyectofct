@@ -244,8 +244,15 @@ function alta_alumno()
             $fila=mysqli_fetch_assoc($r);
         }
     }
-							// FUNCIONES DE LA WEB //
-							
+					// FUNCIONES DE LA WEB //
+
+	// FUNCION QUE MUESTRA EL LOGO DE LA WEB //
+	function ver_logo($ruta){
+	?>
+		<a href="principal.php"><img src="<?php echo $ruta?>" alt="logo"></a>
+	<?php	
+	}
+		
 	// FUNCION QUE MUESTRA EL MENU DE LA WEB //						
 	function ver_menu(){
 	?>
@@ -334,8 +341,3 @@ function alta_alumno()
 	<?php
 	}
 	?>
-	
-	
-	
-	
-
