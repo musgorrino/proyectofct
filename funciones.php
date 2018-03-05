@@ -691,333 +691,195 @@ function coger_nombres($nombretabla)
 	}
 	function comprobar_dato($columna)
     {
-        switch ($columna)
-        {
+        switch ($columna) {
             case "nombre":
-                $nom=recogvarc($_POST["nombre"]);
-                if ($nom==1)
-                {
+                $nom = recogvarc($_POST["nombre"]);
+                if ($nom == 1) {
                     return "Nombre vacio o con caracteres numericos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "apellidos":
-                $ape=recogvarc($_POST["apellidos"]);
-                if ($ape==1)
-                {
+                $ape = recogvarc($_POST["apellidos"]);
+                if ($ape == 1) {
                     return "Apellido vacio o con caracteres numericos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "dni":
-                $dni=recogedni($_POST["dni"]);
-                if($dni==1)
-                {
+                $dni = recogedni($_POST["dni"]);
+                if ($dni == 1) {
                     return "Dni vacio o patron incorrecto";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "telefono":
-                $tlf=recogernum($_POST["telefono"]);
-                if($tlf==1)
-                {
+                $tlf = recogernum($_POST["telefono"]);
+                if ($tlf == 1) {
                     return "Telefono vacio o con caracteres alfabeticos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "cp":
-                $cp=recogernum($_POST["cp"]);
-                if($cp==1)
-                {
+                $cp = recogernum($_POST["cp"]);
+                if ($cp == 1) {
                     return "Codigo postal vacio o con caracteres alfabeticos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "fax":
-                $fax=recogernum($_POST["fax"]);
-                if($fax==1)
-                {
+                $fax = recogernum($_POST["fax"]);
+                if ($fax == 1) {
                     return "Fax vacio o con caracteres alfabeticos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "kmscentro":
-                $kms=recogernum($_POST["kmscentro"]);
-                if($kms==1)
-                {
+                $kms = recogernum($_POST["kmscentro"]);
+                if ($kms == 1) {
                     return "Kilometros hasta el centro vacio o con caracteres alfabeticos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             case "numtrabajadores":
-                $trabaj=recogernum($_POST["numtrabajadores"]);
-                if($trabaj==1)
-                {
+                $trabaj = recogernum($_POST["numtrabajadores"]);
+                if ($trabaj == 1) {
                     return "Numero trabajadores vacio o con caracteres alfabeticos";
-                }
-                else
-                {
+                } else {
                     return "hecho";
                 }
                 break;
             default:
-                $dato=recoger($_POST[$columna]);
-                if($dato==1)
-                {
-                    return "Campo ".$columna." vacio";
-                }
-                else
-                {
+                $dato = recoger($_POST[$columna]);
+                if ($dato == 1) {
+                    return "Campo " . $columna . " vacio";
+                } else {
                     return "hecho";
                 }
 
 
-
-
-        }
-
-
-    
-    function preparar_busqueda($tabla,$datos)
-    {
-        $nombres=coger_nombres($tabla);
-        $query="select * from ".$tabla." where ";
-        $contador=1;
-        foreach($datos as $i)
-        {
-            if($contador!=1)
-            {
-                $query=$query." AND ".$i." LIKE '".$_POST['$i']."%'";
-            }
-            else
-            {
-                $query=$query.$i." LIKE '".$_POST['$i']."%'";
-            }
-            $contador++;
-
-        }
-        echo $query;
-
-
-    }
-    function busqueda($array,$nombretabla,$query)
-
-{
-    $conexion = mysqli_connect("localhost", "root", "", "mydb");
-
-    $datos = mysqli_query($conexion,$query);
-    if ($nombretabla=="profesor")
-    {
-        $conexion = mysqli_connect("localhost", "root", "", "mydb");
-        $query = "select abreviatura,tutor_practicas,tutor from grupos";
-        $done = mysqli_query($conexion,$query);
-        $grupo= mysqli_fetch_assoc($done);
-        $j=array();
-        while($grupo)
-        {
-            $j[]=array(
-                "abreviatura"=>$grupo["abreviatura"],
-                "tutorp"=>$grupo["tutor_practicas"],
-                "tutor" =>$grupo["tutor"]
-            );
-            $grupo= mysqli_fetch_assoc($done);
         }
 
     }
+    function preparar_busqueda($tabla, $datos)
+        {
+            $nombres = coger_nombres($tabla);
+            $query = "select * from " . $tabla . " where ";
+            $contador = 1;
+            foreach ($datos as $i) {
+                if ($contador != 1) {
+                    $query = $query . " AND " . $i . " LIKE '" . $_POST['$i'] . "%'";
+                } else {
+                    $query = $query . $i . " LIKE '" . $_POST['$i'] . "%'";
+                }
+                $contador++;
 
-    ?>
-    <div id="scrollmenu">
-        <table>
-            <thead><?php foreach ($array as $i) {
-                ?><th><?php echo ucfirst($i);?></th>
-            <?php }
-
-            if ($nombretabla=="profesor")
-            {?>
-                <th>Tutor de</th>
-                <th>Tutor de practicas de</th>
-                <?php
             }
-            ?></thead>
-            <?php
+            echo $query;
 
 
-            $_fila = mysqli_fetch_assoc($datos);
-            while ($_fila)
-            {
+        }
+    function busqueda($array, $nombretabla, $query)
+
+        {
+            $conexion = mysqli_connect("localhost", "root", "", "mydb");
+
+            $datos = mysqli_query($conexion, $query);
+            if ($nombretabla == "profesor") {
+                $conexion = mysqli_connect("localhost", "root", "", "mydb");
+                $query = "select abreviatura,tutor_practicas,tutor from grupos";
+                $done = mysqli_query($conexion, $query);
+                $grupo = mysqli_fetch_assoc($done);
+                $j = array();
+                while ($grupo) {
+                    $j[] = array(
+                        "abreviatura" => $grupo["abreviatura"],
+                        "tutorp" => $grupo["tutor_practicas"],
+                        "tutor" => $grupo["tutor"]
+                    );
+                    $grupo = mysqli_fetch_assoc($done);
+                }
+
+            }
 
             ?>
-            <tr>
-                <?php foreach ($array as $i) {
+            <div id="scrollmenu">
+                <table>
+                    <thead><?php foreach ($array as $i) {
+                        ?>
+                        <th><?php echo ucfirst($i); ?></th>
+                    <?php }
+
+                    if ($nombretabla == "profesor") {
+                        ?>
+                        <th>Tutor de</th>
+                        <th>Tutor de practicas de</th>
+                        <?php
+                    }
+                    ?></thead>
+                    <?php
+
+
+                    $_fila = mysqli_fetch_assoc($datos);
+                    while ($_fila)
+                    {
+
                     ?>
-                    <td><?php echo $_fila[$i]; ?></td><?php
-                } ?>
+                    <tr>
+                        <?php foreach ($array as $i) {
+                            ?>
+                            <td><?php echo $_fila[$i]; ?></td><?php
+                        } ?>
 
-                <?php
-                if($nombretabla=="profesor")
-                {
-                foreach($j as $e)
-                {
-                if($_fila["codigo"]==$e["tutor"])
-                {
-                    ?><td><?php echo $e["abreviatura"]; ?></td><?php
-                }
-                else
-                {
-                    ?><td>No es tutor</td><?php
-                }
-                if($_fila["codigo"]==$e["tutorp"])
-                {
-                    ?><td><?php echo $e["abreviatura"]; ?></td><?php
-                }
-                else
-                {
-                ?><td>No es tutor de practicas</td><?php
-        }
+                        <?php
+                        if ($nombretabla == "profesor")
+                        {
+                        foreach ($j
 
-        }
-
-        }
-        ?><tr><?php
-                $_fila = mysqli_fetch_assoc($datos);
+                        as $e)
+                        {
+                        if ($_fila["codigo"] == $e["tutor"]) {
+                            ?>
+                            <td><?php echo $e["abreviatura"]; ?></td><?php
+                        } else {
+                            ?>
+                            <td>No es tutor</td><?php
+                        }
+                        if ($_fila["codigo"] == $e["tutorp"])
+                        {
+                            ?>
+                            <td><?php echo $e["abreviatura"]; ?></td><?php
+                        }
+                        else
+                        {
+                        ?>
+                        <td>No es tutor de practicas</td><?php
                 }
 
+                }
+
+                }
                 ?>
-        </table>
-    </div>
-    <?php
-    mysqli_close($conexion);
+                    <tr><?php
+                        $_fila = mysqli_fetch_assoc($datos);
+                        }
 
-}
+                        ?>
+                </table>
+            </div>
+            <?php
+            mysqli_close($conexion);
+
+        }
+
 
 	// FORMULARIOS INSERTAR //
-	
-	// ALUMNOS //
-	function insertar_alumno(){
 	?>
-	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
-		<div id="insertar_modificar">
-	
-			<form method="post" action="insertar.php">
-			<table>
-				<tr>
-					<td><label for="nombre">Nombre:</label></td>
-					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
-				
-					<td><label for="apellido">Apellido:</label></td>
-					<td><input id="apellido" type="text"  name="apellido" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<td><label for="fecnac">Fecha Nacimiento:</label></td>
-					<td><input id="fecnac" type="text"  name="fecnac" size="20" value="" /></td>
-				
-					<td><label for="telefono">Telefono:</label></td>
-					<td><input id="telefono" type="text"  name="telefono" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<td><label for="email">Email:</label></td>
-					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
-				
-					<td><label  for="grupo">Grupo:</label></td>
-					<td><select name="grupo" id="grupo"><?php generar_select("grupos","abreviatura")?></select></td>
-				</tr>				
-				<tr>
-					<td> ¿Sabes Euskera?</td> 
-					<td>  <label for="si">Si</label>
-							<input type="radio" id="si" name="euskera" value="si">
-						 <label for="no">No</label>
-							 <input type="radio" id="no" name="euskera" value="no">
-					</td>
-				
-					<td> ¿Tienes Carnet de conducir?</td> 
-					<td>  <label for="si">Si</label>
-							<input type="radio" id="si" name="carnet" value="si">
-						 <label for="no">No</label>
-							 <input type="radio" id="no" name="carnet" value="no">
-					</td>
-				</tr>
-				<tr>
-					<td><label  for="curso">Curso:</label></td>
-					<td><select name="curso" id="curso"><?php generar_select("historial_alumnos","curso")?></select></td>
-					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
-				</tr>
-			</table>
-			
-					<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
-			</form>
-		</div>
-	<?php
-	}
-	// INSERTAR PROFESOR //
-	function insertar_profesores(){
-	?>
-	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
-	<div id="insertar_modificar">
-	<form method="post" action="insertar.php"> 
-			<table>
-				<tr>
-					<th><label  for="codigointerprof">Codigo Interno:</label></th> 
-					<td><input type="text" id="codigointerprof" name="codigointerprof" size="20" value="" /></td>
-				
-					<th><label  for="nombre">Nombre:</label></th>
-					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<th><label  for="apellidos">Apellidos:</label></th>
-					<td><input id="apellidos" type="text"  name="apellidos" size="20" value="" /></td>
-				
-					<th><label  for="telefono">Telefono:</label></th>
-					<td><input id="telefono"type="text"  name="telefono" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<th><label  for="email">Email:</label></th>
-					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
-				
-					<td><input type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td><input type="submit" id="enviar" name="enviar" value="Guardar" /></td>
-				
-			</table>
-	
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
-</form>
-</div>
-<?php
-}
-
-	?>
-	
-	
-	
-	
-	
-	
-	
-	
-	
  
