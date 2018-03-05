@@ -33,14 +33,14 @@ function recogedni($dni)
     }
     else
     {
-        if(comprobarDnia($dni)==2)
+        /*if(comprobarDnia($dni)==2)
         {
             return 2;
         }
         else
-        {
+        {*/
             return 0;
-        }
+        //}
 
 
     }
@@ -333,10 +333,9 @@ function alta_alumno()
 
         }
 
-        ?>      <h3>
-        <?php echo strtoupper($nombretabla);?>
-    </h3>
-        <table border=1>
+        ?>      
+		<div id="scrollmenu">
+        <table>
             <thead><?php foreach ($array as $i) {
                     ?><th><?php echo ucfirst($i);?></th>
                <?php }
@@ -393,6 +392,7 @@ function alta_alumno()
 
                 ?>
         </table>
+		</div>
         <?php
         mysqli_close($conexion);
 
@@ -558,7 +558,8 @@ function coger_nombres($nombretabla)
 }
 // FUNCIONES DE LA WEB //
 
-	function logo($ruta){
+	function ver_logo($ruta){
+
 	?>
 		<a href="principal.php"><img src="<?php echo $ruta?>" alt="logo"></a>
 	<?php	
@@ -651,4 +652,112 @@ function coger_nombres($nombretabla)
 	
 	<?php
 	}
+	function comprobar_dato($columna)
+    {
+        switch ($columna)
+        {
+            case "nombre":
+                $nom=recogvarc($_POST["nombre"]);
+                if ($nom==1)
+                {
+                    return "Nombre vacio o con caracteres numericos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "apellidos":
+                $ape=recogvarc($_POST["apellidos"]);
+                if ($ape==1)
+                {
+                    return "Apellido vacio o con caracteres numericos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "dni":
+                $dni=recogedni($_POST["dni"]);
+                if($dni==1)
+                {
+                    return "Dni vacio o patron incorrecto";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "telefono":
+                $tlf=recogernum($_POST["telefono"]);
+                if($tlf==1)
+                {
+                    return "Telefono vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "cp":
+                $cp=recogernum($_POST["cp"]);
+                if($cp==1)
+                {
+                    return "Codigo postal vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "fax":
+                $fax=recogernum($_POST["fax"]);
+                if($fax==1)
+                {
+                    return "Fax vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "kmscentro":
+                $kms=recogernum($_POST["kmscentro"]);
+                if($kms==1)
+                {
+                    return "Kilometros hasta el centro vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "numtrabajadores":
+                $trabaj=recogernum($_POST["numtrabajadores"]);
+                if($trabaj==1)
+                {
+                    return "Numero trabajadores vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            default:
+                $dato=recoger($_POST[$columna]);
+                if($dato==1)
+                {
+                    return "Campo ".$columna." vacio";
+                }
+                else
+                {
+                    return "hecho";
+                }
+
+
+
+
+        }
+    }
 	?>
