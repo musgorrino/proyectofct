@@ -184,8 +184,6 @@ function login($usuario,$contrasena)
     $conexion=conectar("localhost","root","","mydb");
     $query="select nombre, password,tipo from usuarios where nombre='".$usuario."' and password='".$contrasena."'";
     $r=mysqli_query ($conexion,$query);
-    var_dump($query);
-    var_dump($r);
     $totalfilas=mysqli_num_rows($r);
     if($totalfilas==1)
     {
