@@ -1,8 +1,8 @@
 <?php
 include "funciones.php";
-
+generar_insert("grupos")
 /*coger_tablas("profesor");*/
-if (isset($_POST["enviar"]))
+/*if (isset($_POST["enviar"]))
 {
     $insert="insert into grupos(";
     $columnas=coger_nombres("grupos");
@@ -59,7 +59,7 @@ if (isset($_POST["enviar"]))
 
 
 
-}
+}*/
 
 ?>
 <form method="post" action="pruebas.php">

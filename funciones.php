@@ -903,7 +903,7 @@ function generar_insert($tabla)
     }
     $insert=$insert.");";
 
-    
+
     $conexion = conectar("localhost","root","","mydb");
     $r=mysqli_query($conexion,$insert);
 
