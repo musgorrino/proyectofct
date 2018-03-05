@@ -629,7 +629,7 @@ function coger_nombres($nombretabla)
 		<div id="insertar">
 				<table>
 					<tr>
-					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
+					<td><strong>Haz click en "insertar" si deseas insertar <?php echo insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 						<td>
 						  <input type="submit" value="Insertar">
 						</td>
