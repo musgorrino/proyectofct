@@ -101,29 +101,29 @@ p {
 									border-top-right-radius: 10px;
 									}
 								
-								#scrollmenu{width: 1170px;
-									height: 450px;
-									overflow-y: auto;}
+									#scrollmenu{width: 1170px;
+										height: 450px;
+										overflow-y: auto;}
+										
+									#scrollmenu table {display: inline-block;
+										color: black;
+										text-align: center;
+										padding: 15px;
+										text-decoration: none;
+										}
+										
+									#scrollmenu th{
+										text-align: center;
+										padding: 30px;
+										background-color: white;
+										color: black;}
+										
+									#scrollmenu td {
+										/*background-color: #cc00cc;*/
+										text-align: center;
+										padding: 30px;}
 									
-								#scrollmenu table {display: inline-block;
-									color: black;
-									text-align: center;
-									padding: 15px;
-									text-decoration: none;
-									}
-									
-								#scrollmenu th{
-									text-align: center;
-									padding: 30px;
-									background-color: white;
-									color: black;}
-									
-								#scrollmenu td {
-									/*background-color: #cc00cc;*/
-									text-align: center;
-									padding: 30px;}
-								
-								#scrollmenu tr:hover {background-color:white;}
+									#scrollmenu tr:hover {background-color:white;}
 								
 								#modificar{margin: 0 auto;
 								background-color: #b300b3  ;
@@ -133,18 +133,18 @@ p {
 								font-size:20px;
 								border-radius: 10px;}
 								
-								#modificar:hover {background-color:white;}
-								
-								#modificar select {
-								width: 89px;
-								height: 40px;
-								}
-								
-								#modificar input {
-								width: 89px;
-								height: 40px;
-								}
-								
+									#modificar:hover {background-color:white;}
+									
+									#modificar select {
+									width: 89px;
+									height: 40px;
+									}
+									
+									#modificar input {
+									width: 89px;
+									height: 40px;
+									}
+									
 								#borrar{margin: 0 auto;
 								background-color:  #b300b3;
 								padding: 15px;
@@ -153,21 +153,21 @@ p {
 								font-size:20px;
 								border-radius: 10px;}
 								
-								#borrar table { width: 100%;
-								height:40px;
-								text-align:left;}
-								
-								#borrar select {
-								width: 89px;
-								height: 40px;
-								}
-								
-								#borrar input {
-								width: 89px;
-								height: 40px;
-								}
-								
-								#borrar:hover {background-color:white;}
+									#borrar table { width: 100%;
+									height:40px;
+									text-align:left;}
+									
+									#borrar select {
+									width: 89px;
+									height: 40px;
+									}
+									
+									#borrar input {
+									width: 89px;
+									height: 40px;
+									}
+									
+									#borrar:hover {background-color:white;}
 								
 								#insertar {margin: 0 auto;
 								background-color:  #b300b3;
@@ -177,17 +177,20 @@ p {
 								font-size:20px;
 								border-radius: 10px;}
 								
-								#insertar table { width: 100%;
-								height:40px;
-								text-align:left;}
-								
-								#insertar input {
-								width: 89px;
-								height: 40px;
-								}
-								
-								#insertar:hover {background-color:white;}
+									#insertar table { width: 100%;
+									height:40px;
+									text-align:left;}
+									
+									#insertar input {
+									width: 89px;
+									height: 40px;
+									}
+									
+									#insertar:hover {background-color:white;}
 				
+								#insertar_mofidicar{width:400px;
+													height:300px;
+													background-color:white;}
 								
 				#pie{width: 1200px;
 						height: 35px;
