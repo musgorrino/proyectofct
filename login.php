@@ -1,5 +1,9 @@
 <?php 
+<<<<<<< HEAD
 	include("../funciones.php");
+=======
+	include("funciones.php");
+>>>>>>> 6fc429dfb60d5310ef3457cd59e2e75212f64deb
 ?>
 <!DOCTYPE html>
 
@@ -23,7 +27,7 @@
 			$usuarios=$_POST ['usuarios'];
 			$clave=$_POST ['codigo'];
 
-			$consulta="SELECT * FROM usuarios WHERE usuarios='$usuarios' and '$clave'";
+			$consulta="SELECT * FROM usuarios WHERE usuarios='$usuarios' and '$codigo'";
 			$resultado=mysqli_query($consulta);
 
 			$filas=mysqli_num_rows ($resultado);
@@ -34,7 +38,7 @@
 				echo "Error en la autentificación";
 			}
 			mysqli_free_result($resultado);
-			mysqli_close($conexion);
+			
 			
 			
 		?>
