@@ -1,6 +1,8 @@
 <?php
 include "../funciones.php";
-generar_insert("grupos")
+$t=array();
+$t[]="nombre";
+preparar_busqueda("grupos",$t);
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))
 {
@@ -65,7 +67,7 @@ generar_insert("grupos")
 <form method="post" action="pruebas.php">
     <input type="hidden" name="abreviatura" value="1">
     <input type="hidden" name="codigo" value="2">
-    <input type="hidden" name="denominacion" value="">
+    <input type="hidden" name="nombre" value="d">
     <input type="hidden" name="ciclo" value="1">
     <input type="hidden" name="tutor" value="1">
     <input type="hidden" name="tutor_practicas" value="1">
