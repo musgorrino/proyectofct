@@ -183,7 +183,7 @@ function alta_alumno()
         $query = "describe ".$nombretabla;
         $r = mysqli_query($conexion, $query);
         $_fila = mysqli_fetch_assoc($r);
-        $tabla = array();
+                                                                                                                                                                                                                                                                                                                                                                                       $tabla = array();
         while ($_fila) {
 
             $tabla[] = $_fila["Field"];

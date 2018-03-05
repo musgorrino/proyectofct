@@ -8,7 +8,7 @@ cabecera("Gestion FCT", "estilo.css");
 		<div id="login">
 		</div>
 		<div id="logo">
-			<img src="../imagenes/logo.png"> 
+			<?php ver_logo("../imagenes/logo.png");?> 
 		</div>
 		<div id="menu">
 			<?php ver_menu();?>				
@@ -16,7 +16,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("cilos_formativos","Ciclos Formativos","los ciclos formativos","un ciclo formativo nuevo");?>
+		<?php ver_contenido("ciclos_formativos","Ciclos Formativos","los ciclos formativos","un ciclo formativo nuevo");?>
 	</div>
 		
 	<div id="pie">
