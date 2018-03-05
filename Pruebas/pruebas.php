@@ -44,6 +44,7 @@ if (isset($_POST["enviar"]))
         }
         else
         {
+            echo $comp;
             return $comp;
         }
 
@@ -64,7 +65,7 @@ if (isset($_POST["enviar"]))
 <form method="post" action="pruebas.php">
     <input type="hidden" name="abreviatura" value="1">
     <input type="hidden" name="codigo" value="2">
-    <input type="hidden" name="denominacion" value="3">
+    <input type="hidden" name="denominacion" value="">
     <input type="hidden" name="ciclo" value="1">
     <input type="hidden" name="tutor" value="1">
     <input type="hidden" name="tutor_practicas" value="1">
