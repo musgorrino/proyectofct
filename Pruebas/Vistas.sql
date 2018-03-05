@@ -15,7 +15,7 @@ FROM profesores p left outer join
 (familias_profesionales t) 
 ON p.codigo=t.coordinador
 
-/*
+
 
 /*Vista 3*/
 CREATE or replace VIEW `ciclo`

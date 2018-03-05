@@ -28,16 +28,25 @@ if (isset($_POST["enviar"]))
     $contados=0;
     foreach($columnas as $i)
     {
-        if ($i!="codigo")
+        $comp=comprobar_dato($i);
+        if($comp=="hecho")
         {
+            if ($i!="codigo")
+            {
 
-            if ($contados != 1) {
-                $insert = $insert . ",'" . $_POST[$i] . "'";
-            } else {
-                $insert = $insert . "'" . $_POST[$i] . "'";
+                if ($contados != 1) {
+                    $insert = $insert . ",'" . $_POST[$i] . "'";
+                } else {
+                    $insert = $insert . "'" . $_POST[$i] . "'";
+                }
             }
+            $contados++;
         }
-        $contados++;
+        else
+        {
+            return $comp;
+        }
+
 
     }
     $insert=$insert.");";
