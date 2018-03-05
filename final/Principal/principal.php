@@ -9,7 +9,7 @@ cabecera("Gestion FCT", "estilo.css");
 			<h5> Usuario conectado:  </h5>
 		</div>
 		<div id="logo">
-			<img src="../imagenes/logo.png"> 
+			<img src="../Imagenes/logo.png"> 
 		</div>
 		<div id="menu">
 			<?php ver_menu();?>				
