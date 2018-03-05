@@ -695,6 +695,10 @@ function coger_nombres($nombretabla)
                 {
                     return "Telefono vacio o con caracteres alfabeticos";
                 }
+                else
+                {
+                    return "hecho";
+                }
                 break;
             case "cp":
                 $cp=recogernum($_POST["cp"]);
@@ -702,7 +706,54 @@ function coger_nombres($nombretabla)
                 {
                     return "Codigo postal vacio o con caracteres alfabeticos";
                 }
+                else
+                {
+                    return "hecho";
+                }
                 break;
+            case "fax":
+                $fax=recogernum($_POST["fax"]);
+                if($fax==1)
+                {
+                    return "Fax vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "kmscentro":
+                $kms=recogernum($_POST["kmscentro"]);
+                if($kms==1)
+                {
+                    return "Kilometros hasta el centro vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            case "numtrabajadores":
+                $trabaj=recogernum($_POST["numtrabajadores"]);
+                if($trabaj==1)
+                {
+                    return "Numero trabajadores vacio o con caracteres alfabeticos";
+                }
+                else
+                {
+                    return "hecho";
+                }
+                break;
+            default:
+                $dato=recoger($_POST[$columna]);
+                if($dato==1)
+                {
+                    return "Campo ".$columna." vacio";
+                }
+                else
+                {
+                    return "hecho";
+                }
 
 
 
