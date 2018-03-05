@@ -182,7 +182,7 @@ el usuario y la contraseña como pametros.*/
 function login($usuario,$contrasena)
 {
     $conexion=conectar("localhost","root","","mydb");
-    $query="select usuario, password,tipo from usuarios where usuario='".$usuario."' and password='".$contrasena."'";
+    $query="select nombre, password,tipo from usuarios where usuario='".$usuario."' and password='".$contrasena."'";
     $r=mysqli_query ($conexion,$query);
     var_dump($query);
     var_dump($r);
