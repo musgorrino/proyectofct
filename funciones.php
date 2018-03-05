@@ -640,6 +640,43 @@ function coger_nombres($nombretabla)
 		
 	<?php
 	}
+	// FUNCION BUSCAR ALUMNOS //
+		function ver_buscar($tabla,$titulo,$descripcion,$insertar){
+	?>
+		<center></br><h3> GESTION DE FORMACIÓN EN CENTRO DE TRABAJO </h3> </center>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
+        <?php echo strtoupper($titulo);?>
+    </h3>
+		
+	<div id="formbuscar">
+	<h3> Buscar informacion de alumnxs </h3>
+	<table>
+		<form action="" method="post">
+		
+			<label id="nombre">Nombre </label>
+			<input type="text" name="nombre" placeholder="Nombre"></br>
+			
+			<label id="euskera">Conocimiento de Euskera</label>
+			<input type="text"	name="euskera" placeholder="¿Si o No?"/></br>
+			
+			<label id="carnet"> Dispone de carnet de conducir </label>
+			<input type="text" name="carnet"	placeholder="¿Si o No?"/>
+			
+			<label id="ciclo"> Ciclo cursado </label>
+			<input type="text" name="ciclo"	placeholder="Inserta abreviatura"/>
+			
+			<label id="curso"> Curso </label>
+			<input type="text" name="curso"	placeholder="Inserte curso"/>
+			
+		</form>
+	</table>
+		
+		
+		
+		
+	<?php
+	}
+	
 	// FUNCION QUE MUESTRA EL PIE DE LA WEB
 	function ver_pie(){
 	?>
@@ -759,7 +796,37 @@ function coger_nombres($nombretabla)
 
 
         }
+<<<<<<< HEAD
     } function busqueda($array,$nombretabla,$query)
+=======
+<<<<<<< HEAD
+    }
+=======
+    }
+    function preparar_busqueda($tabla,$datos)
+    {
+        $nombres=coger_nombres($tabla);
+        $query="select * from ".$tabla." where ";
+        $contador=1;
+        foreach($datos as $i)
+        {
+            if($contador!=1)
+            {
+                $query=$query." AND ".$i." LIKE '".$_POST['$i']."%'";
+            }
+            else
+            {
+                $query=$query.$i." LIKE '".$_POST['$i']."%'";
+            }
+            $contador++;
+
+        }
+        echo $query;
+
+
+    }
+    function busqueda($array,$nombretabla,$query)
+>>>>>>> 1ea7790352b721776d2ccd4b3ef19e766a67457d
 {
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
 
@@ -946,6 +1013,7 @@ function coger_nombres($nombretabla)
 </div>
 <?php
 }
+>>>>>>> e5ff1851a85611b303a4b206f3d4b36a93aa8768
 	?>
 	
 	
