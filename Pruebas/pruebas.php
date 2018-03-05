@@ -1,5 +1,5 @@
 <?php
-include "funciones.php";
+include "../funciones.php";
 generar_insert("grupos")
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))

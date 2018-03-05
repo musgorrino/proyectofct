@@ -763,7 +763,23 @@ function coger_nombres($nombretabla)
     function preparar_busqueda($tabla,$datos)
     {
         $nombres=coger_nombres($tabla);
-        $query="select * from ".$tabla." where "
+        $query="select * from ".$tabla." where ";
+        $contador=1;
+        foreach($datos as $i)
+        {
+            if($contador!=1)
+            {
+                $query=$query." AND ".$i.;
+            }
+            else
+            {
+                $insert=$insert.$i;
+            }
+            $contador++;
+
+        }
+
+
     }
     function busqueda($array,$nombretabla,$query)
 {
