@@ -689,7 +689,21 @@ function coger_nombres($nombretabla)
                     return "hecho";
                 }
                 break;
-                
+            case "telefono":
+                $tlf=recogernum($_POST["telefono"]);
+                if($tlf==1)
+                {
+                    return "Telefono vacio o con caracteres alfabeticos";
+                }
+                break;
+            case "cp":
+                $cp=recogernum($_POST["cp"]);
+                if($cp==1)
+                {
+                    return "Codigo postal vacio o con caracteres alfabeticos";
+                }
+                break;
+
 
 
 
