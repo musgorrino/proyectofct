@@ -38,7 +38,8 @@
                 
 			}
 			else {
-				echo "Error en la autentificación";
+				/*echo "Error en la autentificación"; */
+				echo"<script>alert('El usuario o contrase\u00f1a no es correcto.'); window.location.href=\"../indice.php\"</script>"; 
 			}
 			//mysqli_free_result($resultado);
             }
