@@ -879,21 +879,5 @@ function coger_nombres($nombretabla)
 
         }
 
-
-<<<<<<< HEAD
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-=======
-	// FORMULARIOS INSERTAR //
-	?>
->>>>>>> c8f903883ffc5328556216c01f238d769ba80586
+?>
  
