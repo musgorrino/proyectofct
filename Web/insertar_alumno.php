@@ -45,7 +45,7 @@ cabecera("Gestion FCT", "estilo.css");
 				</tr>				
 				<tr>
 					<th><label  for="curso">Curso:</label></th>
-					<td><select name="curso" id="curso"><?php generar_select("historial","curso")?></td>
+					<td><select name="curso" id="curso"><?php generar_select("historial_alumnos","curso")?></td>
 				</tr>
 				<tr>
 					<th> ¿Sabes Euskera?</th> 
