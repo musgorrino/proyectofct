@@ -796,17 +796,7 @@ function coger_nombres($nombretabla)
 
 
         }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-    } function busqueda($array,$nombretabla,$query)
-=======
-<<<<<<< HEAD
-    }
-=======
->>>>>>> b09d7640504f1a720a87c6449091cd190f71ef18
-    }
 
     
     function preparar_busqueda($tabla,$datos)
@@ -832,7 +822,7 @@ function coger_nombres($nombretabla)
 
     }
     function busqueda($array,$nombretabla,$query)
->>>>>>> 1ea7790352b721776d2ccd4b3ef19e766a67457d
+
 {
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
 
@@ -1019,7 +1009,7 @@ function coger_nombres($nombretabla)
 </div>
 <?php
 }
->>>>>>> e5ff1851a85611b303a4b206f3d4b36a93aa8768
+
 	?>
 	
 	
