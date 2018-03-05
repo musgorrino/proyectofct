@@ -63,7 +63,7 @@
 	
 	// INSERTAR PROFESORES //
 	
-	function insertar_profesores(){
+	function insertar_profesor(){
 	?>
 	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -71,21 +71,21 @@
 	<form method="post" action="insertar.php"> 
 			<table>
 				<tr>
-					<th><label  for="codigointerprof">Codigo Interno:</label></th> 
+					<td><label  for="codigointerprof">Codigo Interno:</label></td> 
 					<td><input type="text" id="codigointerprof" name="codigointerprof" size="20" value="" /></td>
 				
-					<th><label  for="nombre">Nombre:</label></th>
+					<td><label  for="nombre">Nombre:</label></td>
 					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
 				</tr>
 				<tr>
-					<th><label  for="apellidos">Apellidos:</label></th>
+					<td><label  for="apellidos">Apellidos:</label></td>
 					<td><input id="apellidos" type="text"  name="apellidos" size="20" value="" /></td>
 				
-					<th><label  for="telefono">Telefono:</label></th>
+					<td><label  for="telefono">Telefono:</label></td>
 					<td><input id="telefono"type="text"  name="telefono" size="20" value="" /></td>
 				</tr>
 				<tr>
-					<th><label  for="email">Email:</label></th>
+					<td><label  for="email">Email:</label></td>
 					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
 				
 					<td><input type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
