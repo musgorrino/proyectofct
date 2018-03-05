@@ -773,11 +773,12 @@ function coger_nombres($nombretabla)
             }
             else
             {
-                $insert=$insert.$i;
+                $query=$query.$i." LIKE '".$_POST['$i']."%'";
             }
             $contador++;
 
         }
+        echo $query;
 
 
     }
