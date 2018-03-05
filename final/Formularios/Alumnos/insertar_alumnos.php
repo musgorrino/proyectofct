@@ -28,7 +28,7 @@ cabecera("Insertar Alumno.","estilos.css");
 				</tr>
 				<tr>
 					<th><label  for="grupo">Grupo:</label></th>
-					<td><select name="grupo" id="grupo"><?php generar_select("grupos","abreviatura")?></td>
+					<td><select name="grupo" id="grupo"><?php generar_select("grupos","abreviatura")?></select></td>
 				</tr>				
 				<tr>
 					<th><label  for="curso">Curso:</label></th>

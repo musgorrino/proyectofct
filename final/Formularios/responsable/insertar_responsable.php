@@ -1,5 +1,5 @@
 <?php
-include "funciones.php";
+include "../../funciones/funciones.php";
 ?>
 <html>
 <head>
