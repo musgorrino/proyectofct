@@ -16,61 +16,58 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-	<div id="insertar_modificar"
-		<form method="post" action="insertar.php">
+	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
+		<div id="insertar_modificar">
+	
+			<form method="post" action="insertar.php">
 			<table>
 				<tr>
-					<th><label for="nombre">Nombre:</label></th>
+					<td><label for="nombre">Nombre:</label></td>
 					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<th><label for="apellido">Apellido:</label></th>
+				
+					<td><label for="apellido">Apellido:</label></td>
 					<td><input id="apellido" type="text"  name="apellido" size="20" value="" /></td>
 				</tr>
 				<tr>
-					<th><label for="fecnac">Fecha Nacimiento:</label></th>
+					<td><label for="fecnac">Fecha Nacimiento:</label></td>
 					<td><input id="fecnac" type="text"  name="fecnac" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<th><label for="telefono">Telefono:</label></th>
+				
+					<td><label for="telefono">Telefono:</label></td>
 					<td><input id="telefono" type="text"  name="telefono" size="20" value="" /></td>
 				</tr>
 				<tr>
-					<th><label for="email">Email:</label></th>
+					<td><label for="email">Email:</label></td>
 					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<th><label  for="grupo">Grupo:</label></th>
+				
+					<td><label  for="grupo">Grupo:</label></td>
 					<td><select name="grupo" id="grupo"><?php generar_select("grupos","abreviatura")?></select></td>
 				</tr>				
 				<tr>
-					<th><label  for="curso">Curso:</label></th>
-					<td><select name="curso" id="curso"><?php generar_select("historial_alumnos","curso")?></td>
-				</tr>
-				<tr>
-					<th> ¿Sabes Euskera?</th> 
+					<td> ¿Sabes Euskera?</td> 
 					<td>  <label for="si">Si</label>
 							<input type="radio" id="si" name="euskera" value="si">
 						 <label for="no">No</label>
 							 <input type="radio" id="no" name="euskera" value="no">
 					</td>
-				</tr>
-				<tr>
-					<th> ¿Tienes Carnet de conducir?</th> 
+				
+					<td> ¿Tienes Carnet de conducir?</td> 
 					<td>  <label for="si">Si</label>
 							<input type="radio" id="si" name="carnet" value="si">
 						 <label for="no">No</label>
 							 <input type="radio" id="no" name="carnet" value="no">
 					</td>
 				</tr>
+				<tr>
+					<td><label  for="curso">Curso:</label></td>
+					<td><select name="curso" id="curso"><?php generar_select("historial_alumnos","curso")?></select></td>
+					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
+				</tr>
 			</table>
-	<p>
+			
 		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	</p>
-	<p>
-        <input type="reset" id="limpiar" name="limpiar" value="Limpiar" />
-		<input type="submit" id="enviar" name="enviar" value="Guardar" />
-	</p>
+	
 </form>
 	</div>
 	</div>	
