@@ -759,7 +759,12 @@ function coger_nombres($nombretabla)
 
 
         }
-    } function busqueda($array,$nombretabla,$query)
+    }
+    function preparar_busqueda($tabla,$datos)
+    {
+        
+    }
+    function busqueda($array,$nombretabla,$query)
 {
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
 
