@@ -2,30 +2,9 @@
 body {background-color: black;
 		font-family: sans-serif;}
 h3{
-	text-align: center;
 	font-family: sans-serif;
 	color: #fff;
-	
 	}
-<<<<<<< HEAD
-#contenedor{width: 1200px;
-			height: 1300px;
-			margin: 0 auto;
-			
-			/*border:solid;*/}
-			
-			#cabecera{width: 1200px;
-						height: 320px;}
-						
-			#login{width: 1200px;
-						text-align: right;
-						font-family: sans-serif;
-						color: #FFF;
-						height: 35px;
-						background-color: #800080;
-						border-radius: 10px;
-						/*border-bottom:solid;*/}
-=======
 
 	#contenedor{width: 1200px;
 				height: 1300px;
@@ -34,7 +13,6 @@ h3{
 				
 				#cabecera{width: 1200px;
 							height: 320px;}
->>>>>>> 8038c26b388fce89c8b6d597c028f33048a4030e
 							
 					#login{width: 1200px;
 							height: 35px;
@@ -87,7 +65,7 @@ h3{
 						    /*border-top:solid;
 							border-bottom:solid;*/}
 
-								#scrollmenu {background-color: #cc00cc;
+								#scrollmenu {background-color: #b300b3 ;
 									overflow: auto;
 									white-space: nowrap;
 									margin-left:15px;
@@ -95,12 +73,17 @@ h3{
 									border-top-left-radius: 10px;
 									border-top-right-radius: 10px;
 									}
-
+								
+								#scrollmenu{width: 1170px;
+									height: 450px;
+									overflow-y: auto;}
+									
 								#scrollmenu table {display: inline-block;
 									color: black;
 									text-align: center;
 									padding: 15px;
-									text-decoration: none;}
+									text-decoration: none;
+									}
 									
 								#scrollmenu th{
 									text-align: center;
@@ -116,7 +99,7 @@ h3{
 								#scrollmenu tr:hover {background-color:white;}
 								
 								#modificar{margin: 0 auto;
-								background-color: #cc00cc;
+								background-color: #b300b3  ;
 								padding: 15px;
 								margin-left:15px;
 								margin-right:15px;
@@ -135,7 +118,7 @@ h3{
 								}
 								
 								#borrar{margin: 0 auto;
-								background-color: #cc00cc;
+								background-color:  #b300b3;
 								padding: 15px;
 								margin-left:15px;
 								margin-right:15px;
@@ -158,7 +141,7 @@ h3{
 								#borrar:hover {background-color:white;}
 								
 								#insertar {margin: 0 auto;
-								background-color: #cc00cc;
+								background-color:  #b300b3;
 								padding: 15px;
 								margin-left:15px;
 								margin-right:15px;

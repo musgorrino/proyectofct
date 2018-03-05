@@ -2,30 +2,9 @@
 body {background-color: black;
 		font-family: sans-serif;}
 h3{
-	text-align: center;
 	font-family: sans-serif;
 	color: #fff;
-	
 	}
-<<<<<<< HEAD
-#contenedor{width: 1200px;
-			height: 1300px;
-			margin: 0 auto;
-			
-			/*border:solid;*/}
-			
-			#cabecera{width: 1200px;
-						height: 320px;}
-						
-			#login{width: 1200px;
-						text-align: right;
-						font-family: sans-serif;
-						color: #FFF;
-						height: 35px;
-						background-color: #800080;
-						border-radius: 10px;
-						/*border-bottom:solid;*/}
-=======
 
 	#contenedor{width: 1200px;
 				height: 1300px;
@@ -34,7 +13,6 @@ h3{
 				
 				#cabecera{width: 1200px;
 							height: 320px;}
->>>>>>> 8038c26b388fce89c8b6d597c028f33048a4030e
 							
 					#login{width: 1200px;
 							height: 35px;

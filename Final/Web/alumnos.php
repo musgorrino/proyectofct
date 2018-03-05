@@ -6,7 +6,6 @@ cabecera("Gestion FCT", "estilo.css");
 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
-			<h5> Usuario conectado:  </h5>
 		</div>
 		<div id="logo">
 			<img src="../imagenes/logo.png"> 
@@ -17,7 +16,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("empresas","Empresas","las empresas","una empresa nueva");?>
+		<?php ver_contenido("alumnos","Alumnos","los alumnos","un alumno nuevo");?>
 	</div>
 		
 	<div id="pie">

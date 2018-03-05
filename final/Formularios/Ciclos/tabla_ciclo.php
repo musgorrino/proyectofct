@@ -1,25 +1,24 @@
 <?php 
-include("funciones.php");
+include("../../funciones/funciones.php");
 
-	cabecera("Modificar asignacion.","estilos.css");
+	cabecera("Ciclos formativos.","estilos.css");
 ?>
 <?php 
-coger_tablas('alumnos');
+coger_tablas('ciclos_formativos');
 ?>
 <form action="" method="post">
 <table>
-		
-<tr><td><label for="codigo">Introduce el nombre del alumno que deseas modificar:</label></td>
-<td>
+		<tr>
+			<td>
+				<label for="codigo">codigo: </label>
+			</td>
+			<td>
 				<select name="codigo" id="codigo">
 				<?php
-				generar_select('alumnos','codigo')
+				generar_select('ciclos_formativos','codigo')
 				?>
 				</select>
-</td>
-</tr>
-
-		<tr>
+			</td>
 			<td>
 			<input type="submit" value="modificar" name="enviar" />
 			</td>
@@ -29,6 +28,6 @@ coger_tablas('alumnos');
 		</tr>
 </table>
 </form>
-<button><a href="">nuevo</a></button>
+<button><a href="insertar_ciclos.php">nuevo</a></button>
 </body>
 </html>
