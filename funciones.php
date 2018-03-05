@@ -683,10 +683,12 @@ function coger_nombres($nombretabla)
                 {
                     return "Dni vacio o patron incorrecto";
                 }
-                elseif ($dni==2)
+                else
                 {
-                    return "El dni ya existe en nuestra base de datos";
+                    return "hecho";
                 }
+                break;
+                
 
 
 
