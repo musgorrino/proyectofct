@@ -28,6 +28,7 @@ if (isset($_POST["enviar"]))
     $contados=0;
     foreach($columnas as $i)
     {
+
         if ($i!="codigo")
         {
 

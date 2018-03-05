@@ -762,7 +762,8 @@ function coger_nombres($nombretabla)
     }
     function preparar_busqueda($tabla,$datos)
     {
-        
+        $nombres=coger_nombres($tabla);
+        $query="select * from ".$tabla." where "
     }
     function busqueda($array,$nombretabla,$query)
 {
@@ -850,6 +851,10 @@ function coger_nombres($nombretabla)
     </div>
     <?php
     mysqli_close($conexion);
+
+}
+function generar_insert()
+{
 
 }
 	?>
