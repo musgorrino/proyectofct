@@ -559,6 +559,7 @@ function coger_nombres($nombretabla)
 // FUNCIONES DE LA WEB //
 
 	function logo($ruta){
+
 	?>
 		<a href="principal.php"><img src="<?php echo $ruta?>" alt="logo"></a>
 	<?php	
