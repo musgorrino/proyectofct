@@ -6,6 +6,7 @@ cabecera("Gestion FCT", "estilos.css");
 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
+			<h5> Usuario conectado:  </h5>
 		</div>
 		<div id="logo">
 			<img src="../imagenes/logo.png"> 

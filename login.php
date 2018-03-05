@@ -1,5 +1,5 @@
 <?php 
-	include("funciones.php");
+	include("../funciones/funciones.php");
 ?>
 <!DOCTYPE html>
 
@@ -15,20 +15,20 @@
 	<form action="login.php" method="post">
 		<h2> Gestión FCT </h2>
 		<input type="text" name="usuario" placeholder=" &#128590; usuario" size="30"/>
-		<input type="password" name="clave" placeholder="&#128272; Contraseña" size="30"/>
+		<input type="password" name="codigo" placeholder="&#128272; Contraseña" size="30"/>
 		<input type="submit" name="" value="Acceder"/>
 
 	</form>
 		<?php 
 			$usuarios=$_POST ['usuarios'];
-			$clave=$_POST ['clave'];
+			$clave=$_POST ['codigo'];
 
 			$consulta="SELECT * FROM usuarios WHERE usuarios='$usuarios' and '$clave'";
 			$resultado=mysqli_query($consulta);
 
 			$filas=mysqli_num_rows ($resultado);
 			if ($filas>0) {
-				header ("location:principal.php");
+				header ("location:../final/principal/principal.php");
 			}
 			else {
 				echo "Error en la autentificación";
