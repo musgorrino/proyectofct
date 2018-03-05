@@ -1,11 +1,19 @@
 
 body {background-color: black;
+		
 		font-family: sans-serif;}
 h3{
 	font-family: sans-serif;
 	color: #fff;
 	}
 
+h1 {
+		color: #fff;
+}
+p {
+	color: #fff:
+	text-align: center; 
+}
 	#contenedor{width: 1200px;
 				height: 1300px;
 				margin: 0 auto;
@@ -18,6 +26,8 @@ h3{
 							height: 35px;
 							background-color: #800080;
 							border-radius: 10px;
+							position: right:
+							color: #fff;
 							/*border-bottom:solid;*/}
 								
 					#logo{margin: 0 auto;
@@ -64,6 +74,24 @@ h3{
 							border-top-right-radius: 10px;
 						    /*border-top:solid;
 							border-bottom:solid;*/}
+				#contenido2 {
+					background-color: purple;
+					
+				text-align: center;
+				color: #FFF;
+				font-family: impact;
+				font-size: 20px;
+				text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+				-webkit-text-fill-color: #fff;
+				-webkit-text-stroke: 0,5px black;
+
+					border-radius: 55px 55px 55px 55px;
+					-moz-border-radius: 55px 55px 55px 55px;
+					-webkit-border-radius: 55px 55px 55px 55px;
+					border: 0px solid #000000;
+					
+				}
+				
 
 								#scrollmenu {background-color: #b300b3 ;
 									overflow: auto;
@@ -158,6 +186,7 @@ h3{
 								}
 								
 								#insertar:hover {background-color:white;}
+				
 								
 				#pie{width: 1200px;
 						height: 35px;
@@ -168,7 +197,7 @@ h3{
 					#copyright{position: relative;
 						padding: 3em 0em;
 						border-top: 10px solid #303030;
-						letter-spacing: 1px;
+						letter-spacing: 5px;
 						color: rgba(255,255,255,.4);}
 				
 		
@@ -176,4 +205,5 @@ h3{
 						text-decoration: none;
 						color: rgba(255,255,255,.4) !important;
 					}
+					
 

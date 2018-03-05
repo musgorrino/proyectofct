@@ -6,6 +6,7 @@ cabecera("Gestion FCT", "estilo.css");
 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
+		Usuario:
 		</div>
 		<div id="logo">
 			<?php ver_logo("../imagenes/logo.png");?>
@@ -18,21 +19,25 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	
-	<div id="contenido">
-		<?php
-		  ver_contenido("alumnos","Alumnos","los alumnos");
-		?>
-	</div>
+	<div  id="contenido2">
 		
+		<center><h1>ONGI ETORRI </h1>
+		<h3>Mediante el navegador de la parte superior puede acceder a el apartado que deseé.</h3></center>
+		
+	</div>
+	</br>
+	</br>
+	
 <div id="pie">
 		
-		<div id="copyright" 
-			 <a href="principal.php">Volver al Inicio</a> 
-			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
+		<div id="copyright">
+			  
+			<center><p>PAGINA WEB DESIGNADA POR ANONIMO</p></center>
 		
 		</div>
 	</div>
 </div>
+
 
 </body>
 </html>
