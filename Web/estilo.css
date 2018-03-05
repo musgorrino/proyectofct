@@ -188,9 +188,81 @@ p {
 									
 									#insertar:hover {background-color:white;}
 				
-								#insertar_mofidicar{width:400px;
-													height:300px;
-													background-color:white;}
+								#insertar_modificar {background-color: #b300b3 ;
+									overflow: auto;
+									white-space: nowrap;
+									margin-left:15px;
+									margin-right:15px;
+									border-top-left-radius: 10px;
+									border-top-right-radius: 10px;
+									}
+									
+										#insertar_modificar table {display: inline-block;
+											color: black;
+											text-align: center;
+											padding: 15px;
+											text-decoration: none;
+											}
+											
+										#insertar_modificar th{
+											text-align: center;
+											padding: 30px;
+											background-color: white;
+											color: black;}
+											
+										#insertar_modificar td {
+											/*background-color: #cc00cc;*/
+											text-align: center;
+											padding: 30px;}
+										
+										#insertar_modificar tr:hover {background-color:white;}
+										
+										#insertar_modificar select {
+										width: 89px;
+										height: 30px;
+										}
+										#insertar_modificar input.botones {
+										width: 89px;
+										height: 30px;
+										}
+									
+								#formbuscar {background-color: #b300b3 ;
+									overflow: auto;
+									white-space: nowrap;
+									margin-left:15px;
+									margin-right:15px;
+									border-top-left-radius: 10px;
+									border-top-right-radius: 10px;
+									}
+									
+										#formbuscar table {display: inline-block;
+											color: black;
+											text-align: center;
+											padding: 15px;
+											text-decoration: none;
+											}
+											
+										#formbuscar th{
+											text-align: center;
+											padding: 30px;
+											background-color: white;
+											color: black;}
+											
+										#formbuscar td {
+											/*background-color: #cc00cc;*/
+											text-align: center;
+											padding: 30px;}
+										
+										#formbuscar tr:hover {background-color:white;}
+										
+										#formbuscar select {
+										width: 89px;
+										height: 30px;
+										}
+										#formbuscar input.botones {
+										width: 89px;
+										height: 30px;
+										}
 								
 				#pie{width: 1200px;
 						height: 35px;
