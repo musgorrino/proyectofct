@@ -34,7 +34,8 @@
 			$filas=mysqli_num_rows ($resultado);*/
 			$login=login($usuario,$contrasena);
 			if ($login) {
-				header ("location:../final/principal/principal.php");
+				//header ("location:../final/principal/principal.php");
+                echo "hecho";
 			}
 			else {
 				echo "Error en la autentificación";
