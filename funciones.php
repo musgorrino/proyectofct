@@ -648,37 +648,7 @@ function coger_nombres($nombretabla)
         <?php echo strtoupper($titulo);?>
     </h3>
 		
-	<div id="formbuscar">
-	<h3> Buscar informacion de alumnxs </h3>
-	<table>
-		<form action="usuarios.php" method="post">
-		<td>
-			<th>
-				<label id="nombre">Nombre </label>
-			
-			<tr><input type="text" name="nombre" placeholder="Nombre"></tr>
-			</th>
-			<tr>
-				<label id="euskera">Conocimiento de Euskera</label>
-				<input type="text"	name="euskera" placeholder="¿Si o No?"/>
-			</tr>
-			<tr>
-				<label id="carnet"> Dispone de carnet de conducir </label>
-				<input type="text" name="carnet"	placeholder="¿Si o No?"/>
-			</tr>
-			<tr>
-				<label id="ciclo"> Ciclo cursado </label>
-				<input type="text" name="abreviatura"	placeholder="Inserta abreviatura"/>
-			</tr>
-			<tr>	
-				<label id="curso"> Curso </label>
-				<input type="text" name="curso"	placeholder="Inserte curso"/>
-			</tr>
-		</td>
-		</form>
-	</table>
-		
-		
+	
 		
 		
 	<?php
@@ -692,7 +662,7 @@ function coger_nombres($nombretabla)
 			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
 		
 		</div>
-	</div>	
+		
 	
 	<?php
 	}
@@ -811,9 +781,9 @@ function coger_nombres($nombretabla)
         $contador = 1;
         foreach ($datos as $i) {
             if ($contador != 1) {
-                $query = $query . " AND " . $i . " LIKE '" . $_POST['$i'] . "%'";
+                $query = $query . " AND " . $i . " LIKE '" . $_POST[$i] . "%'";
             } else {
-                $query = $query . $i . " LIKE '" . $_POST['$i'] . "%'";
+                $query = $query . $i . " LIKE '" . $_POST[$i] . "%'";
             }
             $contador++;
 
