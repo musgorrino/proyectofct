@@ -3,7 +3,7 @@ include "../funciones.php";
 $t=array();
 $t[]="nombre";
 
-preparar_busqueda("grupos",$t);
+preparar_busqueda("alumnos",$t);
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))
 {
