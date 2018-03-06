@@ -1,7 +1,7 @@
 <?php 
 include("../funciones.php");
  
-cabecera("Gestion FCT", "estilo.css");
+cabecera("Gestion FCT", "../Web/estilo.css");
 ?>
 <div id="contenedor">
 	<div id="cabecera">
@@ -18,21 +18,21 @@ cabecera("Gestion FCT", "estilo.css");
 	<div id="contenido">
 
 		<div id="buscar">
-			<form action="" method="post">
+			
 			</br>
 		<table>
 			<tr>
-				<th class="sombra"><a href="">Familias Profesionales</a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Ciclos Formativos </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Empresas  </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarfamilia.php">Familias Profesionales</a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarcic.php">Ciclos Formativos </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarempre.php">Empresas  </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="">Responsable </a></th>
 			</tr>
 			<tr class="espacio">
 			</tr>
 			<tr>
 				<th class="sombra"><a href="">Profesores</a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Alumnos </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Asignaciones  </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscaralu.php">Alumnos </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarasig.php">Asignaciones  </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="">Historial </a></th>
 			</tr>
 		</table>

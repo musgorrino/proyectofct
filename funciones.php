@@ -578,7 +578,7 @@ function coger_nombres($nombretabla)
 				  <li><a href="../Web/asignaciones.php">Asignaciones</a></li>
 				  <li><a href="../Web/empresas.php">Empresas</a></li>
 				  <li><a href="../Web/responsables.php">Responsables</a></li>
-				  <li><a href="../Web/usuarios.php">Buscar</a></li>
+				  <li><a href="../Web/buscador.php">Buscar</a></li>
 				</ul>
 	<?php
 	}
