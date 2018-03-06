@@ -775,7 +775,7 @@ function coger_nombres($nombretabla)
         }
     }
 
-=======
+
     function preparar_busqueda($tabla, $datos)
     {
         $nombres = coger_nombres($tabla);
@@ -942,5 +942,5 @@ function generar_insert($tabla)
 
 
 }
->>>>>>> ccef49d56614a49f9475ed494ebd67cbec2c56b1
+
 	?>
