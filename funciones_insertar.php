@@ -53,9 +53,6 @@
 					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
 				</tr>
 			</table>
-			
-					<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
 			</form>
 		</div>
 	<?php
@@ -91,10 +88,7 @@
 					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
 					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
 				
-			</table>
-	
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
+			</table>	
 </form>
 </div>
 <?php
@@ -202,10 +196,6 @@ function insertar_familia(){
 					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
 				</tr>
 			</table>
-	
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
-	
 </form>
 </div>
 <?php
@@ -259,10 +249,8 @@ function insertar_asignacion(){
 				<td><input type="reset" class="botones" id="limpiar" name="limpiar" value="Limpiar" /></td>
 				<td><input type="submit" class="botones" id="enviar" name="enviar" value="Crear" /></td>
 			</tr>
-</table>
-	
+</table>	
 </form>
-
 </div>
 <?php
 }
@@ -299,9 +287,6 @@ function insertar_ciclo(){
 				</tr>
 				
 			</table>
-
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-
 </form>
 </div>
 <?php
@@ -334,12 +319,8 @@ function insertar_curso(){
 					 <td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
 					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
 				</tr>
-			</table>
-	
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
+			</table>	
 </form>
-
 </div>
 <?php
 }
@@ -391,10 +372,8 @@ function insertar_usuario(){
 			<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
 			<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Crear" /></td>
 		</tr>
-</table>
-		
+</table>	
 </form>
-
 </div>
 <?php
 }
@@ -452,10 +431,8 @@ function modificar_alumno(){
 					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
 					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
 				</tr>
-			</table>
-			
+			</table>	
 					<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
-	
 			</form>
 		</div>
 	<?php
