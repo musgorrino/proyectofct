@@ -607,8 +607,11 @@ function coger_nombres($nombretabla)
 						</td>
 					</tr>
 				</table>
+			</form>
 		</div>
+		
 		</br></br>
+		<form action="" method="post">
 		<div id="borrar">
 				<table class="borrar">
 					<tr>
@@ -624,14 +627,17 @@ function coger_nombres($nombretabla)
 						</td>
 					</tr>
 				</table>
+			</form>
 		</div>
+		
 		</br></br>
+		<form action="insertar_<?php echo $tabla?>.php" method="post">
 		<div id="insertar">
 				<table>
 					<tr>
 					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 						<td>
-						  <input type="submit" value="Insertar">
+						  <input type="submit" name="enviar" value="Insertar">
 						</td>
 					</tr>
 				</table>
