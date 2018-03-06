@@ -285,10 +285,9 @@ p {
 														}
 
 									#buscar a{color: white;
-												text-decoration: none;}
+												text-decoration: none;}	
 									
-										
-										
+									#buscar th :hover {font-size: 125%;}
 										
 				#pie{width: 1200px;
 						height: 35px;
