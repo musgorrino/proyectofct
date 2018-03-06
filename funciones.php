@@ -808,7 +808,7 @@ function coger_nombres($nombretabla)
     {
         $nombres = coger_nombres($tabla);
         $query = "select * from " . $tabla . " where ";
-        $contador = 1;
+        $contador = 0;
         foreach ($datos as $i) {
             if ($contador != 1) {
                 $query = $query . " AND " . $i . " LIKE '" . $_POST['$i'] . "%'";
