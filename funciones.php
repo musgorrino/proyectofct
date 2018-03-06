@@ -789,7 +789,7 @@ function coger_nombres($nombretabla)
 
         }
         var_dump($query);
-        //busqueda($nombres,$tabla,$query);
+        busqueda($nombres,$tabla,$query);
 
 
     }
