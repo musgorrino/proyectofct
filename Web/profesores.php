@@ -16,7 +16,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("profesores","Profesores","los profesores","un profesor nuevo");?>
+		<center><?php ver_contenido("profesores","Profesores","los profesores","un profesor nuevo");?></center>
 	</div>
 		
 	<div id="pie">

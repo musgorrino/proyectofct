@@ -16,7 +16,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("grupos","Grupos","los grupos","un grupo nuevo");?>
+		<center><?php ver_contenido("grupos","Grupos","los grupos","un grupo nuevo");?></center>
 	</div>
 		
 	<div id="pie">
