@@ -1,22 +1,22 @@
 <?php 
 include("../../funciones/funciones.php");
 
-carnet euskera nombre
 $empresa=recoger($_Post['empresa']);
 $contratacionalumno=recoger($_Post['contratacionalumno']);
 $alumno=recoger($_Post['alumno']);
 $curso=recoger($_Post['curso']);
-if($empresa==1){
-echo
+$busqueda=array();
+if($empresa==0){
+$busqueda[]="empresa";
 }
-if($contratacionalumno==1){
-echo
+if($contratacionalumno==0){
+$busqueda[]="contratacionalumno";
 }
-if($alumno==1){
-echo
+if($alumno==0){
+$busqueda[]="alumno";
 }
-if($curso==1){
-echo
+if($curso==0){
+$busqueda[]="curso";
 }
-
+preparar_busqueda("asignaciones",$busqueda);
 ?>
