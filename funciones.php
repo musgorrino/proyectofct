@@ -812,10 +812,11 @@ function coger_nombres($nombretabla)
         $contador = 1;
         foreach ($datos as $i) {
             var_dump($i);
+
             if ($contador != 1) {
-                $query = $query . " AND " . $i . " LIKE '" . $_POST['$i'] . "%'";
+                $query = $query . " AND " . $i . " LIKE '" . $_POST[$i] . "%'";
             } else {
-                $query = $query . $i . " LIKE '" . $_POST['$i'] . "%'";
+                $query = $query . $i . " LIKE '" . $_POST[$i] . "%'";
             }
             $contador++;
 
