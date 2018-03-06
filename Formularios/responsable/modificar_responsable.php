@@ -21,7 +21,7 @@ include("../../funciones/funciones.php");
 				<label for="nombre">Nombre: </label>
 			</td>
 			<td>
-				<input type="text" name="nombre" value="<?php echo $Post['nombre']; ?>" id="nombre">
+				<input type="text" name="nombre" value="<?php echo $fila['nombre']; ?>" id="nombre">
 			</td>
 		</tr>
 		<tr>

@@ -45,7 +45,7 @@ include("../../funciones/funciones.php");
 				<label for="curso">Curso: </label>
 			</td>
 			<td>
-				<input type="text" name="curso" value="<?php echo $Post['curso']; ?>" id="curso">
+				<input type="text" name="curso" value="<?php echo $fila['curso']; ?>" id="curso">
 			</td>
 		</tr>
 		<tr>
@@ -53,7 +53,7 @@ include("../../funciones/funciones.php");
 				<label for="horario">Horario: </label>
 			</td>
 			<td>
-				<input type="text" name="horario" value="<?php echo $Post['horario']; ?>" id="horario">
+				<input type="text" name="horario" value="<?php echo $fila['horario']; ?>" id="horario">
 			</td>
 		</tr>
 		<tr>
@@ -61,7 +61,7 @@ include("../../funciones/funciones.php");
 				<label for="observaciones">Observaciones: </label>
 			</td>
 			<td>
-				<textarea name="observaciones" id="observaciones"><?php echo $Post['observaciones']; ?></textarea>
+				<textarea name="observaciones" id="observaciones"><?php echo $fila['observaciones']; ?></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -69,7 +69,7 @@ include("../../funciones/funciones.php");
 				<label for="trabajodesempenado">trabajo desempeñado: </label>
 			</td>
 			<td>
-				<textarea name="trabajodesempenado" id="trabajodesempenado"><?php echo $Post['trabajodesempenado']; ?></textarea>
+				<textarea name="trabajodesempenado" id="trabajodesempenado"><?php echo $fila['trabajodesempenado']; ?></textarea>
 			</td>
 		</tr>
 		<tr>
