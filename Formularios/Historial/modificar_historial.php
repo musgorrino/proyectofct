@@ -45,7 +45,7 @@ include("../../funciones/funciones.php");
 				<label for="Curso">curso: </label>
 			</td>
 			<td>
-				<input type="text" name="curso" value="<?php echo $Post['curso']; ?>" id="curso">
+				<input type="text" name="curso" value="<?php echo $fila['curso']; ?>" id="curso">
 			</td>
 		</tr>
 </table>
