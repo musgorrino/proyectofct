@@ -519,6 +519,8 @@ function modificar_profesores(){
 </div>
 	<?php
 	}
+	// MODIFICAR EMPRESAS //
+	
 	function modificar_empresas(){
 ?>
 	<center></br><h3> MODIFICAR UNA EMPRESA </h3> </center>
@@ -598,6 +600,34 @@ function modificar_profesores(){
 </div>
 <?php
 }
+// MODIFICAR FAMILIA PROFESIONAL //
+	function modificar_familias_profesionales(){
+?>
+	<center></br><h3> MODIFICAR UNA FAMILIA PROFESIONAL </h3> </center>
+	<div id="insertar_modificar">
+	<form method="post" action="modificar.php">
+			<table>
+				<tr>
+					<td><label for="nombre">Nombre:</label></td>
+					<td><input id="nombre" type="text"  name="nombre" size="30" value="<?php echo $fila['nombre']; ?>" /></td>
+				
+					<td><label  for="coordinador">Coordinador:</label></td>
+					<td><select name="coordinador" id="coordinador"><?php generar_select("profesores","nombre")?></td>
+				</tr>				
+				<tr>
+					<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
+				</tr>
+			</table>
+	
+		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
+</form>
+	
+		
+
+</div>
+<?php
+	}
 ?>
 	
 
