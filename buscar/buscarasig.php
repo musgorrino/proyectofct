@@ -18,7 +18,7 @@ if(isset($_POST['enviar'])){
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?>
+		<center><?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?></center>
 		<div id="formbuscar">
 			<h3> Buscar informacion de las Asignaciones </h3>
 			<center>
@@ -27,41 +27,34 @@ if(isset($_POST['enviar'])){
 					<tr>
 						
 						<td><label id="empresa">Empresa </label></td>
-						<td><input type="text" name="empresa" value="<?php echo $_Post['empresa']; ?>" placeholder="empresa"></td>
+						<td><input type="text" name="empresa" value="<?php echo $_POST['empresa']; ?>" placeholder="empresa"></td>
 					
 						<td><label id="contratacionalumno">Alumnx Contratadx</label></td>
-						<td>	<input type="text"	name="contratacionalumno" value="<?php echo $_Post['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
+						<td>	<input type="text"	name="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-						<td><label id="nombre"> Alumno </label></td>
-						<td><input type="text" name="nombre" value="<?php echo $_Post['nombre']; ?>"	placeholder="Nombre"/></td>
+						<td><label id="codigoalumno"> Alumno </label></td>
+						<td><input type="text" name="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
 						
-						<td><label id="ciclo"> Ciclo cursado </label></td>
-						<td><input type="text" name="abreviatura" value="<?php echo $_Post['ciclo']; ?>"	placeholder="Inserta abreviatura"/></td>
+						<td><label  id="abreviatura"> Ciclo cursado </label></td>
+						<td><input type="text" name="abreviatura" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
 					</tr>
 					<tr>
 					<tr>		<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
-							<td><input type="submit" name="enviar" value="BUSCAR"/>
+							<td><input type="submit" name="enviar" value="BUSCAR"/></td>
 					</tr>
 				</form>
 			</table>
 			</center>
 		</div>
-	</div>
-		
-	<div id="pie">
-		<?php ver_pie(); ?>
-	</div>
-</div>
-<?php 
-include("../../funciones/funciones.php");
+		<div><?php 
 
-$empresa=recoger($_Post['empresa']);
-$contratacionalumno=recoger($_Post['contratacionalumno']);
-$alumno=recoger($_Post['alumno']);
-$curso=recoger($_Post['curso']);
+$empresa=recoger($_POST['empresa']);
+$contratacionalumno=recoger($_POST['contratacionalumno']);
+$codigoalumno=recoger($_POST['codigoalumno']);
+$abreviatura=recoger($_POST['abreviatura']);
 $busqueda=array();
 if($empresa==0){
 $busqueda[]="empresa";
@@ -69,14 +62,22 @@ $busqueda[]="empresa";
 if($contratacionalumno==0){
 $busqueda[]="contratacionalumno";
 }
-if($alumno==0){
-$busqueda[]="alumno";
+if($codigoalumno==0){
+$busqueda[]="codigoalumno";
 }
-if($curso==0){
-$busqueda[]="curso";
+if($abreviatura==0){
+$busqueda[]="abreviatura";
 }
 preparar_busqueda("asignaciones",$busqueda);
 ?>
+		</div>
+	</div>
+		
+	<div id="pie">
+		<?php ver_pie(); ?>
+	</div>
+</div>
+
 
 <?php
 }
@@ -110,16 +111,16 @@ else {
 						<td>	<input type="text"	name="contratacionalumno" value="" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-						<td><label id="nombre"> Alumno </label></td>
-						<td><input type="text" name="nombre" value=""	placeholder="Nombre"/></td>
+						<td><label id="codigoalumno"> Alumno </label></td>
+						<td><input type="text" name="codigoalumno" value=""	placeholder="Nombre"/></td>
 						
-						<td><label id="ciclo"> Ciclo cursado </label></td>
+						<td><label id="abreviatura"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura" value=""	placeholder="Inserta abreviatura"/></td>
 					</tr>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
-							<td><input type="submit" name="enviar" value="BUSCAR"/>
+							<td><input type="submit" name="enviar" value="BUSCAR"/></td>
 					</tr>
 				</form>
 			</table>
