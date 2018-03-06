@@ -5,7 +5,6 @@
 	function insertar_alumno(){
 ?>
 	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
 		<div id="insertar_modificar">
 	
 			<form method="post" action="insertar.php">
@@ -89,8 +88,8 @@
 					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
 				
 			</table>	
-</form>
-</div>
+		</form>
+	</div>
 <?php
 }
 
@@ -381,7 +380,7 @@ function insertar_usuario(){
 
 // MODIFICAR ALUMNO //
 
-function modificar_alumno(){
+function modificar_alumnos(){
 ?>
 	<center></br><h3> MODIFICAR UN NUEVO ALUMNO </h3> </center>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -429,7 +428,7 @@ function modificar_alumno(){
 					<td><label  for="curso">Curso:</label></td>
 					<td><select name="curso" id="curso"><?php generar_select("historial_alumnos","curso")?></select></td>
 					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
+					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 				</tr>
 			</table>	
 					<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
@@ -437,7 +436,6 @@ function modificar_alumno(){
 		</div>
 	<?php
 	}
-
 
 	// MODIFICAR HISTORIAL //
 	
@@ -485,5 +483,44 @@ function modificar_alumno(){
 </div>
 <?php
 }
+// MODIFICAR PROFESORES //
+function modificar_profesores(){
 ?>
+	<center></br><h3> MODIFICAR UN PROFESOR </h3> </center>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
+		<div id="insertar_modificar">
+	
+		<form method="post" action="modificar.php">
+			<table>
+				<tr>
+					<td><label for="codigointerprof">Codigo Interno:</label></th> 
+					<td><input type="text" id="codigointerprof" name="codigointerprof" size="20" value="<?php echo $fila['codigointerprof']; ?>" /></td>
+				
+					<td><label for="nombre">Nombre:</label></td>
+					<td><input id="nombre"  type="text"  name="nombre" size="20" value="<?php echo $fila['nombre']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><label for="apellidos">Apellidos:</label></td>
+					<td><input id="apellidos" type="text"  name="apellidos" size="40" value="<?php echo $fila['apellidos']; ?>" /></td>
+				
+					<td><label for="telefono">Telefono:</label></td>
+					<td><input id="telefono type="text"  name="telefono" size="20" value="<?php echo $fila['telefono']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><label for="email">Email:</label></td>
+					<td><input id="email" type="text"  name="email" size="20" value="<?php echo $fila['email']; ?>" /></td>
+				
+					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
+			</table>
+	
+		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
+</form>
+</div>
+	<?php
+	}
+	?>
+
+
+
 
