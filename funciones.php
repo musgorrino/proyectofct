@@ -811,6 +811,7 @@ function coger_nombres($nombretabla)
         $query = "select * from " . $tabla . " where ";
         $contador = 1;
         foreach ($datos as $i) {
+            var_dump($i);
             if ($contador != 1) {
                 $query = $query . " AND " . $i . " LIKE '" . $_POST['$i'] . "%'";
             } else {
