@@ -792,4 +792,64 @@ function coger_nombres($nombretabla)
 
 
     }
+
+
+
+function generar_insert($tabla)
+{
+    $insert="insert into ".$tabla."(";
+    $columnas=coger_nombres($tabla);
+    $contador=0;
+    foreach($columnas as $i)
+    {
+        if ($i!="codigo")
+        {
+            if($contador!=1)
+            {
+                $insert=$insert.",".$i;
+            }
+            else
+            {
+                $insert=$insert.$i;
+            }
+
+        }
+
+        $contador++;
+    }
+    $insert=$insert.") values(";
+    $contados=0;
+    foreach($columnas as $i)
+    {
+        $comp=comprobar_dato($i);
+        if($comp=="hecho")
+        {
+            if ($i!="codigo")
+            {
+
+                if ($contados != 1) {
+                    $insert = $insert . ",'" . $_POST[$i] . "'";
+                } else {
+                    $insert = $insert . "'" . $_POST[$i] . "'";
+                }
+            }
+            $contados++;
+        }
+        else
+        {
+            echo $comp;
+            return $comp;
+        }
+
+
+    }
+    $insert=$insert.");";
+
+
+    $conexion = conectar("localhost","root","","mydb");
+    $r=mysqli_query($conexion,$insert);
+
+
+
+}
 	?>
