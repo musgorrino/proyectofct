@@ -262,27 +262,27 @@ p {
 										height: 30px;
 										}
 										
-								#buscar{width:500px;
+								#buscar{width:1200px;
 											height:500px;}
 										
-									#buscar table{width:500px;
-													height:500px;}
+									#buscar table{width:1100px;
+													height:100px;
+													background-color: purple;
+													margin-left:20px;}
 			
 									#buscar th.espacio{background-color: purple;
 														color: purple;
-														border-radius:100px;}
+														}
 		
-									#buscar tr.espacio{width:15px;
-														height:15px;}
+									#buscar tr.espacio{width:50px;
+														height:5px;}
 											
-									#buscar th{width:500px;
+									#buscar th{width:50px;
 												height:5px;}
 												
 									#buscar th.sombra{background-color: #b300b3;
 														border-radius:50px;
-														-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-														-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-														box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);}
+														}
 
 									#buscar a{color: white;
 												text-decoration: none;}
