@@ -1,7 +1,7 @@
 <?php 
 include("../funciones.php");
  
-cabecera("Gestion FCT", "../Web/estilo.css");
+cabecera("Gestion FCT", "estilo.css");
 ?>
 <div id="contenedor">
 	<div id="cabecera">
@@ -22,9 +22,9 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 			</br>
 		<table>
 			<tr>
-				<th class="sombra"><a href="">Familias Profesionales</a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarfamilia.php">Familias Profesionales</a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarcic.php">Ciclos Formativos </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Empresas  </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarempre.php">Empresas  </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="">Responsable </a></th>
 			</tr>
 			<tr class="espacio">
