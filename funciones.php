@@ -198,7 +198,7 @@ function login($usuario,$contrasena)
     }
 }
 /*Funcion para dar de alta un alumno*/
-function alta_alumno()
+function alta_alumno12()
 {
 
 
@@ -942,4 +942,41 @@ function generar_insert($tabla)
 
 }
 
+function insert_alumno()
+{
+    $conexion = mysqli_connect("localhost", "root", "", "mydb");
+    $query = "select codigo from alumnos where dni='".$_POST["dni"]."'";
+    $datos = mysqli_query($conexion,$query);
+    var_dump(mysqli_num_rows($datos));
+    if(mysqli_num_rows($datos)==0)
+    {
+        /*generar_insert("alumnos");*/
+        $query = "select codigo from alumnos where dni='".$_POST["dni"]."'";
+        $datos = mysqli_query($conexion,$query);
+        $alumno=mysqli_fetch_assoc($datos);
+
+    }
+    else
+    {
+        $alumno=mysqli_fetch_assoc($datos);
+
+    }
+    $_POST['alumno']=$alumno['codigo'];
+     generar_insert("grupos");
+}
+
+function delete($tabla)
+{
+    $conexion = mysqli_connect("localhost", "root", "", "mydb");
+    $query = "delete from ".$tabla." where codigo='".$_POST["codigo"]."'";
+    $datos = mysqli_query($conexion,$query);
+    $resp=mysqli_affected_rows($datos);
+    if($resp>0)
+    {
+        return "El elemento ha sido borrado correctamente";
+    }
+    else{
+        return "El elemento no ha podido ser borrado o no existe";
+    }
+}
 ?>
