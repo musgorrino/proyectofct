@@ -788,7 +788,7 @@ function coger_nombres($nombretabla)
             $contador++;
 
         }
-        echo $query;
+        
 
 
     }
