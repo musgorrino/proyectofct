@@ -6,20 +6,21 @@ $uskera=recoger($_Post['euskera']);
 $carnet=recoger($_Post['carnet']);
 $abreviatura=recoger($_Post['abreviatura']);
 $curso=recoger($_Post['curso']);
-if($nombre==1){
-echo
+$busqueda=array();
+if($nombre==0){
+$busqueda[]="nombre";
 }
-if($uskera==1){
-echo
+if($uskera==0){
+    $busqueda[]="euskera";
 }
-if($carnet==1){
-echo
+if($carnet==0){
+    $busqueda[]="carnet";
 }
-if($abreviatura==1){
-echo
+if($abreviatura==0){
+    $busqueda[]="abreviatura";
 }
-if($curso==1){
-echo
+if($curso==0){
+    $busqueda[]="curso";
 }
-
+preparar_busqueda("alumnos",$busqueda);
 ?>

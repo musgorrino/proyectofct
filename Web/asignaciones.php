@@ -19,7 +19,9 @@ cabecera("Gestion FCT", "estilo.css");
 		<?php ver_contenido("asignaciones","Asignaciones","las asignaciones","una asignacion nueva");?>
 		
 	</div>
+	<div id="formbuscar">
 	
+	</div>
 	
 		
 	<div id="pie">
