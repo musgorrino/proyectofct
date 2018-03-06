@@ -32,3 +32,7 @@ CREATE OR REPLACE VIEW `responsaempre`
  AS SELECT r.codigo,r.nombre,e.nombre as 'Nombre Empresa' FROM responsable r,empresas e  WHERE r.empresa=e.codigo
  
 /*Vista 6*/
+CREATE OR REPLACE VIEW `alumno`
+ AS SELECT a.*,c.nombre as "Nombre de ciclo",g.abreviatura,g.denominacion as "Clase",h.curso,p.nombre "Tutor",n.nombre as "Tutor de practicas"
+from alumnos a,historial_alumnos h,grupos g,ciclos_formativos c,profesores p,profesores n
+where h.alumno=a.codigo and h.grupo=g.codigo and g.ciclo=c.codigo and g.tutor=p.codigo and g.tutor_practicas=n.codigo
