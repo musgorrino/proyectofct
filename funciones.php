@@ -603,7 +603,7 @@ function coger_nombres($nombretabla)
 							</select>
 						</td>
 						<td>
-						  <input type="submit" value="Modificar">
+						  <input type="submit" name="enviar" value="Modificar">
 						</td>
 					</tr>
 				</table>
@@ -620,7 +620,7 @@ function coger_nombres($nombretabla)
 							</select>
 						</td>
 						<td>
-						  <input type="submit" value="Borrar">
+						  <input type="submit" name="enviar" value="Borrar">
 						</td>
 					</tr>
 				</table>
@@ -631,7 +631,7 @@ function coger_nombres($nombretabla)
 					<tr>
 					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 						<td>
-						  <input type="submit" value="Insertar">
+						  <input type="submit" name="enviar" value="Insertar">
 						</td>
 					</tr>
 				</table>
