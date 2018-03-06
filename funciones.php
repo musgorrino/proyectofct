@@ -603,7 +603,7 @@ function coger_nombres($nombretabla)
 							</select>
 						</td>
 						<td>
-						  <input type="submit" name="enviar" value="Modificar">
+						  <input type="submit" value="Modificar">
 						</td>
 					</tr>
 				</table>
@@ -620,7 +620,7 @@ function coger_nombres($nombretabla)
 							</select>
 						</td>
 						<td>
-						  <input type="submit" name="enviar" value="Borrar">
+						  <input type="submit" value="Borrar">
 						</td>
 					</tr>
 				</table>
@@ -631,7 +631,7 @@ function coger_nombres($nombretabla)
 					<tr>
 					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 						<td>
-						  <input type="submit" name="enviar" value="Insertar">
+						  <input type="submit" value="Insertar">
 						</td>
 					</tr>
 				</table>
@@ -774,82 +774,4 @@ function coger_nombres($nombretabla)
 
         }
     }
-    function preparar_busqueda($tabla, $datos)
-    {
-        $nombres = coger_nombres($tabla);
-        $query = "select * from " . $tabla . " where ";
-        $contador = 1;
-        foreach ($datos as $i) {
-            if ($contador != 1) {
-                $query = $query . " AND " . $i . " LIKE '" . $_POST[$i] . "%'";
-            } else {
-                $query = $query . $i . " LIKE '" . $_POST[$i] . "%'";
-            }
-            $contador++;
-
-        }
-        
-
-
-    }
-
-
-
-function generar_insert($tabla)
-{
-    $insert="insert into ".$tabla."(";
-    $columnas=coger_nombres($tabla);
-    $contador=0;
-    foreach($columnas as $i)
-    {
-        if ($i!="codigo")
-        {
-            if($contador!=1)
-            {
-                $insert=$insert.",".$i;
-            }
-            else
-            {
-                $insert=$insert.$i;
-            }
-
-        }
-
-        $contador++;
-    }
-    $insert=$insert.") values(";
-    $contados=0;
-    foreach($columnas as $i)
-    {
-        $comp=comprobar_dato($i);
-        if($comp=="hecho")
-        {
-            if ($i!="codigo")
-            {
-
-                if ($contados != 1) {
-                    $insert = $insert . ",'" . $_POST[$i] . "'";
-                } else {
-                    $insert = $insert . "'" . $_POST[$i] . "'";
-                }
-            }
-            $contados++;
-        }
-        else
-        {
-            echo $comp;
-            return $comp;
-        }
-
-
-    }
-    $insert=$insert.");";
-
-
-    $conexion = conectar("localhost","root","","mydb");
-    $r=mysqli_query($conexion,$insert);
-
-
-
-}
 	?>
