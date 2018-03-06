@@ -806,13 +806,10 @@ function coger_nombres($nombretabla)
     }
     function preparar_busqueda($tabla, $datos)
     {
-        var_dump($datos);
         $nombres = coger_nombres($tabla);
         $query = "select * from " . $tabla . " where ";
         $contador = 1;
         foreach ($datos as $i) {
-            var_dump($i);
-
             if ($contador != 1) {
                 $query = $query . " AND " . $i . " LIKE '" . $_POST[$i] . "%'";
             } else {
