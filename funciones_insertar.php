@@ -519,7 +519,87 @@ function modificar_profesores(){
 </div>
 	<?php
 	}
-	?>
+	function modificar_empresas(){
+?>
+	<center></br><h3> MODIFICAR UNA EMPRESA </h3> </center>
+	<div id="insertar_modificar">
+	
+	<form action="" method="post">
+		<table>
+			<tr>
+				<td><label for="nombre">Nombre: </label></td>
+				<td><input type="text" name="nombre" value="<?php echo $Post['nombre']; ?>" id="nombre"/></td>
+			
+				<td><label for="nif">Nif: </label></td>
+				<td><input type="text" name="nif" value="<?php echo $Post['nif']; ?>" id="nif"/></td>
+			</tr>
+			<tr>
+				<td><label for="titularidad">Titularidad: </label></td>
+				<td><input type="text" name="titularidad" value="<?php echo $Post['titularidad']; ?>" id="titularidad"/></td>
+			
+				<td><label for="direccion">Direccion: </label></td>
+				<td><input type="text" name="direccion" value="<?php echo $Post['direccion']; ?>" id="direccion"/></td>
+			</tr>
+			<tr>
+				<td><label for="poblacion">Poblacion: </label></td>
+				<td><input type="text" name="poblacion" value="<?php echo $Post['poblacion']; ?>" id="poblacion"/></td>
+			
+				<td><label for="provincia">Provincia: </label></td>
+				<td><input type="text" name="provincia" value="<?php echo $Post['provincia']; ?>" id="provincia"/></td>
+			</tr>
+			<tr>
+				<td><label for="cp">Codigo Postal: </label></td>
+				<td><input type="text" name="cp" value="<?php echo $Post['cp']; ?>" id="cp"></td>
+			
+				<td><label for="telefono">Telefono: </label></td>
+				<td><input type="text" name="telefono" value="<?php echo $Post['telefono']; ?>" id="telefono"/></td>
+			</tr>
+			<tr>
+				<td><label for="fax">Fax: </label></td>
+				<td><input type="text" name="fax" value="<?php echo $Post['fax']; ?>" id="fax"/></td>
+		
+				<td><label for="repempresa">Representante de la empresa: </label></td>
+				<td><input type="text" name="repempresa" value="<?php echo $Post['repempresa']; ?>" id="repempresa"/></td>
+			</tr>
+			<tr>
+				<td><label for="personacontacto">Persona de contacto: </label></td>			
+				<td><input type="text" name="personacontacto" value="<?php echo $Post['personacontacto']; ?>" id="personacontacto"/></td>
+			
+				<td><label for="actividadempresa">Actividad de la empresa: </label></td>
+				<td><input type="text" name="actividadempresa" value="<?php echo $Post['actividadempresa']; ?>" id="actividadempresa"/></td>
+			</tr>
+			<tr>
+				<td><label for="numtrabajadores">Numero de trabajadores: </label></td>
+				<td><input type="text" name="numtrabajadores" value="<?php echo $Post['numtrabajadores']; ?>" id="numtrabajadores"/></td>
+			
+				<td><label for="kmscentro">Kilometros desde el centro: </label></td>
+				<td><input type="text" name="kmscentro" value="<?php echo $Post['kmscentro']; ?>" id="kmscentro"/></td>
+			</tr>
+			<tr>
+				<td><label for="horariopracticas">Horario de las practicas: </label></td>	
+				<td><input type="text" name="horariopracticas" value="<?php echo $Post['horariopracticas']; ?>" id="horariopracticas"/></td>
+			
+				<td>Convenio:</td>
+				<td>
+					<label for="conveniosi">si </label>
+					<input type="radio" <?php ponerc('convenio','si')?> name="convenio" value="si" id="conveniosi"/>
+					
+					<label for="conveniono">no </label>
+					<input type="radio" <?php ponerc('convenio','no')?> name="convenio" value="no" id="conveniono" />		
+				</td>
+			</tr>	
+			<tr>
+				<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+				<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
+			</tr>
+</table>
+		
+</form>	
+</div>
+<?php
+}
+?>
+	
 
 
 
