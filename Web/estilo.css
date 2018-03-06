@@ -269,7 +269,8 @@ p {
 													height:500px;}
 			
 									#buscar th.espacio{background-color: purple;
-														color: purple;}
+														color: purple;
+														border-radius:100px;}
 		
 									#buscar tr.espacio{width:15px;
 														height:15px;}
@@ -277,7 +278,7 @@ p {
 									#buscar th{width:500px;
 												height:5px;}
 												
-									#buscar th.sombra{background-color: yellow;
+									#buscar th.sombra{background-color: #b300b3;
 														border-radius:50px;
 														-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
 														-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);

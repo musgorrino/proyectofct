@@ -185,7 +185,7 @@ function insertar_empresa(){
 
 function insertar_familia(){
 ?>
-<center></br><h3> INSERTAR UNA NUEVA EMPRESA </h3> </center>
+<center></br><h3> INSERTAR UNA NUEVA FAMILIA PROFESIONAL </h3> </center>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
 	<div id="insertar_modificar">
 	<form method="post" action="insertar.php">
@@ -214,7 +214,7 @@ function insertar_familia(){
 
 function insertar_asignacion(){
 ?>
-<center></br><h3> INSERTAR UNA NUEVA EMPRESA </h3> </center>
+<center></br><h3> INSERTAR UNA NUEVA ASIGNACION </h3> </center>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
 	<div id="insertar_modificar">
 	<form action="" method="post">
@@ -270,7 +270,7 @@ function insertar_asignacion(){
 
 function insertar_ciclo(){
 ?>
-<center></br><h3> INSERTAR UNA NUEVA EMPRESA </h3> </center>
+<center></br><h3> INSERTAR UN NUEVO CICLO </h3> </center>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
 	<div id="insertar_modificar">
 	<form method="post" action="insertar.php">
