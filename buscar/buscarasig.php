@@ -37,7 +37,8 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 						<td><label id="ciclo"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura"	placeholder="Inserta abreviatura"/></td>
 					</tr>
-							
+							<td><input type="hidden" name="" value=""></td>
+							<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="submit" name="enviar" value="BUSCAR"/>
 					</tr>
