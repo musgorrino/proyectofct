@@ -16,7 +16,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("ciclos_formativos","Ciclos Formativos","los ciclos formativos","un ciclo formativo nuevo");?>
+		<center><?php ver_contenido("ciclos_formativos","Ciclos Formativos","los ciclos formativos","un ciclo formativo nuevo");?></center>
 	</div>
 		
 	<div id="pie">

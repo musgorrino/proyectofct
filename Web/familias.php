@@ -16,7 +16,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("familias_profesionales","Familias Profesionales","las familias profesionales","una familia profesional nueva");?>
+		<center><?php ver_contenido("familias_profesionales","Familias Profesionales","las familias profesionales","una familia profesional nueva");?></center>
 	</div>
 		
 	<div id="pie">
