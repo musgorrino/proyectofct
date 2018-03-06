@@ -1,6 +1,7 @@
 <?php 
 include("../funciones.php");
-
+include("../funciones_insertar.php");
+ 
 cabecera("Gestion FCT", "estilo.css");
 ?>
 <div id="contenedor">
@@ -8,7 +9,7 @@ cabecera("Gestion FCT", "estilo.css");
 		<div id="login">
 		</div>
 		<div id="logo">
-			<?php ver_logo("../imagenes/logo.png");?> 
+			<?php ver_logo("../imagenes/logo.png");?>
 		</div>
 		<div id="menu">
 			<?php ver_menu();?>				
@@ -16,12 +17,8 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("asignaciones","Asignaciones","las asignaciones","una asignacion nueva");?>
-		
-	</div>
-	
-	
-		
+		<?php insertar_asignacion();?>
+	</div>	
 	<div id="pie">
 		<?php ver_pie(); ?>
 	</div>
