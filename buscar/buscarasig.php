@@ -39,7 +39,8 @@ if(isset($_POST['enviar'])){
 						<td><label id="ciclo"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura" value="<?php echo $_Post['ciclo']; ?>"	placeholder="Inserta abreviatura"/></td>
 					</tr>
-							<td><input type="hidden" name="" value=""></td>
+					<tr>
+					<tr>		<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="submit" name="enviar" value="BUSCAR"/>

@@ -561,7 +561,7 @@ function coger_nombres($nombretabla)
 	function ver_logo($ruta){
 
 	?>
-		<a href="principal.php"><img src="<?php echo $ruta?>" alt="logo"></a>
+		<a href="../Web/principal.php"><img src="<?php echo $ruta?>" alt="logo"></a>
 	<?php	
 	}
 		
@@ -578,7 +578,7 @@ function coger_nombres($nombretabla)
 				  <li><a href="../Web/asignaciones.php">Asignaciones</a></li>
 				  <li><a href="../Web/empresas.php">Empresas</a></li>
 				  <li><a href="../Web/responsables.php">Responsables</a></li>
-				  <li><a href="../Web/usuarios.php">Buscar</a></li>
+				  <li><a href="../Web/buscador.php">Buscar</a></li>
 				</ul>
 	<?php
 	}
@@ -607,11 +607,8 @@ function coger_nombres($nombretabla)
 						</td>
 					</tr>
 				</table>
-			</form>
 		</div>
-		
 		</br></br>
-		<form action="" method="post">
 		<div id="borrar">
 				<table class="borrar">
 					<tr>
@@ -627,17 +624,14 @@ function coger_nombres($nombretabla)
 						</td>
 					</tr>
 				</table>
-			</form>
 		</div>
-		
 		</br></br>
-		<form action="insertar_<?php echo $tabla?>.php" method="post">
 		<div id="insertar">
 				<table>
 					<tr>
 					<td><strong>Haz click en "insertar" si deseas insertar <?php echo $insertar ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 						<td>
-						  <input type="submit" name="enviar" value="Insertar">
+						  <input type="submit" value="Insertar">
 						</td>
 					</tr>
 				</table>
@@ -780,171 +774,4 @@ function coger_nombres($nombretabla)
 
         }
     }
-function preparar_busqueda($tabla, $datos)
-{
-    $nombres = coger_nombres($tabla);
-    $query = "select * from " . $tabla . " where ";
-    $contador = 1;
-    foreach ($datos as $i) {
-        if ($contador != 1) {
-            $query = $query . " AND " . $i . " LIKE '" . $_POST[$i] . "%'";
-        } else {
-            $query = $query . $i . " LIKE '" . $_POST[$i] . "%'";
-        }
-        $contador++;
-
-    }
-    var_dump($query);
-    busqueda($nombres,$tabla,$query);
-
-
-}
-function busqueda($array,$nombretabla,$query)
-{
-    $conexion = mysqli_connect("localhost", "root", "", "mydb");
-
-    $datos = mysqli_query($conexion,$query);
-    if ($nombretabla=="profesor")
-    {
-        $conexion = mysqli_connect("localhost", "root", "", "mydb");
-        $query = "select abreviatura,tutor_practicas,tutor from grupos";
-        $done = mysqli_query($conexion,$query);
-        $grupo= mysqli_fetch_assoc($done);
-        $j=array();
-        while($grupo)
-        {
-            $j[]=array(
-                "abreviatura"=>$grupo["abreviatura"],
-                "tutorp"=>$grupo["tutor_practicas"],
-                "tutor" =>$grupo["tutor"]
-            );
-            $grupo= mysqli_fetch_assoc($done);
-        }
-
-    }
-
-    ?>
-    <div id="scrollmenu">
-        <table>
-            <thead><?php foreach ($array as $i) {
-                ?><th><?php echo ucfirst($i);?></th>
-            <?php }
-
-            if ($nombretabla=="profesor")
-            {?>
-                <th>Tutor de</th>
-                <th>Tutor de practicas de</th>
-                <?php
-            }
-            ?></thead>
-            <?php
-
-
-            $_fila = mysqli_fetch_assoc($datos);
-            while ($_fila)
-            {
-
-            ?>
-            <tr>
-                <?php foreach ($array as $i) {
-                    ?>
-                    <td><?php echo $_fila[$i]; ?></td><?php
-                } ?>
-
-                <?php
-                if($nombretabla=="profesor")
-                {
-                foreach($j as $e)
-                {
-                if($_fila["codigo"]==$e["tutor"])
-                {
-                    ?><td><?php echo $e["abreviatura"]; ?></td><?php
-                }
-                else
-                {
-                    ?><td>No es tutor</td><?php
-                }
-                if($_fila["codigo"]==$e["tutorp"])
-                {
-                    ?><td><?php echo $e["abreviatura"]; ?></td><?php
-                }
-                else
-                {
-                ?><td>No es tutor de practicas</td><?php
-        }
-
-        }
-
-        }
-        ?><tr><?php
-                $_fila = mysqli_fetch_assoc($datos);
-                }
-
-                ?>
-        </table>
-    </div>
-    <?php
-    mysqli_close($conexion);
-
-}
-
-
-function generar_insert($tabla)
-{
-    $insert="insert into ".$tabla."(";
-    $columnas=coger_nombres($tabla);
-    $contador=0;
-    foreach($columnas as $i)
-    {
-        if ($i!="codigo")
-        {
-            if($contador!=1)
-            {
-                $insert=$insert.",".$i;
-            }
-            else
-            {
-                $insert=$insert.$i;
-            }
-
-        }
-
-        $contador++;
-    }
-    $insert=$insert.") values(";
-    $contados=0;
-    foreach($columnas as $i)
-    {
-        $comp=comprobar_dato($i);
-        if($comp=="hecho")
-        {
-            if ($i!="codigo")
-            {
-
-                if ($contados != 1) {
-                    $insert = $insert . ",'" . $_POST[$i] . "'";
-                } else {
-                    $insert = $insert . "'" . $_POST[$i] . "'";
-                }
-            }
-            $contados++;
-        }
-        else
-        {
-            echo $comp;
-            return $comp;
-        }
-
-
-    }
-    $insert=$insert.");";
-
-
-    $conexion = conectar("localhost","root","","mydb");
-    $r=mysqli_query($conexion,$insert);
-
-
-
-}
-
-?>
+	?>
