@@ -261,7 +261,34 @@ p {
 										width: 89px;
 										height: 30px;
 										}
-								
+										
+								#buscar{width:500px;
+											height:500px;}
+										
+									#buscar table{width:500px;
+													height:500px;}
+			
+									#buscar th.espacio{background-color: purple;
+														color: purple;}
+		
+									#buscar tr.espacio{width:15px;
+														height:15px;}
+											
+									#buscar th{width:500px;
+												height:5px;}
+												
+									#buscar th.sombra{background-color: yellow;
+														border-radius:50px;
+														-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+														-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+														box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);}
+
+									#buscar a{color: white;
+												text-decoration: none;}
+									
+										
+										
+										
 				#pie{width: 1200px;
 						height: 35px;
 						background-color: #800080;

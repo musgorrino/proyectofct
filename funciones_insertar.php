@@ -509,3 +509,4 @@ function modificar_alumno(){
 <?php
 }
 ?>
+
