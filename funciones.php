@@ -788,11 +788,98 @@ function coger_nombres($nombretabla)
             $contador++;
 
         }
-        
+        busqueda($nombres,$tabla,$query);
 
 
     }
+function busqueda($array,$nombretabla,$query)
+{
+    $conexion = mysqli_connect("localhost", "root", "", "mydb");
 
+    $datos = mysqli_query($conexion,$query);
+    if ($nombretabla=="profesor")
+    {
+        $conexion = mysqli_connect("localhost", "root", "", "mydb");
+        $query = "select abreviatura,tutor_practicas,tutor from grupos";
+        $done = mysqli_query($conexion,$query);
+        $grupo= mysqli_fetch_assoc($done);
+        $j=array();
+        while($grupo)
+        {
+            $j[]=array(
+                "abreviatura"=>$grupo["abreviatura"],
+                "tutorp"=>$grupo["tutor_practicas"],
+                "tutor" =>$grupo["tutor"]
+            );
+            $grupo= mysqli_fetch_assoc($done);
+        }
+
+    }
+
+    ?>
+    <div id="scrollmenu">
+        <table>
+            <thead><?php foreach ($array as $i) {
+                ?><th><?php echo ucfirst($i);?></th>
+            <?php }
+
+            if ($nombretabla=="profesor")
+            {?>
+                <th>Tutor de</th>
+                <th>Tutor de practicas de</th>
+                <?php
+            }
+            ?></thead>
+            <?php
+
+
+            $_fila = mysqli_fetch_assoc($datos);
+            while ($_fila)
+            {
+
+            ?>
+            <tr>
+                <?php foreach ($array as $i) {
+                    ?>
+                    <td><?php echo $_fila[$i]; ?></td><?php
+                } ?>
+
+                <?php
+                if($nombretabla=="profesor")
+                {
+                foreach($j as $e)
+                {
+                if($_fila["codigo"]==$e["tutor"])
+                {
+                    ?><td><?php echo $e["abreviatura"]; ?></td><?php
+                }
+                else
+                {
+                    ?><td>No es tutor</td><?php
+                }
+                if($_fila["codigo"]==$e["tutorp"])
+                {
+                    ?><td><?php echo $e["abreviatura"]; ?></td><?php
+                }
+                else
+                {
+                ?><td>No es tutor de practicas</td><?php
+        }
+
+        }
+
+        }
+        ?><tr><?php
+                $_fila = mysqli_fetch_assoc($datos);
+                }
+
+                ?>
+        </table>
+    </div>
+    <?php
+    mysqli_close($conexion);
+
+}
 
 
 function generar_insert($tabla)
