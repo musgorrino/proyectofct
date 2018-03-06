@@ -7,16 +7,16 @@
  */
 /*<<<<<<< HEAD*/
 function cabecera($titulo, $css)
-{ 
-?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{   
+?>"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
    <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title><?php echo $titulo ?></title>
-  <link href="<?php echo $css ?>" rel="stylesheet" type="text/css" />
+  <title><?php echo $titulo?></title>
+  <link href="<?php echo $css?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
+ 
 <?php
 }
 /*=======*/
@@ -578,7 +578,7 @@ function coger_nombres($nombretabla)
 				  <li><a href="asignaciones.php">Asignaciones</a></li>
 				  <li><a href="empresas.php">Empresas</a></li>
 				  <li><a href="responsables.php">Responsables</a></li>
-				  <li><a href="usuarios.php">Usuarios</a></li>
+				  <li><a href="buscador.php">Buscar</a></li>
 				</ul>
 	<?php
 	}
