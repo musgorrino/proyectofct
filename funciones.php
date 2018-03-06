@@ -806,7 +806,7 @@ function coger_nombres($nombretabla)
     }
     function preparar_busqueda($tabla, $datos)
     {
-        var_dump($tabla);
+        var_dump($datos);
         $nombres = coger_nombres($tabla);
         $query = "select * from " . $tabla . " where ";
         $contador = 1;
