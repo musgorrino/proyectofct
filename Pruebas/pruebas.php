@@ -2,6 +2,7 @@
 include "../funciones.php";
 $t=array();
 $t[]="nombre";
+var_dump($t);
 preparar_busqueda("grupos",$t);
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))
