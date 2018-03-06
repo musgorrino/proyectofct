@@ -7,7 +7,7 @@ where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutor_practicas=r.codigo;
 
 /*Vista 2*/
 CREATE or replace
- ALGORITHM = UNDEFINED
+
  VIEW `profesor`
  AS SELECT p.codigo, codigointerprof, p.nombre,apellidos,telefono,email,
 ifnull(t.nombre,"No es coordinador") as "Coordinador" 
