@@ -23,22 +23,22 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 				<form action="buscarphpempresas.php" method="post">
 					<tr>
 						
-						<td><label id="nombre">Nombre </label></td>
-						<td><input type="text" name="nombre" placeholder="Nombre"></td>
+						<td><label for="nombre">Nombre </label></td>
+						<td><input type="text" name="nombre" id=nombre=  value="" placeholder="Nombre"></td>
 					
-						<td><label id="titularidad">Titularidad</label></td>
-						<td>	<input type="text"	name="titularidad" placeholder="¿Publica o Privada?"/></td>
+						<td><label for="titularidad">Titularidad</label></td>
+						<td>	<input type="text"	name="titularidad" id="titularidad" value=""  placeholder="¿Publica o Privada?"/></td>
 					</tr>	
 					<tr>	
-						<td><label id="Poblacion"> Población</label></td>
-						<td><input type="text" name="Poblacion"	placeholder="Inserte población"/></td>
+						<td><label for="Poblacion"> Población</label></td>
+						<td><input type="text" name="Poblacion" id="Poblacion"  value="" placeholder="Inserte población"/></td>
 						
-						<td><label id="provincia"> Provincia </label></td>
-						<td><input type="text" name="provincia"	placeholder="Inserta Provincia"/></td>
+						<td><label for="provincia"> Provincia </label></td>
+						<td><input type="text" name="provincia" id= "provinciaa" value="" placeholder="Inserta Provincia"/></td>
 					</tr>
 							
-							<td><label id="convenio"> Convenio </label></td>
-							<td><input type="text" name="convenio"	placeholder="¿Si o No?"/></td>
+							<td><label for="convenio"> Convenio </label></td>
+							<td><input type="text" name="convenio" id="convenio" placeholder="¿Si o No?"/></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="submit" name="enviar" value="BUSCAR"/>
 					</tr>

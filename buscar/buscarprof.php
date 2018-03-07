@@ -26,8 +26,8 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 						<td><input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"></td>	
 					</tr>	
 					<tr>	
-						<td><label id="codigointerprof">Codigo Interno Profesores</label></td>
-						<td><input type="text"	name="codigointerprof" value="" placeholder="Inserte codigo"/></td>
+						<td><label for="codigointerprof">Codigo Interno Profesores</label></td>
+						<td><input type="text"	name="codigointerprof" id="codigointerprof" value="" placeholder="Inserte codigo"/></td>
 					</tr>
 						<td><input type="hidden" name="" value=""></td>
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
