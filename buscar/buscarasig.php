@@ -33,13 +33,8 @@ if(isset($_POST['enviar'])){
 						<td>	<input type="text"	name="contratacionalumno" id="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-<<<<<<< HEAD
 						<td><label for="alumno"> Alumno </label></td>
 						<td><input type="text" name="alumno" id="alumno" value="<?php echo $_POST['alumno']; ?>"	placeholder="Nombre"/></td>
-=======
-						<td><label for="codigoalumno"> Alumno </label></td>
-						<td><input type="text" name="alumno" id="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
->>>>>>> b941394083f44bb409688390b3a3339a73726052
 						
 						<td><label  for="abreviatura"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura" id="abreviatura" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
