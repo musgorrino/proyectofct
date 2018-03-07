@@ -24,21 +24,21 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 					<tr>
 						
 						<td><label id="nombre">Nombre </label></td>
-						<td><input type="text" name="nombre" placeholder="Nombre"></td>
+						<td><input type="text" name="nombre" value=" placeholder="Nombre"></td>
 					
 						<td><label id="euskera">Conocimiento de Euskera</label></td>
-						<td>	<input type="text"	name="euskera" placeholder="¿Si o No?"/></td>
+						<td>	<input type="text"	name="euskera" value="" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
 						<td><label id="carnet"> Dispone de carnet de conducir </label></td>
-						<td><input type="text" name="carnet"	placeholder="¿Si o No?"/></td>
+						<td><input type="text" name="carnet" value=""	placeholder="¿Si o No?"/></td>
 						
 						<td><label id="ciclo"> Ciclo cursado </label></td>
-						<td><input type="text" name="abreviatura"	placeholder="Inserta abreviatura"/></td>
+						<td><input type="text" name="abreviatura" value=""	placeholder="Inserta abreviatura"/></td>
 					</tr>
 							
 							<td><label id="curso"> Curso </label></td>
-							<td><input type="text" name="curso"	placeholder="Inserte curso"/></td>
+							<td><input type="text" name="curso" value=""	placeholder="Inserte curso"/></td>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="submit" name="enviar" value="BUSCAR"/>
 					</tr>
