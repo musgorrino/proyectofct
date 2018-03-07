@@ -27,16 +27,20 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 				<th class="sombra"><a href="../buscar/buscarcic.php">Ciclos Formativos </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarempre.php">Empresas  </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarresp.php">Responsables </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="../buscar/buscarusu.php"> Usuarios </a></th><th class="espacio">---</th>
 			</tr>
 			<tr class="espacio">
 			</tr>
 			<tr>
+				<th class="sombra"><a href="../buscar/buscarusu.php"> Usuarios </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarprof.php">Profesores</a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="../buscar/buscaralu.php">Alumnos </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="../buscar/buscarasig.php">Asignaciones  </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarhistori.php">Historial </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscargrupo.php">Grupos </a></th><th class="espacio">---</th>
+			</tr>
+			<tr>
+				<td></td><td></td>
+				<th class="sombra"><a href="../buscar/buscaralu.php">Alumnos </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarasig.php">Asignaciones  </a></th><th class="espacio">---</th>
+				
 			</tr>
 		</table>
 		</center>
