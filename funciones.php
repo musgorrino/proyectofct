@@ -20,17 +20,17 @@ function cabecera($titulo, $css)
 <body>
 <?php
     $u=2;
+    $ad=0;
     if(isset($_SESSION["usuario"]))
     {
         $usuario=unserialize($_SESSION["usuario"]);
+        $u=0;
         if($_SESSION["tipo"]!="user")
         {
-            $u=1;
+            $ad=1;
         }
-        else
-        {
-            $u=0;
-        }
+
+
 
     }
     else
