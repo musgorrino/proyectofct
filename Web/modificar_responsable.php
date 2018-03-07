@@ -1,6 +1,7 @@
 <?php 
 include("../funciones.php");
 include("../funciones_insertar.php");
+ 
 cabecera("Gestion FCT", "estilo.css");
 ?>
 <div id="contenedor">
@@ -16,7 +17,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php modificar_familias_profesionales();?>
+		<?php modificar_responsable();?>
 	</div>	
 	<div id="pie">
 		<?php ver_pie(); ?>

@@ -33,8 +33,8 @@ if(isset($_POST['enviar'])){
 						<td><input type="text"	name="contratacionalumno" id="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-						<td><label for="codigoalumno"> Alumno </label></td>
-						<td><input type="text" name="codigoalumno" id="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
+						<td><label for="alumno"> Alumno </label></td>
+						<td><input type="text" name="alumno" id="alumno" value="<?php echo $_POST['alumno']; ?>"	placeholder="Nombre"/></td>
 						
 						<td><label  for="abreviatura"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura" id="abreviatura" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
@@ -53,7 +53,7 @@ if(isset($_POST['enviar'])){
 
 $empresa=recoger($_POST['empresa']);
 $contratacionalumno=recoger($_POST['contratacionalumno']);
-$codigoalumno=recoger($_POST['codigoalumno']);
+$alumno=recoger($_POST['alumno']);
 $abreviatura=recoger($_POST['abreviatura']);
 $busqueda=array();
 if($empresa==0){
@@ -62,13 +62,13 @@ $busqueda[]="empresa";
 if($contratacionalumno==0){
 $busqueda[]="contratacionalumno";
 }
-if($codigoalumno==0){
-$busqueda[]="codigoalumno";
+if($alumno==0){
+$busqueda[]="alumno";
 }
 if($abreviatura==0){
 $busqueda[]="abreviatura";
 }
-preparar_busqueda("asignaciones",$busqueda);
+preparar_busqueda("asignacion",$busqueda);
 ?>
 		</div>
 	</div>
@@ -96,7 +96,7 @@ else {
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?>
+	<center>	<?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?></center>
 		<div id="formbuscar">
 			<h3> Buscar informacion de las Asignaciones </h3>
 			<center>
@@ -111,8 +111,8 @@ else {
 						<td>	<input type="text"	name="contratacionalumno" id="contratacionalumno" value="" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-						<td><label for="codigoalumno"> Alumno </label></td>
-						<td><input type="text" name="codigoalumno" id="codigoalumno" value=""	placeholder="Nombre"/></td>
+						<td><label for="alumno"> Alumno </label></td>
+						<td><input type="text" name="alumno" id="alumno" value=""	placeholder="Nombre"/></td>
 						
 						<td><label for="abreviatura"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura" id="abreviatura" value=""	placeholder="Inserta abreviatura"/></td>
