@@ -30,7 +30,7 @@ if(isset($_POST['enviar'])){
 						<td><input type="text" name="empresa" id="empresa" value="<?php echo $_POST['empresa']; ?>" placeholder="empresa"></td>
 					
 						<td><label for="contratacionalumno">Alumnx Contratadx</label></td>
-						<td>	<input type="text"	name="contratacionalumno" id="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
+						<td><input type="text"	name="contratacionalumno" id="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
 						<td><label for="codigoalumno"> Alumno </label></td>

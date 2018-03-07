@@ -16,23 +16,21 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("responsables","Responsables","los responsales","un responsable nuevo");?>
+		<?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Responsables </h3>
+			<h3> Buscar informacion de lxs Usuario </h3>
 			<table>
-				<form action="buscarresp.php" method="post">
+				<form action="bsucarusu.php" method="post">
 					<tr>
 						<td><label for="nombre">Nombre </label></td>
 						<td><input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"></td>	
 					</tr>	
 					<tr>	
-						<td><label for="empresa">Empresa</label></td>
-						<td><input type="text"	name="empresa" id="empresa" value="" placeholder="Inserte nombre de la empresa"/></td>
+						<td><label for="tipo"> Tipo de Usuario</label></td>
+						<td><input type="text"	name="tipo" id="tipo" value="" placeholder="¿Administrador o basico?"/></td>
 					</tr>
 						<td><input type="hidden" name="" value=""></td>
-						
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
-						<td><input type="su" name="Volver al menu" a href="../Web/buscador.php"></td>	
 					</tr>
 				</form>
 			</table>
