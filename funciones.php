@@ -19,7 +19,7 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
-    $u=2;
+    $u;
     $ad=0;
     if(isset($_SESSION["usuario"]))
     {
