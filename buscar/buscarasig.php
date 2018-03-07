@@ -26,18 +26,18 @@ if(isset($_POST['enviar'])){
 				<form action="buscarasig.php" method="post">
 					<tr>
 						
-						<td><label id="empresa">Empresa </label></td>
-						<td><input type="text" name="empresa" value="<?php echo $_POST['empresa']; ?>" placeholder="empresa"></td>
+						<td><label for="empresa">Empresa </label></td>
+						<td><input type="text" name="empresa" id="empresa" value="<?php echo $_POST['empresa']; ?>" placeholder="empresa"></td>
 					
-						<td><label id="contratacionalumno">Alumnx Contratadx</label></td>
-						<td>	<input type="text"	name="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
+						<td><label for="contratacionalumno">Alumnx Contratadx</label></td>
+						<td>	<input type="text"	name="contratacionalumno" id="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-						<td><label id="codigoalumno"> Alumno </label></td>
-						<td><input type="text" name="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
+						<td><label for="codigoalumno"> Alumno </label></td>
+						<td><input type="text" name="codigoalumno" id="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
 						
-						<td><label  id="abreviatura"> Ciclo cursado </label></td>
-						<td><input type="text" name="abreviatura" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
+						<td><label  for="abreviatura"> Ciclo cursado </label></td>
+						<td><input type="text" name="abreviatura" id="abreviatura" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
 					</tr>
 					<tr>
 					<tr>		<td><input type="hidden" name="" value=""></td>
@@ -104,18 +104,18 @@ else {
 				<form action="buscarasig.php" method="post">
 					<tr>
 						
-						<td><label id="empresa">Empresa </label></td>
-						<td><input type="text" name="empresa" value="" placeholder="empresa"></td>
+						<td><label for="empresa">Empresa </label></td>
+						<td><input type="text" name="empresa" id="empresa" value="" placeholder="empresa"></td>
 					
-						<td><label id="contratacionalumno">Alumnx Contratadx</label></td>
-						<td>	<input type="text"	name="contratacionalumno" value="" placeholder="¿Si o No?"/></td>
+						<td><label for="contratacionalumno">Alumnx Contratadx</label></td>
+						<td>	<input type="text"	name="contratacionalumno" id="contratacionalumno" value="" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
-						<td><label id="codigoalumno"> Alumno </label></td>
-						<td><input type="text" name="codigoalumno" value=""	placeholder="Nombre"/></td>
+						<td><label for="codigoalumno"> Alumno </label></td>
+						<td><input type="text" name="codigoalumno" id="codigoalumno" value=""	placeholder="Nombre"/></td>
 						
-						<td><label id="abreviatura"> Ciclo cursado </label></td>
-						<td><input type="text" name="abreviatura" value=""	placeholder="Inserta abreviatura"/></td>
+						<td><label for="abreviatura"> Ciclo cursado </label></td>
+						<td><input type="text" name="abreviatura" id="abreviatura" value=""	placeholder="Inserta abreviatura"/></td>
 					</tr>
 							<td><input type="hidden" name="" value=""></td>
 							<td><input type="hidden" name="" value=""></td>
