@@ -6,7 +6,7 @@ cabecera("Gestion FCT", "estilo.css");
 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
-		Usuario:
+		
 		</div>
 		<div id="logo">
 			<?php ver_logo("../imagenes/logo.png");?>
