@@ -592,7 +592,7 @@ function coger_nombres($nombretabla)
 		<?php coger_tablas("$tabla")?>
 		</br></br>
 		<div id="modificar">
-			<form action="" method="post">
+			<form action="modificar_<?php echo $tabla ?>.php" method="post">
 				<table class="modificar" width=100%>
 					<tr>
 						<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas modificar:</strong></td>
@@ -608,8 +608,10 @@ function coger_nombres($nombretabla)
 					</tr>
 				</table>
 		</div>
+		</form>
 		</br></br>
 		<div id="borrar">
+			<form action="" method="post">
 				<table class="borrar">
 					<tr>
 						<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas eliminar:</strong><td>
@@ -625,7 +627,9 @@ function coger_nombres($nombretabla)
 					</tr>
 				</table>
 		</div>
+		</form>
 		</br></br>
+		<form action="insertar_<?php echo $tabla ?>.php" method="post">
 		<div id="insertar">
 				<table>
 					<tr>

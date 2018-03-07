@@ -1,7 +1,141 @@
 <?php
-// FORMULARIOS INSERTAR //
+		// FORMULARIOS INSERTAR //	
 	
-	// INSERTAR ALUMNOS //
+	// INSERTAR FAMILIA PROFESIONAL //
+
+	function insertar_familia(){
+	?>
+	<center></br><h3> INSERTAR UNA NUEVA FAMILIA PROFESIONAL </h3> </center>
+		
+		<div id="insertar_modificar">
+		<form method="post" action="insertar.php">
+				<table>
+					<tr>
+						<td><label  for="nombre">Nombre:</label></td>
+						<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
+					
+						<tD><label  for="coordinador">Coordinador:</label></tD>
+						<td><select name="coordinador" id="coordinador"><?php generar_select("profesores","nombre")?></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+						<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
+					</tr>
+				</table>
+	</form>
+	</div>
+	<?php
+	}
+	// INSERTAR CICLO FORMATIVO //
+
+	function insertar_ciclo(){
+	?>
+	<center></br><h3> INSERTAR UN NUEVO CICLO </h3> </center>
+			
+		<div id="insertar_modificar">
+		<form method="post" action="insertar.php">
+				<table>
+					<tr>
+						<td><label  for="nombre">Nombre:</label></td>
+						<td><input id="nombre" type="text"  name="nombre" size="40" value="" /></td>
+					
+						<td><label  for="abreviatura">Abreviatura:</label></td>
+						<td><input id="abreviatura" type="text"  name="abreviatura" size="20" value="" /></td>
+					</tr>
+					<tr>
+						<td><label for="grado">Grado:</label></td>
+						<td><select name="grado" id="grado">
+							<option value="FPB">FPB</option>
+							<option value="medio">Grado Medio</option>
+							<option value="superior">Grado Superior</option>
+						</select></td>
+					
+						<td><label  for="curso">Curso:</label></td>
+						<td><select name="curso" id="curso"><?php generar_select("historial","curso")?></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+						<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Crear" /></td>
+					</tr>
+					
+				</table>
+	</form>
+	</div>
+	<?php
+	}
+	//INSERTAR GRUPO //
+	
+	function insertar_grupo(){
+	?>
+	<center></br><h3> INSERTAR UN NUEVO GRUPO</h3> </center>
+		
+		<div id="insertar_modificar">
+		<form method="post" action="insertar.php">
+				<table>
+					<tr>
+						<td><label for="abreviatura">Abreviatura:</label></td>
+						<td><input id="abreviatura" id="abreviatura" type="text"  name="nombre" size="20" value="" /></td>
+					
+						<td><label  for="denominacion">Denominacion:</label></td>
+						<td><input id="denominacion" type="text"  name="denominacion" size="40" value="" /></td>
+					</tr>
+					<tr>
+						<td><label  for="tutor">Tutor:</label></td>
+						<td><select name="tutor" id="tutor"><?php generar_select("profesores","tutor")?></td>
+					
+						<td><label  for="tutorpracticas">Tutor Practicas:</label></td>
+						<td><select name="tutorpracticas" id="tutorpracticas"><?php generar_select("profesores","tutorpracticas")?></td>
+					</tr>
+					<tr>
+						<td><label  for="ciclo">Ciclo:</label></td>
+						<td><select name="ciclo" id="ciclo"><?php generar_select("ciclo","nombre")?></td>
+						
+						 <td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+						<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
+					</tr>
+				</table>	
+	</form>
+	</div>
+	<?php
+	}	
+	// INSERTAR PROFESORES //
+	
+	function insertar_profesor(){
+	?>
+	<center></br><h3> INSERTAR UN NUEVO PROFESOR </h3> </center>
+		
+	<div id="insertar_modificar">
+	<form method="post" action="insertar.php"> 
+			<table>
+				<tr>
+					<td><label  for="codigointerprof">Codigo Interno:</label></td> 
+					<td><input type="text" id="codigointerprof" name="codigointerprof" size="20" value="" /></td>
+				
+					<td><label  for="nombre">Nombre:</label></td>
+					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
+				</tr>
+				<tr>
+					<td><label  for="apellidos">Apellidos:</label></td>
+					<td><input id="apellidos" type="text"  name="apellidos" size="20" value="" /></td>
+				
+					<td><label  for="telefono">Telefono:</label></td>
+					<td><input id="telefono"type="text"  name="telefono" size="20" value="" /></td>
+				</tr>
+				<tr>
+					<td><label  for="email">Email:</label></td>
+					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
+				
+					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
+				
+			</table>	
+	</form>
+	</div>
+	<?php
+	}
+	
+	// INSERTAR ALUMNOS //	
+	
 	function insertar_alumno(){
 ?>
 	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
@@ -56,40 +190,57 @@
 		</div>
 	<?php
 	}
-	
-	// INSERTAR PROFESORES //
-	
-	function insertar_profesor(){
-	?>
-	<center></br><h3> INSERTAR UN NUEVO PROFESOR </h3> </center>
+	// INSERTAR UNA NUEVA ASIGNACION //
+	function insertar_asignacion(){
+?>
+<center></br><h3> INSERTAR UNA NUEVA ASIGNACION </h3> </center>
 		
 	<div id="insertar_modificar">
-	<form method="post" action="insertar.php"> 
-			<table>
-				<tr>
-					<td><label  for="codigointerprof">Codigo Interno:</label></td> 
-					<td><input type="text" id="codigointerprof" name="codigointerprof" size="20" value="" /></td>
+	<form action="" method="post">
+	<table>
+		<tr>
+			<td><label for="empresa">Empresa: </label></td>
+			<td><select id="empresa">
+					<?php
+						generar_select('empresas','nombre')
+					?>
+				</select></td>
+		
+			<td><label for="alumnos">Alumno: </label></td>
+			<td><select id="alumnos">
+					<?php
+						generar_select('alumnos','nombre')
+					?>
+				</select></td>
+		</tr>
+		<tr>
+			<td><label for="curso">Curso: </label></td>
+			<td><input type="text" name="curso" value="" id="curso"></td>
+		
+			<td><label for="horario">Horario: </label></td>
+			<td><input type="text" name="horario" value="" id="horario"></td>
+		</tr>
+		<tr>
+			<td><label for="observaciones">Observaciones: </label></td>
+			<td><textarea name="observaciones" id="observaciones"></textarea></td>
+		
+			<td><label for="trabajodesempenado">Trabajo desempeñado: </label></td>
+			<td><textarea name="trabajodesempenado" id="trabajodesempenado"></textarea></td>
+		</tr>
+		<tr>
+			<td>Contratacion del alumno:</td>
+			<td><label for="contratacionsi">si </label>
+				<input type="radio" name="contratacionsi" value="si" id="contratacionsi">
 				
-					<td><label  for="nombre">Nombre:</label></td>
-					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<td><label  for="apellidos">Apellidos:</label></td>
-					<td><input id="apellidos" type="text"  name="apellidos" size="20" value="" /></td>
-				
-					<td><label  for="telefono">Telefono:</label></td>
-					<td><input id="telefono"type="text"  name="telefono" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<td><label  for="email">Email:</label></td>
-					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
-				
-					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
-				
-			</table>	
-		</form>
-	</div>
+				<label for="contratacionno">no </label>
+				<input type="radio" name="contratacionno" value="no" id="contratacionno">
+			</td>
+				<td><input type="reset" class="botones" id="limpiar" name="limpiar" value="Limpiar" /></td>
+				<td><input type="submit" class="botones" id="enviar" name="enviar" value="Crear" /></td>
+			</tr>
+</table>	
+</form>
+</div>
 <?php
 }
 
@@ -174,155 +325,7 @@ function insertar_empresa(){
 <?php
 }
 
-// INSERTAR FAMILIA PROFESIONAL //
-
-function insertar_familia(){
-?>
-<center></br><h3> INSERTAR UNA NUEVA FAMILIA PROFESIONAL </h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
-	<div id="insertar_modificar">
-	<form method="post" action="insertar.php">
-			<table>
-				<tr>
-					<td><label  for="nombre">Nombre:</label></td>
-					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
-				
-					<tD><label  for="coordinador">Coordinador:</label></tD>
-					<td><select name="coordinador" id="coordinador"><?php generar_select("profesores","nombre")?></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
-				</tr>
-			</table>
-</form>
-</div>
-<?php
-}
-// INSERTAR FAMILIA PROFESIONAL //
-
-function insertar_asignacion(){
-?>
-<center></br><h3> INSERTAR UNA NUEVA ASIGNACION </h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
-	<div id="insertar_modificar">
-	<form action="" method="post">
-	<table>
-		<tr>
-			<td><label for="empresa">Empresa: </label></td>
-			<td><select id="empresa">
-					<?php
-						generar_select('empresas','nombre')
-					?>
-				</select></td>
-		
-			<td><label for="alumnos">Alumno: </label></td>
-			<td><select id="alumnos">
-					<?php
-						generar_select('alumnos','nombre')
-					?>
-				</select></td>
-		</tr>
-		<tr>
-			<td><label for="curso">Curso: </label></td>
-			<td><input type="text" name="curso" value="" id="curso"></td>
-		
-			<td><label for="horario">Horario: </label></td>
-			<td><input type="text" name="horario" value="" id="horario"></td>
-		</tr>
-		<tr>
-			<td><label for="observaciones">Observaciones: </label></td>
-			<td><textarea name="observaciones" id="observaciones"></textarea></td>
-		
-			<td><label for="trabajodesempenado">Trabajo desempeñado: </label></td>
-			<td><textarea name="trabajodesempenado" id="trabajodesempenado"></textarea></td>
-		</tr>
-		<tr>
-			<td>Contratacion del alumno:</td>
-			<td><label for="contratacionsi">si </label>
-				<input type="radio" name="contratacionsi" value="si" id="contratacionsi">
-				
-				<label for="contratacionno">no </label>
-				<input type="radio" name="contratacionno" value="no" id="contratacionno">
-			</td>
-				<td><input type="reset" class="botones" id="limpiar" name="limpiar" value="Limpiar" /></td>
-				<td><input type="submit" class="botones" id="enviar" name="enviar" value="Crear" /></td>
-			</tr>
-</table>	
-</form>
-</div>
-<?php
-}
-// INSERTAR CICLO FORMATIVO //
-
-function insertar_ciclo(){
-?>
-<center></br><h3> INSERTAR UN NUEVO CICLO </h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
-	<div id="insertar_modificar">
-	<form method="post" action="insertar.php">
-			<table>
-				<tr>
-					<td><label  for="nombre">Nombre:</label></td>
-					<td><input id="nombre" type="text"  name="nombre" size="40" value="" /></td>
-				
-					<td><label  for="abreviatura">Abreviatura:</label></td>
-					<td><input id="abreviatura" type="text"  name="abreviatura" size="20" value="" /></td>
-				</tr>
-				<tr>
-					<td><label for="grado">Grado:</label></td>
-					<td><select name="grado" id="grado">
-						<option value="FPB">FPB</option>
-						<option value="medio">Grado Medio</option>
-						<option value="superior">Grado Superior</option>
-					</select></td>
-				
-					<td><label  for="curso">Curso:</label></td>
-					<td><select name="curso" id="curso"><?php generar_select("historial","curso")?></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Crear" /></td>
-				</tr>
-				
-			</table>
-</form>
-</div>
-<?php
-}
-function insertar_curso(){
-?>
-<center></br><h3> INSERTAR UN NUEVO CURSO</h3> </center>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
-	<div id="insertar_modificar">
-	<form method="post" action="insertar.php">
-			<table>
-				<tr>
-					<td><label for="abreviatura">Abreviatura:</label></td>
-					<td><input id="abreviatura" id="abreviatura" type="text"  name="nombre" size="20" value="" /></td>
-				
-					<td><label  for="denominacion">Denominacion:</label></td>
-					<td><input id="denominacion" type="text"  name="denominacion" size="40" value="" /></td>
-				</tr>
-				<tr>
-					<td><label  for="tutor">Tutor:</label></td>
-					<td><select name="tutor" id="tutor"><?php generar_select("profesores","tutor")?></td>
-				
-					<td><label  for="tutorpracticas">Tutor Practicas:</label></td>
-					<td><select name="tutorpracticas" id="tutorpracticas"><?php generar_select("profesores","tutorpracticas")?></td>
-				</tr>
-				<tr>
-					<td><label  for="ciclo">Ciclo:</label></td>
-					<td><select name="ciclo" id="ciclo"><?php generar_select("ciclo","nombre")?></td>
-					
-					 <td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Guardar" /></td>
-				</tr>
-			</table>	
-</form>
-</div>
-<?php
-}
+// INSERTAR UN RESPONSABLE //
 
 function insertar_responsable(){
 ?>
