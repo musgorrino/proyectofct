@@ -7,7 +7,8 @@
  */
 /*<<<<<<< HEAD*/
 function cabecera($titulo, $css)
-{ 
+{
+    session_start()
 ?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
    <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +19,16 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
+    if(isset($_SESSION["usuario"]))
+    {
+        if($_SESSION["tipo"])
+        $usuario=unserialize($_SESSION["usuario"]);
+        $u=true;
+    }
+    else
+    {
+        $u=false;
+    }
 }
 /*=======*/
 /*Funcion para recoger el dni y comporbar que no esta vacio y el patron es correcto, devuelve un 1 si el campo esta vacio
