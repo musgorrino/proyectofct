@@ -24,21 +24,40 @@ if(isset($_POST['enviar'])){
 				<form action="buscarhistori.php" method="post">
 					<tr>
 						<td><label for="grupo">Grupo </label></td>
-						<td><input type="text" id="grupo" name="grupo" value="" placeholder="Inserte nombre grupo"></td>	
+						<td><input type="text" id="grupo" name="grupo" value="<?php echo $_POST['grupo']; ?>" placeholder="Inserte nombre grupo"></td>	
 					</tr>	
 					<tr>	
 						<td><label for="alumno">Alumno</label></td>
-						<td><input type="text" id="alumno"	name="alumno" value="" placeholder="Inserte nombre alumno"/></td>
+						<td><input type="text" id="alumno"	name="alumno" value="<?php echo $_POST['alumno']; ?>" placeholder="Inserte nombre alumno"/></td>
 					</tr>
 					<tr>
 						<td><label for="curso">Curso</label></td>
-						<td><input type="text" id="curso"	name="curso" value="" placeholder="Inserte curso"/></td>
+						<td><input type="text" id="curso"	name="curso" value="<?php echo $_POST['curso']; ?>" placeholder="Inserte curso"/></td>
 					</tr>
 						<td><input type="hidden" name="" value=""></td>
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
 					</tr>
 				</form>
 			</table>
+		</div>
+		<div>
+		<?php 
+$grupo=recoger($_Post['grupo']);
+$alumno=recoger($_Post['alumno']);
+$curso=recoger($_Post['curso']);
+$busqueda=array();
+if($grupo==0){
+$busqueda[]="grupo";
+}
+if($alumno==0){
+$busqueda[]="alumno";
+}
+if($curso==0){
+$busqueda[]="curso";
+}
+preparar_busqueda("historial_alumnos",$busqueda);
+?>
+
 		</div>
 	</div>
 		
