@@ -1,6 +1,6 @@
 /*Vista 1*/
 CREATE VIEW or replace`grupo`
- AS select g.codigo as "Codigo grupo", g.abreviatura, denominacion, c.nombre as "Nombre de ciclo",p.nombre as "Tutor",r.nombre as "Tutor de practicas"
+ AS select g.codigo, g.abreviatura, denominacion, c.nombre as "Ciclo",p.nombre as "Tutor",r.nombre as "Practicas"
 from grupos g,ciclos_formativos c,profesores p,profesores r
 where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutor_practicas=r.codigo;
 
@@ -39,6 +39,6 @@ where h.alumno=a.codigo and h.grupo=g.codigo and g.ciclo=c.codigo and g.tutor=p.
 
 /* Vista 7*/
 CREATE OR REPLACE VIEW `asignacion`
- AS select e.nombre as "Nombre de empresa", a.nombre as "Nombre alumno", curso,horario,trabajodesempeñado as "Trabajo",contratacionalumno as "contratado"
+ AS select e.nombre as "empresa", a.nombre as "alumno", curso,horario,trabajodesempeñado as "trabajo",contratacionalumno as "contratado"
 from empresas e, alumnos a,asignaciones s
 where e.codigo=s.codigoempresa and a.codigo=s.codigoalumno;
