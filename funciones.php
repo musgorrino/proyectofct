@@ -954,7 +954,7 @@ function insert_alumno()
     var_dump(mysqli_num_rows($datos));
     if(mysqli_num_rows($datos)==0)
     {
-        /*generar_insert("alumnos");*/
+        generar_insert("alumnos");
         $query = "select codigo from alumnos where dni='".$_POST["dni"]."'";
         $datos = mysqli_query($conexion,$query);
         $alumno=mysqli_fetch_assoc($datos);

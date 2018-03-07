@@ -19,17 +19,17 @@ ON p.codigo=t.coordinador;
 
 /*Vista 3*/
 CREATE or replace VIEW `ciclo`
- AS SELECT c.codigo,c.nombre,c.abreviatura,c.nivel, p.nombre as 'Nombre Familia' 
+ AS SELECT c.codigo,c.nombre,c.abreviatura,c.nivel, p.nombre as 'familia'
  FROM  ciclos_formativos c, familias_profesionales p where c.familia=p.codigo;
  
 /*Vista 4*/
 CREATE OR REPLACE VIEW `familia`
- AS SELECT f.codigo,f.nombre,c.nombre as 'Nombre Coordinador' FROM familias_profesionales f, profesores c 
+ AS SELECT f.codigo,f.nombre,c.nombre as 'coordinador' FROM familias_profesionales f, profesores c
  WHERE c.codigo=coordinador;
  
 /*Vista 5*/
 CREATE OR REPLACE VIEW `responsaempre`
- AS SELECT r.codigo,r.nombre,e.nombre as 'Nombre Empresa' FROM responsable r,empresas e  WHERE r.empresa=e.codigo;
+ AS SELECT r.codigo,r.nombre,e.nombre as 'empresa' FROM responsable r,empresas e  WHERE r.empresa=e.codigo;
  
 /*Vista 6*/
 CREATE OR REPLACE VIEW `alumno`
