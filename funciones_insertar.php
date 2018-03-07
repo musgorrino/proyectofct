@@ -1,4 +1,6 @@
 <?php
+include ("funciones.php");
+
 		 //=================================================================================================================//
 		//											FORMULARIOS DE INSERTAR 										 	   //
 	   //=================================================================================================================//
@@ -29,6 +31,9 @@
 	</form>
 	</div>
 	<?php
+	if(isset($_POST['envia'])){
+		generar_insert(familia_profesionales);
+	}
 	}
 	
 	 //==============================//
@@ -429,7 +434,7 @@ function insertar_usuario(){
 				<table>
 					<tr>
 						<td><label for="nombre">Nombre:</label></td>
-						<td><input id="nombre" type="text"  name="nombre" size="30" value="<?php echo $fila['nombre']; ?>" /></td>
+						<td><input id="nombre" type="text"  name="nombre" size="30" value="" /></td>
 					
 						<td><label  for="coordinador">Coordinador:</label></td>
 						<td><select name="coordinador" id="coordinador"><?php generar_select("profesores","nombre")?></td>
@@ -454,10 +459,10 @@ function insertar_usuario(){
 			<table>
 				<tr>
 					<td><label for="nombre">Nombre:</label></td>
-					<td><input id="nombre" type="text"  name="nombre" size="40" value="<?php echo $fila['nombre']; ?>" /></td>
+					<td><input id="nombre" type="text"  name="nombre" size="40" value="" /></td>
 				
 					<td><label  for="abreviatura">Abreviatura:</label></th>
-					<td><input id="abreviatura" type="text"  name="abreviatura" size="20" value="<?php echo $fila['abreviatura']; ?>" /></td>
+					<td><input id="abreviatura" type="text"  name="abreviatura" size="20" value="" /></td>
 				</tr>
 				
 				<tr>
@@ -490,10 +495,10 @@ function insertar_usuario(){
 			<table>
 				<tr>
 					<td><label for="abreviatura">Abreviatura:</label></td>
-					<td><input  id="abreviatura" id="abreviatura" type="text"  name="nombre" size="20" value="<?php echo $fila['abreviatura']; ?>" /></td>
+					<td><input  id="abreviatura" id="abreviatura" type="text"  name="nombre" size="20" value="" /></td>
 				
 					<td><label for="denominacion">Denominacion:</label></td>
-					<td><input id="denominacion" type="text"  name="denominacion" size="40" value="<?php echo $fila['denominacion']; ?>" /></td>
+					<td><input id="denominacion" type="text"  name="denominacion" size="40" value="" /></td>
 				</tr>
 			
 				<tr>
