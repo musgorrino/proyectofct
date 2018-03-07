@@ -1,6 +1,6 @@
 /*Vista 1*/
 CREATE VIEW or replace`grupo`
- AS select g.codigo as "Codigo grupo", g.abreviatura, denominacion, c.nombre as "Nombre de ciclo",p.nombre as "Tutor",r.nombre as "Tutor de practicas"
+ AS select g.codigo as "Co", g.abreviatura, denominacion, c.nombre as "Nombre de ciclo",p.nombre as "Tutor",r.nombre as "Tutor de practicas"
 from grupos g,ciclos_formativos c,profesores p,profesores r
 where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutor_practicas=r.codigo;
 
