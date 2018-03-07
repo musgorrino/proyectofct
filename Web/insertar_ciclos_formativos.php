@@ -17,7 +17,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php insertar_responsable();?>
+		<?php insertar_ciclo();?>
 	</div>	
 	<div id="pie">
 		<?php ver_pie(); ?>
