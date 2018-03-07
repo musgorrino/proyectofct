@@ -262,19 +262,26 @@ p {
 										height: 30px;
 										}
 								
-				#pie{width: 1200px;
+				#pie{	
+						text-align: center;
+						position: center;
+						width: 1200px;
 						height: 35px;
 						background-color: #800080;
 							border-radius: 10px;
 						/*border-top:solid;*/ }
 							
-					#copyright{position: relative;
+					#copyright{
+						text-align: center;
+						position: center;
 						padding: 3em 0em;
 						border-top: 10px solid #303030;
 						letter-spacing: 5px;
 						color: rgba(255,255,255,.4);}
 				
 					#copyright a{
+						text-align: center;
+						position:center;
 						text-decoration: none;
 						color: rgba(255,255,255,.4) !important;
 					}

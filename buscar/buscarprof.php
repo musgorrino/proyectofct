@@ -20,7 +20,7 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 		<div id="formbuscar">
 			<h3> Buscar informacion de lxs Profesrxs </h3>
 			<table>
-				<form action="buscarphpresponsables.php" method="post">
+				<form action="buscarprof.php" method="post">
 					<tr>
 						<td><label for="nombre">Nombre </label></td>
 						<td><input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"></td>	

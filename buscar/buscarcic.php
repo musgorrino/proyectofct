@@ -21,7 +21,7 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 			<h3> Buscar informacion de los Ciclos Formativos </h3>
 			<center>
 			<table>
-				<form action="buscarphpasignaciones.php" method="post">
+				<form action="buscarcic.php" method="post">
 					<tr>
 						
 						<td><label for="nombre">Familias Profesionales </label></td>

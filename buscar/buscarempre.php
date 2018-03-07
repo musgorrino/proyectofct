@@ -20,7 +20,7 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 		<div id="formbuscar">
 			<h3> Buscar informacion de las empresas </h3>
 			<table>
-				<form action="buscarphpempresas.php" method="post">
+				<form action="buscarempre.php" method="post">
 					<tr>
 						
 						<td><label for="nombre">Nombre </label></td>
