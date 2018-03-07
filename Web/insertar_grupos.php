@@ -17,7 +17,7 @@ cabecera("Gestion FCT", "estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php insertar_curso();?>
+		<?php insertar_grupo();?>
 	</div>	
 	<div id="pie">
 		<?php ver_pie(); ?>
