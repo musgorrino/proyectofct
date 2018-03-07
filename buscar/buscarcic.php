@@ -19,12 +19,11 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("ciclo","Ciclos","Ciclos Formativos","un ciclo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Ciclos Formativos </h3>
+			&nbsp;&nbsp;&nbsp;<h3> Buscar informacion de los Ciclos Formativos </h3>
 			<center>
 			<table>
 				<form action="buscarcic.php" method="post">
-					<tr>
-						
+					<tr>	
 						<td><label for="nombre">Familias Profesionales </label></td>
 						<td><input type="text" name="nombre" id="nombre" value="<?php echo $_POST['nombre']; ?>" placeholder="Inserta Familia Profesional"></td>
 					</tr>	
@@ -36,9 +35,7 @@ if(isset($_POST['enviar'])){
 						<td><label for="ciclo"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura"  id="ciclo" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
 					</tr>
-							<td><input type="hidden" name="" value=""></td>
-							<td><input type="hidden" name="" value=""></td>
-							<td><input type="hidden" name="" value=""></td>
+							<td colspan="3"><input type="hidden" name="" value=""></td>
 							<td><input type="submit" name="enviar" value="BUSCAR"/>
 					</tr>
 				</form>
