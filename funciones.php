@@ -7,7 +7,8 @@
  */
 /*<<<<<<< HEAD*/
 function cabecera($titulo, $css)
-{ 
+{
+    session_start()
 ?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
    <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +19,24 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
+    $u=2;
+    $ad=0;
+    if(isset($_SESSION["usuario"]))
+    {
+        $usuario=unserialize($_SESSION["usuario"]);
+        $u=0;
+        if($_SESSION["tipo"]!="user")
+        {
+            $ad=1;
+        }
+
+
+
+    }
+    else
+    {
+        $u=2;
+    }
 }
 /*=======*/
 /*Funcion para recoger el dni y comporbar que no esta vacio y el patron es correcto, devuelve un 1 si el campo esta vacio
@@ -187,9 +206,9 @@ function login($usuario,$contrasena)
     $totalfilas=mysqli_num_rows($r);
     if($totalfilas==1)
     {
-        /*$usuariot=mysqli_fech_assoc($r);
+        $usuariot=mysqli_fech_assoc($r);
         $_SESSION["usuario"]=serialize($usuario);
-        $_SESSION["tipo"]=serialize($usuariot["tipo"]);*/
+        $_SESSION["tipo"]=serialize($usuariot["tipo"]);
         return true;
     }
     else
@@ -957,7 +976,7 @@ function insert_alumno()
     var_dump(mysqli_num_rows($datos));
     if(mysqli_num_rows($datos)==0)
     {
-        /*generar_insert("alumnos");*/
+        generar_insert("alumnos");
         $query = "select codigo from alumnos where dni='".$_POST["dni"]."'";
         $datos = mysqli_query($conexion,$query);
         $alumno=mysqli_fetch_assoc($datos);

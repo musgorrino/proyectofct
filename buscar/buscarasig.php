@@ -29,8 +29,8 @@ if(isset($_POST['enviar'])){
 						<td><label for="empresa">Empresa </label></td>
 						<td><input type="text" name="empresa" id="empresa" value="<?php echo $_POST['empresa']; ?>" placeholder="empresa"></td>
 					
-						<td><label for="contratacionalumno">Alumnx Contratadx</label></td>
-						<td><input type="text"	name="contratacionalumno" id="contratacionalumno" value="<?php echo $_POST['contratacionalumno']; ?>" placeholder="¿Si o No?"/></td>
+						<td><label for="contratado">Alumnx Contratadx</label></td>
+						<td><input type="text"	name="contratado" id="contratado" value="<?php echo $_POST['contratado']; ?>" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
 						<td><label for="alumno"> Alumno </label></td>
@@ -52,7 +52,7 @@ if(isset($_POST['enviar'])){
 		<div><?php 
 
 $empresa=recoger($_POST['empresa']);
-$contratacionalumno=recoger($_POST['contratacionalumno']);
+$contratacionalumno=recoger($_POST['contratado']);
 $alumno=recoger($_POST['alumno']);
 $abreviatura=recoger($_POST['abreviatura']);
 $busqueda=array();
@@ -60,7 +60,7 @@ if($empresa==0){
 $busqueda[]="empresa";
 }
 if($contratacionalumno==0){
-$busqueda[]="contratacionalumno";
+$busqueda[]="contratado";
 }
 if($alumno==0){
 $busqueda[]="alumno";
@@ -107,8 +107,8 @@ else {
 						<td><label for="empresa">Empresa </label></td>
 						<td><input type="text" name="empresa" id="empresa" value="" placeholder="empresa"></td>
 					
-						<td><label for="contratacionalumno">Alumnx Contratadx</label></td>
-						<td>	<input type="text"	name="contratacionalumno" id="contratacionalumno" value="" placeholder="¿Si o No?"/></td>
+						<td><label for="contratado">Alumnx Contratadx</label></td>
+						<td>	<input type="text"	name="contratado" id="contratado" value="" placeholder="¿Si o No?"/></td>
 					</tr>	
 					<tr>	
 						<td><label for="alumno"> Alumno </label></td>
