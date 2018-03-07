@@ -24,7 +24,7 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 					<tr>
 						
 						<td><label id="nombre">Nombre </label></td>
-						<td><input type="text" name="nombre" value=" placeholder="Nombre"></td>
+						<td><input type="text" name="nombre" value="" placeholder="Nombre"></td>
 					
 						<td><label id="euskera">Conocimiento de Euskera</label></td>
 						<td>	<input type="text"	name="euskera" value="" placeholder="¿Si o No?"/></td>

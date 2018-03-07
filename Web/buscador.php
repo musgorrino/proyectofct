@@ -24,8 +24,8 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 			<tr>
 				<th class="sombra"><a href="../buscar/buscarfamilia.php">Familias Profesionales</a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarcic.php">Ciclos Formativos </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="c">Empresas  </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Responsable </a></th>
+				<th class="sombra"><a href="../buscar/buscarempre.php">Empresas  </a></th><th class="espacio">---</th>
+				<th class="sombra"><a href="../buscar/buscarresp.php">Responsable </a></th>
 			</tr>
 			<tr class="espacio">
 			</tr>
@@ -33,7 +33,7 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 				<th class="sombra"><a href="../buscar/buscarprof.php">Profesores</a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscaralu.php">Alumnos </a></th><th class="espacio">---</th>
 				<th class="sombra"><a href="../buscar/buscarasig.php">Asignaciones  </a></th><th class="espacio">---</th>
-				<th class="sombra"><a href="">Historial </a></th>
+				<th class="sombra"><a href="../buscar/buscarhistori.php">Historial </a></th>
 			</tr>
 		</table>
 			

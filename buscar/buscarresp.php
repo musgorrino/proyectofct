@@ -16,18 +16,18 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("profesores","Profesores","los profesores","un profesor nuevo");?>
+		<?php ver_buscar("responsables","Responsables","los responsales","un responsable nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de lxs Profesrxs </h3>
+			<h3> Buscar informacion de los Responsables </h3>
 			<table>
-				<form action="buscarphpresponsables.php" method="post">
+				<form action="buscarresp.php" method="post">
 					<tr>
 						<td><label for="nombre">Nombre </label></td>
 						<td><input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"></td>	
 					</tr>	
 					<tr>	
-						<td><label id="codigointerprof">Codigo Interno Profesores</label></td>
-						<td><input type="text"	name="codigointerprof" value="" placeholder="Inserte codigo"/></td>
+						<td><label for="empresa">Empresa</label></td>
+						<td><input type="text"	name="empresa" id="empresa" value="" placeholder="Inserte nombre de la empresa"/></td>
 					</tr>
 						<td><input type="hidden" name="" value=""></td>
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
