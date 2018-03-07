@@ -55,15 +55,15 @@
 						<td><input id="abreviatura" type="text"  name="abreviatura" size="20" value="" /></td>
 					</tr>
 					<tr>
-						<td><label for="grado">Grado:</label></td>
-						<td><select name="grado" id="grado">
+						<td><label for="nivel">Grado:</label></td>
+						<td><select name="nivel" id="grado">
 							<option value="FPB">FPB</option>
 							<option value="medio">Grado Medio</option>
 							<option value="superior">Grado Superior</option>
 						</select></td>
 					
 						<td><label  for="familia">Familia Profesional:</label></td>
-						<td><select name="familia" id="familia"><?php generar_select("familias_profesionales","codigo")?></td>
+						<td><select name="familia" id="familia"><?php generar_select("familias_profesionales","nombre")?></td>
 					</tr>
 					<tr>
 						<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
@@ -92,21 +92,21 @@
 				<table>
 					<tr>
 						<td><label for="abreviatura">Abreviatura:</label></td>
-						<td><input id="abreviatura" id="abreviatura" type="text"  name="nombre" size="20" value="" /></td>
+						<td><input id="abreviatura" type="text"  name="abreviatura" size="20" value="" /></td>
 					
 						<td><label  for="denominacion">Denominacion:</label></td>
 						<td><input id="denominacion" type="text"  name="denominacion" size="40" value="" /></td>
 					</tr>
 					<tr>
 						<td><label  for="tutor">Tutor:</label></td>
-						<td><select name="tutor" id="tutor"><?php generar_select("profesores","codigo")?></td>
+						<td><select name="tutor" id="tutor"><?php generar_select("profesores","nombre")?></td>
 					
 						<td><label  for="tutorpracticas">Tutor Practicas:</label></td>
-						<td><select name="tutorpracticas" id="tutorpracticas"><?php generar_select("profesores","codigo")?></td>
+						<td><select name="tutorpracticas" id="tutorpracticas"><?php generar_select("profesores","nombre")?></td>
 					</tr>
 					<tr>
 						<td><label  for="ciclo">Ciclo:</label></td>
-						<td><select name="ciclo" id="ciclo"><?php generar_select("ciclos_formativos","codigo")?></td>
+						<td><select name="ciclo" id="ciclo"><?php generar_select("ciclos_formativos","nombre")?></td>
 						
 						 <td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
 						<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
@@ -176,20 +176,27 @@
 					<td><label for="nombre">Nombre:</label></td>
 					<td><input id="nombre" type="text"  name="nombre" size="20" value="" /></td>
 				
-					<td><label for="apellido">Apellido:</label></td>
-					<td><input id="apellido" type="text"  name="apellido" size="20" value="" /></td>
+					<td><label for="apellidos">Apellidos:</label></td>
+					<td><input id="apellidos" type="text"  name="apellidos" size="20" value="" /></td>
 				</tr>
 				<tr>
+				<td><label for="dni">DNI:</label></td>
+					<td><input id="dni" type="text"  name="dni" size="20" value="" /></td>
+					
 					<td><label for="fecnac">Fecha Nacimiento:</label></td>
 					<td><input id="fecnac" type="text"  name="fecnac" size="20" value="" /></td>
-				
-					<td><label for="telefono">Telefono:</label></td>
-					<td><input id="telefono" type="text"  name="telefono" size="20" value="" /></td>
 				</tr>
 				<tr>
+					<td><label for="telefono">Telefono:</label></td>
+					<td><input id="telefono" type="text"  name="telefono" size="20" value="" /></td>
+				
 					<td><label for="email">Email:</label></td>
 					<td><input id="email" type="text"  name="email" size="20" value="" /></td>
-				
+				</tr>
+				<tr>
+				<td><label for="otros">Otros: </label></td>
+					<td><textarea name="otros" id="otros"></textarea></td>
+					
 					<td><label  for="grupo">Grupo:</label></td>
 					<td><select name="grupo" id="grupo"><?php generar_select("grupos","abreviatura")?></select></td>
 				</tr>				
@@ -209,10 +216,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label  for="curso">Curso:</label></td>
-					<td><select name="curso" id="curso"><?php generar_select("historial_alumnos","curso")?></select></td>
-					<td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
-					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
+					
+					<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
+					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
 				</tr>
 			</table>
 			</form>
@@ -251,7 +257,7 @@
 		</tr>
 		<tr>
 			<td><label for="curso">Curso: </label></td>
-			<td><input type="text" name="curso" value="" id="curso"></td>
+			<td><select id="curso" ><?php generar_select("historial_alumnos","curso")?></select></td></td>
 		
 			<td><label for="horario">Horario: </label></td>
 			<td><input type="text" name="horario" value="" id="horario"></td>
