@@ -1,5 +1,7 @@
 
-body {background-color: black;
+body {
+	background-image: url(../Imagenes/fondo.jpg);
+	background-color: black;
 		
 		font-family: sans-serif;}
 		

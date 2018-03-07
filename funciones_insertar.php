@@ -1,5 +1,5 @@
 <?php
-include ("funciones.php");
+
 
 		 //=================================================================================================================//
 		//											FORMULARIOS DE INSERTAR 										 	   //
@@ -14,7 +14,7 @@ include ("funciones.php");
 	<center></br><h3> INSERTAR UNA NUEVA FAMILIA PROFESIONAL </h3> </center>
 		
 		<div id="insertar_modificar">
-		<form method="post" action="insertar.php">
+		<form method="post" action="#">
 				<table>
 					<tr>
 						<td><label  for="nombre">Nombre:</label></td>
@@ -31,8 +31,8 @@ include ("funciones.php");
 	</form>
 	</div>
 	<?php
-	if(isset($_POST['envia'])){
-		generar_insert(familia_profesionales);
+	if(isset($_POST['enviar'])){
+		generar_insert("familias_profesionales");
 	}
 	}
 	
@@ -45,7 +45,7 @@ include ("funciones.php");
 	<center></br><h3> INSERTAR UN NUEVO CICLO </h3> </center>
 			
 		<div id="insertar_modificar">
-		<form method="post" action="insertar.php">
+		<form method="post" action="#">
 				<table>
 					<tr>
 						<td><label  for="nombre">Nombre:</label></td>
@@ -62,8 +62,8 @@ include ("funciones.php");
 							<option value="superior">Grado Superior</option>
 						</select></td>
 					
-						<td><label  for="curso">Curso:</label></td>
-						<td><select name="curso" id="curso"><?php generar_select("historial","curso")?></td>
+						<td><label  for="familia">Familia Profesional:</label></td>
+						<td><select name="familia" id="familia"><?php generar_select("familias_profesionales","codigo")?></td>
 					</tr>
 					<tr>
 						<td colspan="2"><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
@@ -74,6 +74,9 @@ include ("funciones.php");
 	</form>
 	</div>
 	<?php
+	if(isset($_POST['enviar'])){
+		generar_insert("ciclos_formativos");
+	}
 	}
 	
 	 //==============================//
@@ -85,7 +88,7 @@ include ("funciones.php");
 	<center></br><h3> INSERTAR UN NUEVO GRUPO</h3> </center>
 		
 		<div id="insertar_modificar">
-		<form method="post" action="insertar.php">
+		<form method="post" action="#">
 				<table>
 					<tr>
 						<td><label for="abreviatura">Abreviatura:</label></td>
@@ -96,14 +99,14 @@ include ("funciones.php");
 					</tr>
 					<tr>
 						<td><label  for="tutor">Tutor:</label></td>
-						<td><select name="tutor" id="tutor"><?php generar_select("profesores","tutor")?></td>
+						<td><select name="tutor" id="tutor"><?php generar_select("profesores","codigo")?></td>
 					
 						<td><label  for="tutorpracticas">Tutor Practicas:</label></td>
-						<td><select name="tutorpracticas" id="tutorpracticas"><?php generar_select("profesores","tutorpracticas")?></td>
+						<td><select name="tutorpracticas" id="tutorpracticas"><?php generar_select("profesores","codigo")?></td>
 					</tr>
 					<tr>
 						<td><label  for="ciclo">Ciclo:</label></td>
-						<td><select name="ciclo" id="ciclo"><?php generar_select("ciclo","nombre")?></td>
+						<td><select name="ciclo" id="ciclo"><?php generar_select("ciclos_formativos","codigo")?></td>
 						
 						 <td><input class="botones" type="reset" id="limpiar" name="limpiar" value="Limpiar" /></td>
 						<td><input class="botones" type="submit" id="enviar" name="enviar" value="Insertar" /></td>
@@ -112,6 +115,9 @@ include ("funciones.php");
 	</form>
 	</div>
 	<?php
+	if(isset($_POST['enviar'])){
+		generar_insert("grupos");
+	}
 	}	
 	
      //==============================//
@@ -123,7 +129,7 @@ include ("funciones.php");
 	<center></br><h3> INSERTAR UN NUEVO PROFESOR </h3> </center>
 		
 	<div id="insertar_modificar">
-	<form method="post" action="insertar.php"> 
+	<form method="post" action="#"> 
 			<table>
 				<tr>
 					<td><label  for="codigointerprof">Codigo Interno:</label></td> 
@@ -150,6 +156,9 @@ include ("funciones.php");
 	</form>
 	</div>
 	<?php
+	if(isset($_POST['enviar'])){
+		generar_insert("profesores");
+	}
 	}
 	
 	 //==============================//
@@ -161,7 +170,7 @@ include ("funciones.php");
 	<center></br><h3> INSERTAR UN NUEVO ALUMNO </h3> </center>
 		<div id="insertar_modificar">
 	
-			<form method="post" action="insertar.php">
+			<form method="post" action="#">
 			<table>
 				<tr>
 					<td><label for="nombre">Nombre:</label></td>
@@ -209,6 +218,9 @@ include ("funciones.php");
 			</form>
 		</div>
 	<?php
+	if(isset($_POST['enviar'])){
+		generar_insert("alumnos");
+	}
 	}
 	
 	 //==============================//
@@ -220,7 +232,7 @@ include ("funciones.php");
 <center></br><h3> INSERTAR UNA NUEVA ASIGNACION </h3> </center>
 		
 	<div id="insertar_modificar">
-	<form action="" method="post">
+	<form action="#" method="post">
 	<table>
 		<tr>
 			<td><label for="empresa">Empresa: </label></td>
@@ -266,6 +278,9 @@ include ("funciones.php");
 </form>
 </div>
 <?php
+if(isset($_POST['enviar'])){
+		generar_insert("asignaciones");
+	}
 }
 
 	 //==============================//
@@ -278,7 +293,7 @@ function insertar_empresa(){
 <center></br><h3> INSERTAR UNA NUEVA EMPRESA </h3> </center>
 		
 	<div id="insertar_modificar">
-	<form method="post" action="insertar.php"> 
+	<form method="post" action="#"> 
 			<table>
 	<table>
 		<tr>
@@ -350,6 +365,9 @@ function insertar_empresa(){
 </form>
 </div>
 <?php
+if(isset($_POST['enviar'])){
+		generar_insert("empresas");
+	}
 }
 
 	 //==============================//
@@ -361,7 +379,7 @@ function insertar_responsable(){
 <center></br><h3> INSERTAR UN NUEVO RESPONSABLE</h3> </center>
 		
 	<div id="insertar_modificar">
-<form action="" method="post">
+<form action="#" method="post">
 	<table>
 		<tr>
 			<td><label for="nombre">Nombre: </label></td>
@@ -384,6 +402,9 @@ function insertar_responsable(){
 
 </div>
 <?php
+if(isset($_POST['enviar'])){
+		generar_insert("responsable");
+	}
 }
 
      //==============================//
@@ -395,7 +416,7 @@ function insertar_usuario(){
 <center></br><h3> INSERTAR UN NUEVO RESPONSABLE</h3> </center>
 		
 	<div id="insertar_modificar">
-<form action="" method="post">
+<form action="#" method="post">
 	<table>
 		<tr>
 			<td><label for="nombre">Nombre: </label></td>
@@ -412,6 +433,9 @@ function insertar_usuario(){
 </form>
 </div>
 <?php
+if(isset($_POST['enviar'])){
+		generar_insert("usuarios");
+	}
 }
 	//=================================================================================================================//
 	//											CONEXION A LA BASE DE DATOS 										   //

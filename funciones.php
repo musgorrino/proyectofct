@@ -933,25 +933,28 @@ function generar_insert($tabla)
     $contados=0;
     foreach($columnas as $i)
     {
-        $comp=comprobar_dato($i);
-        if($comp=="hecho")
-        {
+        
+       
             if ($i!="codigo")
             {
+			$comp=comprobar_dato($i);
+			if($comp=="hecho")
+				{
 
                 if ($contados != 1) {
                     $insert = $insert . ",'" . $_POST[$i] . "'";
                 } else {
                     $insert = $insert . "'" . $_POST[$i] . "'";
                 }
+				}
+			else
+			{
+				echo $comp;
+				return $comp;
+			}
             }
             $contados++;
-        }
-        else
-        {
-            echo $comp;
-            return $comp;
-        }
+        
 
 
     }
