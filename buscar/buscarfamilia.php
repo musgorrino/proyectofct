@@ -48,7 +48,6 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 
 $nombre=recoger($_POST['nombre']);
 $coordinador=recoger($_POST['coordinador']);
-
 $busqueda=array();
 if($nombre==0){
 $busqueda[]="nombre";
@@ -71,7 +70,8 @@ preparar_busqueda("",$busqueda);
 <?php
 }
 else {
-?>
+?
+.>
 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
