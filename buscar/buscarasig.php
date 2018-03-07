@@ -68,7 +68,7 @@ $busqueda[]="codigoalumno";
 if($abreviatura==0){
 $busqueda[]="abreviatura";
 }
-preparar_busqueda("asignaciones",$busqueda);
+preparar_busqueda("asignacion",$busqueda);
 ?>
 		</div>
 	</div>
@@ -96,7 +96,7 @@ else {
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?>
+	<center>	<?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?></center>
 		<div id="formbuscar">
 			<h3> Buscar informacion de las Asignaciones </h3>
 			<center>
