@@ -34,7 +34,7 @@ if(isset($_POST['enviar'])){
 					</tr>	
 					<tr>	
 						<td><label for="codigoalumno"> Alumno </label></td>
-						<td><input type="text" name="codigoalumno" id="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
+						<td><input type="text" name="alumno" id="codigoalumno" value="<?php echo $_POST['codigoalumno']; ?>"	placeholder="Nombre"/></td>
 						
 						<td><label  for="abreviatura"> Ciclo cursado </label></td>
 						<td><input type="text" name="abreviatura" id="abreviatura" value="<?php echo $_POST['abreviatura']; ?>"	placeholder="Inserta abreviatura"/></td>
