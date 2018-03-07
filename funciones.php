@@ -187,9 +187,9 @@ function login($usuario,$contrasena)
     $totalfilas=mysqli_num_rows($r);
     if($totalfilas==1)
     {
-        /*$usuariot=mysqli_fech_assoc($r);
+        $usuariot=mysqli_fech_assoc($r);
         $_SESSION["usuario"]=serialize($usuario);
-        $_SESSION["tipo"]=serialize($usuariot["tipo"]);*/
+        $_SESSION["tipo"]=serialize($usuariot["tipo"]);
         return true;
     }
     else
