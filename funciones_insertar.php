@@ -460,7 +460,7 @@ if(isset($_POST['enviar'])){
 	?>
 		<center></br><h3> MODIFICAR UNA FAMILIA PROFESIONAL </h3> </center>
 		<div id="insertar_modificar">
-		<form method="post" action="modificar.php">
+		<form method="post" action="#">
 				<table>
 					<tr>
 						<td><label for="nombre">Nombre:</label></td>
@@ -485,7 +485,7 @@ if(isset($_POST['enviar'])){
 	?>
 	<center></br><h3> MODIFICAR UN CICLO FORMATIVO </h3> </center>
 	<div id="insertar_modificar">
-	<form method="post" action="modificar.php">
+	<form method="post" action="#">
 			<table>
 				<tr>
 					<td><label for="nombre">Nombre:</label></td>
@@ -521,7 +521,7 @@ if(isset($_POST['enviar'])){
 	?>
 	<center></br><h3> MODIFICAR UN GRUPO </h3> </center>
 	<div id="insertar_modificar">
-	<form method="post" action="modificar.php">
+	<form method="post" action="#">
 			<table>
 				<tr>
 					<td><label for="abreviatura">Abreviatura:</label></td>
@@ -559,7 +559,7 @@ if(isset($_POST['enviar'])){
 			
 			<div id="insertar_modificar">
 		
-			<form method="post" action="modificar.php">
+			<form method="post" action="#">
 				<table>
 					<tr>
 						<td><label for="codigointerprof">Codigo Interno:</label></th> 
@@ -596,7 +596,7 @@ if(isset($_POST['enviar'])){
 			
 			<div id="insertar_modificar">
 		
-				<form method="post" action="insertar.php">
+				<form method="post" action="#">
 				<table>
 					<tr>
 						<td><label for="nombre">Nombre:</label></td>
@@ -655,7 +655,7 @@ if(isset($_POST['enviar'])){
 		<center></br><h3> MODIFICAR ASIGNACIONES </h3> </center>
 			
 		<div id="insertar_modificar">
-	<form action="" method="post">
+	<form action="#" method="post">
 	<table>
 		<tr>
 			<td><label for="empresa">Empresa: </label></td>
@@ -714,7 +714,7 @@ if(isset($_POST['enviar'])){
 		<center></br><h3> MODIFICAR UNA EMPRESA </h3> </center>
 		<div id="insertar_modificar">
 		
-		<form action="" method="post">
+		<form action="#" method="post">
 			<table>
 				<tr>
 					<td><label for="nombre">Nombre: </label></td>
@@ -794,7 +794,7 @@ if(isset($_POST['enviar'])){
 		<center></br><h3> MODIFICAR UN RESPONSABLE </h3> </center>
 		<div id="insertar_modificar">
 	
-<form action="" method="post">
+<form action="#" method="post">
 	<table>
 		<tr>
 			<td><label for="nombre">Nombre: </label></td>
