@@ -48,9 +48,9 @@ if(isset($_POST['enviar'])){
 		<div>
 		<?php 
 
-$abreviatura=recoger($_Post['abreviatura']);
-$nivel=recoger($_Post['nivel']);
-$familia=recoger($_Post['familia']);
+$abreviatura=recoger($_POST['abreviatura']);
+$nivel=recoger($_POST['nivel']);
+$familia=recoger($_POST['nombre']);
 $busqueda=array();
 if($abreviatura==0){
  $busqueda[]="abreviatura";
@@ -59,9 +59,9 @@ if($nivel==0){
  $busqueda[]="nivel";
 }
 if($familia==0){
- $busqueda[]="familia";
+ $busqueda[]="nombre";
 }
-preparar_busqueda("ciclos_formativos",$busqueda);
+preparar_busqueda("ciclo",$busqueda);
 ?>
 
 		</div>

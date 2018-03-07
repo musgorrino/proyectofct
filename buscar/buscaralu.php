@@ -18,7 +18,7 @@ if(isset($_POST['enviar'])){
 	</div>
 	
 	<div id="contenido">
-		<center><?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?></center>
+		<center><?php ver_buscar("alumnos","Alumnos","los alumnos","un alumno nuevo");?></center>
 		<div id="formbuscar">
 			<h3> Buscar informacion de alumnxs </h3>
 			<center>
@@ -53,11 +53,11 @@ if(isset($_POST['enviar'])){
 		<div>
 <?php
 		
-$nombre=recoger($_Post['nombre']);
-$uskera=recoger($_Post['euskera']);
-$carnet=recoger($_Post['carnet']);
-$abreviatura=recoger($_Post['abreviatura']);
-$curso=recoger($_Post['curso']);
+$nombre=recoger($_POST['nombre']);
+$uskera=recoger($_POST['euskera']);
+$carnet=recoger($_POST['carnet']);
+$abreviatura=recoger($_POST['abreviatura']);
+$curso=recoger($_POST['curso']);
 $busqueda=array();
 if($nombre==0){
 $busqueda[]="nombre";
@@ -74,7 +74,7 @@ if($abreviatura==0){
 if($curso==0){
     $busqueda[]="curso";
 }
-preparar_busqueda("alumnos",$busqueda);
+preparar_busqueda("alumno",$busqueda);
 ?>
 		</div>
 	</div>
@@ -101,7 +101,7 @@ else {
 	</div>
 	
 	<div id="contenido">
-	<center>	<?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?></center>
+	<center>	<?php ver_buscar("alumnos","Alumnos","los alumnos","un alumno nuevo");?></center>
 		<div id="formbuscar">
 			<h3> Buscar informacion de alumnxs </h3>
 			<center>

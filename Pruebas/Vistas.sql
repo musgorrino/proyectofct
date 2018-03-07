@@ -1,14 +1,11 @@
 /*Vista 1*/
-CREATE VIEW or replace`grupo`
- AS select g.codigo, g.abreviatura, denominacion, c.nombre as "Ciclo",p.nombre as "Tutor",r.nombre as "Practicas"
-from grupos g,ciclos_formativos c,profesores p,profesores r
-where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutor_practicas=r.codigo;
+CREATE or replace VIEW `grupo` 
+AS SELECT g.codigo, g.abreviatura, denominacion, c.nombre as "Ciclo",p.nombre as "tutor",r.nombre as "tutorpracticas" 
+from grupos g,ciclos_formativos c,profesores p,profesores r where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutorpracticas=r.codigo
 
 
 /*Vista 2*/
-CREATE or replace
-
- VIEW `profesor`
+CREATE or replace VIEW `profesor`
  AS SELECT p.codigo, codigointerprof, p.nombre,apellidos,telefono,email,
 ifnull(t.nombre,"No es coordinador") as "Coordinador" 
 FROM profesores p left outer join 

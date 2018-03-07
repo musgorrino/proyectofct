@@ -38,8 +38,8 @@ if(isset($_POST['enviar'])){
 		</div>
 		<div>
 		<?php 
-$codigointerprof=recoger($_Post['codigointerprof']);
-$nombre=recoger($_Post['nombre']);
+$codigointerprof=recoger($_POST['codigointerprof']);
+$nombre=recoger($_POST['nombre']);
 $busqueda=array();
 if($codigointerprof==0){
 $busqueda[]="codigointerprof";
@@ -47,7 +47,7 @@ $busqueda[]="codigointerprof";
 if($nombre==0){
 $busqueda[]="nombre";
 }
-preparar_busqueda("profesores",$busqueda);
+preparar_busqueda("profesor",$busqueda);
 ?>
 
 		</div>

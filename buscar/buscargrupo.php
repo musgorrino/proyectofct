@@ -24,15 +24,15 @@ if(isset($_POST['enviar'])){
 				<form action="buscargrupo.php" method="post">
 					<tr>
 						
-						<td><label for="Abreviatura">Abreviatura </label></td>
-						<td><input type="text" name="Abreviatura" id="Abreviatura"  value="<?php echo $_POST['Abreviatura']; ?>" placeholder="Abreviatura"></td>
+						<td><label for="abreviatura">Abreviatura </label></td>
+						<td><input type="text" name="abreviatura" id="abreviatura"  value="<?php echo $_POST['abreviatura']; ?>" placeholder="Abreviatura"></td>
 					
-						<td><label for="Denominacion">Denominacion</label></td>
-						<td>	<input type="text"	name="Denominacion" id="Denominacion" value="<?php echo $_POST['Denominacion']; ?>"  placeholder=" Inserte denominacion"/></td>
+						<td><label for="denominacion">Denominacion</label></td>
+						<td>	<input type="text"	name="denominacion" id="denominacion" value="<?php echo $_POST['denominacion']; ?>"  placeholder=" Inserte denominacion"/></td>
 					</tr>	
 					<tr>	
-						<td><label for="ciclo"> Cilco</label></td>
-						<td><input type="text" name="cilco" id="ciclo"  value="<?php echo $_POST['ciclo']; ?>" placeholder="Inserte cilco"/></td>
+						<td><label for="ciclo"> Ciclo</label></td>
+						<td><input type="text" name="ciclo" id="ciclo"  value="<?php echo $_POST['ciclo']; ?>" placeholder="Inserte cilco"/></td>
 						
 						<td><label for="tutor">Tutor/a </label></td>
 						<td><input type="text" name="tutor" id= "tutor" value="<?php echo $_POST['tutor']; ?>" placeholder="Inserta tutor/a"/></td>
@@ -49,11 +49,11 @@ if(isset($_POST['enviar'])){
 		</div>
 		<div>
 		<?php 
-$abreviatura=recoger($_Post['abreviatura']);
-$denominacion=recoger($_Post['denominacion']);
-$ciclo=recoger($_Post['ciclo']);
-$tutor=recoger($_Post['tutor']);
-$tutorpracticas=recoger($_Post['tutorpracticas']);
+$abreviatura=recoger($_POST['abreviatura']);
+$denominacion=recoger($_POST['denominacion']);
+$ciclo=recoger($_POST['ciclo']);
+$tutor=recoger($_POST['tutor']);
+$tutorpracticas=recoger($_POST['tutorpracticas']);
 $busqueda=array();
 if($abreviatura==0){
 $busqueda[]="abreviatura";
@@ -70,7 +70,7 @@ $busqueda[]="tutor";
 if($tutorpracticas==0){
 $busqueda[]="tutorpracticas";
 }
-preparar_busqueda("grupos",$busqueda);
+preparar_busqueda("grupo",$busqueda);
 ?>
 
 		</div>
@@ -104,14 +104,14 @@ else {
 				<form action="buscargrupo.php" method="post">
 					<tr>
 						
-						<td><label for="Abreviatura">Abreviatura </label></td>
-						<td><input type="text" name="Abreviatura" id="Abreviatura"  value="" placeholder="Abreviatura"></td>
+						<td><label for="abreviatura">Abreviatura </label></td>
+						<td><input type="text" name="abreviatura" id="abreviatura"  value="" placeholder="Abreviatura"></td>
 					
-						<td><label for="Denominacion">Denominacion</label></td>
-						<td>	<input type="text"	name="Denominacion" id="Denominacion" value=""  placeholder=" Inserte denominacion"/></td>
+						<td><label for="denominacion">Denominacion</label></td>
+						<td>	<input type="text"	name="denominacion" id="denominacion" value=""  placeholder=" Inserte denominacion"/></td>
 					</tr>	
 					<tr>	
-						<td><label for="cilco"> Ciclo</label></td>
+						<td><label for="ciclo"> Ciclo</label></td>
 						<td><input type="text" name="ciclo" id="ciclo"  value="" placeholder="Inserte ciclo"/></td>
 						
 						<td><label for="tutor">Tutor/a </label></td>

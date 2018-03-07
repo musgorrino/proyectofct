@@ -33,17 +33,16 @@ if(isset($_POST['enviar'])){
 						<td><input type="hidden" name="" value=""></td>
 						
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
-						<td><input type="su" name="Volver al menu" a href="../Web/buscador.php"></td>	
+						<td><input type="submit" name="Volver al menu" a href="../Web/buscador.php"></td>	
 					</tr>
 				</form>
 			</table>
 		</div>
 		<div>
 		<?php 
-include("../../funciones/funciones.php");
 
-$nombre=recoger($_Post['nombre']);
-$empresa=recoger($_Post['empresa']);
+$nombre=recoger($_POST['nombre']);
+$empresa=recoger($_POST['empresa']);
 $busqueda=array();
 if($nombre==0){
 $busqueda[]="nombre";
@@ -51,7 +50,7 @@ $busqueda[]="nombre";
 if($empresa==0){
 $busqueda[]="empresa";
 }
-preparar_busqueda("responsable",$busqueda);
+preparar_busqueda("responsaempre",$busqueda);
 ?>
 
 		</div>
@@ -94,7 +93,7 @@ else {
 						<td><input type="hidden" name="" value=""></td>
 						
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
-						<td><input type="su" name="Volver al menu" a href="../Web/buscador.php"></td>	
+						<td><input type="submit" name="Volver al menu" a href="../Web/buscador.php"></td>	
 					</tr>
 				</form>
 			</table>

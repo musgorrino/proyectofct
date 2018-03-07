@@ -2,6 +2,7 @@
 include("../funciones.php");
  
 cabecera("Gestion FCT", "../Web/estilo.css");
+if(isset($_POST['enviar'])){
 ?>
 <div id="contenedor">
 	<div id="cabecera">
@@ -24,13 +25,13 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 					<tr>
 						
 						<td><label  for="nombre">Nombre </label></td>
-						<td><input type="text" name="nombre"  id="nombre" value="" placeholder="Nombre"></td>
+						<td><input type="text" name="nombre"  id="nombre" value="<?php echo $_POST['nombre']; ?>" placeholder="Nombre"></td>
 					
 						
 					</tr>	
 					<tr>	
 						<td><label  for="coordinador">Coordinador</label></td>
-						<td><input type="text"	name="coordinador" id="coordinador" value="" placeholder="Inserte coordinador"/></td>
+						<td><input type="text"	name="coordinador" id="coordinador" value="<?php echo $_POST['coordinador']; ?>" placeholder="Inserte coordinador"/></td>
 					</tr>
 							
 							
@@ -40,11 +41,8 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 				</form>
 			</table>
 		</div>
-	</div>
-</div>
-
-
-<div><?php 
+		<div>
+		<?php 
 
 $nombre=recoger($_POST['nombre']);
 $coordinador=recoger($_POST['coordinador']);
@@ -55,12 +53,10 @@ $busqueda[]="nombre";
 if($coordinador==0){
 $busqueda[]="coordinador";
 }
-{
-$busqueda[]="abreviatura";
-}
-preparar_busqueda("",$busqueda);
+preparar_busqueda("familia",$busqueda);
 ?>
-		</div>
+</div>
+
 	</div>
 		
 	<div id="pie">
@@ -70,8 +66,7 @@ preparar_busqueda("",$busqueda);
 <?php
 }
 else {
-?
-.>
+?>
 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
@@ -111,7 +106,9 @@ else {
 		</div>
 	</div>
 </div>
-
+<?php
+}
+?>
 
 </body>
 </html>

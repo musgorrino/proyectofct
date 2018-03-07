@@ -42,9 +42,9 @@ if(isset($_POST['enviar'])){
 		</div>
 		<div>
 		<?php 
-$grupo=recoger($_Post['grupo']);
-$alumno=recoger($_Post['alumno']);
-$curso=recoger($_Post['curso']);
+$grupo=recoger($_POST['grupo']);
+$alumno=recoger($_POST['alumno']);
+$curso=recoger($_POST['curso']);
 $busqueda=array();
 if($grupo==0){
 $busqueda[]="grupo";

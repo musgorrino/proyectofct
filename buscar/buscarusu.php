@@ -2,6 +2,7 @@
 include("../funciones.php");
  
 cabecera("Gestion FCT", "../Web/estilo.css");
+if(isset($_POST['enviar'])){
 ?>
 <div id="contenedor">
 	<div id="cabecera">
@@ -20,7 +21,7 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 		<div id="formbuscar">
 			<h3> Buscar informacion de lxs Usuario </h3>
 			<table>
-				<form action="bsucarusu.php" method="post">
+				<form action="buscarusu.php" method="post">
 					<tr>
 						<td><label for="nombre">Nombre </label></td>
 						<td><input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"></td>	
@@ -35,13 +36,10 @@ cabecera("Gestion FCT", "../Web/estilo.css");
 				</form>
 			</table>
 		</div>
-	</div>
-</div>
-<?php 
-include("../../funciones/funciones.php");
-
-$nombre=recoger($_Post['nombre']);
-$tipo=recoger($_Post['tipo']);
+		<div>
+		<?php 
+$nombre=recoger($_POST['nombre']);
+$tipo=recoger($_POST['tipo']);
 $busqueda=array();
 if($nombre==0){
 $busqueda[]="nombre";
@@ -52,6 +50,17 @@ $busqueda[]="tipo";
 preparar_busqueda("usuarios",$busqueda);
 ?>
 
+				</div>
+	</div>
+		
+	<div id="pie">
+		<?php ver_pie(); ?>
+	</div>
+</div>
+<?php
+}
+else {
+?>
 
 <div id="contenedor">
 	<div id="cabecera">
@@ -70,7 +79,7 @@ preparar_busqueda("usuarios",$busqueda);
 		<div id="formbuscar">
 			<h3> Buscar informacion de lxs Usuario </h3>
 			<table>
-				<form action="bsucarusu.php" method="post">
+				<form action="buscarusu.php" method="post">
 					<tr>
 						<td><label for="nombre">Nombre </label></td>
 						<td><input type="text" id="nombre" name="nombre" value="" placeholder="Nombre"></td>	
@@ -93,7 +102,9 @@ preparar_busqueda("usuarios",$busqueda);
 		<?php ver_pie(); ?>
 	</div>
 </div>
-
+<?php
+}
+?>
 
 </body>
 </html>
