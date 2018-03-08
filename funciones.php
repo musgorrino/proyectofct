@@ -19,24 +19,7 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
-    $u=1;
-    $ad=0;
-    if(isset($_SESSION["usuario"]))
-    {
-        $usuario=unserialize($_SESSION["usuario"]);
-        $u=0;
-        if($_SESSION["tipo"]!="user")
-        {
-            $ad=1;
-        }
-
-
-
-    }
-    else
-    {
-        $u=2;
-    }
+    
 }
 /*=======*/
 /*Funcion para recoger el dni y comporbar que no esta vacio y el patron es correcto, devuelve un 1 si el campo esta vacio
@@ -206,7 +189,7 @@ function login($usuario,$contrasena)
     $totalfilas=mysqli_num_rows($r);
     if($totalfilas==1)
     {
-        $usuariot=mysqli_fech_assoc($r);
+        $usuariot=mysqli_fetch_assoc($r);
         $_SESSION["usuario"]=serialize($usuario);
         $_SESSION["tipo"]=serialize($usuariot["tipo"]);
         return true;
@@ -586,11 +569,11 @@ function coger_nombres($nombretabla)
 		
 	// FUNCION QUE MUESTRA EL MENU DE LA WEB //						
 	function ver_menu(){
-    $ad=0;
 	?>
 		<ul>
-				<li class="espacio">---------</li>
+				<li class="espacio">--</li>
 				  <li><a href="../Web/familias.php">Familias Profesionales</a></li>
+				  
 				  <li><a href="../Web/ciclos.php">Ciclos Formativos</a></li>
 				  <li><a href="../Web/grupos.php">Grupos</a></li>
 				  <li><a href="../Web/profesores.php">Profesores</a></li>
@@ -599,7 +582,7 @@ function coger_nombres($nombretabla)
 				  <li><a href="../Web/empresas.php">Empresas</a></li>
 				  <li><a href="../Web/responsables.php">Responsables</a></li>
 				  <li><a href="../Web/buscador.php">Buscar</a></li>
-        <? if($ad==0){?><li><a href="../Web/usuarios2.php">Usuarios</a></li><?php}?>
+                  <li><a href="../Web/usuarios2.php">Usuarios</a></li>
 				</ul>
 	<?php
 	}
@@ -1027,7 +1010,7 @@ function modificar($tabla, $datos)
     //var_dump($query);
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
     $datos = mysqli_query($conexion,$query);
-    $resp=mysqli_affected_rows($conexion);
+    $resp=mysqli_affected_rows($datos);
     if($resp>0)
     {
         return "El elemento ha sido modificado correctamente";
@@ -1035,5 +1018,7 @@ function modificar($tabla, $datos)
     else{
         return "El elemento no ha podido ser modificado o no existe";
     }
+
+
 }
 ?>

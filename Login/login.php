@@ -1,13 +1,14 @@
 <?php 
 
 	//include("../funciones.php");
-
+session_start();
 	include("../funciones.php");?>
 
 <!DOCTYPE html>
 
 <html lang="es">
 <head>
+
 	<title> Acceso a Gestion FCT </title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="estilos.css">
@@ -23,6 +24,7 @@
 
 	</form>
 		<?php
+		var_dump($_SESSION);
         if (isset($_POST["enviar"]))
             {
                 $usuario=$_POST ['usuario'];
