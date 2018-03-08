@@ -19,7 +19,7 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
-    $u=2;
+    $u=1;
     $ad=0;
     if(isset($_SESSION["usuario"]))
     {
@@ -588,7 +588,7 @@ function coger_nombres($nombretabla)
 	function ver_menu(){
 	?>
 		<ul>
-				<li class="espacio">-</li>
+				<li class="espacio">---------</li>
 				  <li><a href="../Web/familias.php">Familias Profesionales</a></li>
 				  <li><a href="../Web/ciclos.php">Ciclos Formativos</a></li>
 				  <li><a href="../Web/grupos.php">Grupos</a></li>
@@ -598,8 +598,6 @@ function coger_nombres($nombretabla)
 				  <li><a href="../Web/empresas.php">Empresas</a></li>
 				  <li><a href="../Web/responsables.php">Responsables</a></li>
 				  <li><a href="../Web/buscador.php">Buscar</a></li>
-				   <li><?php if (ad==1){?><a href="../Web/usuarios2.php">Usuarios</a><?php}?></li>
-				  
 				</ul>
 	<?php
 	}
@@ -814,7 +812,7 @@ function preparar_busqueda($tabla, $datos)
         $contador++;
 
     }
-   
+    var_dump($query);
     busqueda($nombres,$tabla,$query);
 
 
@@ -822,17 +820,12 @@ function preparar_busqueda($tabla, $datos)
 function busqueda($array,$nombretabla,$query)
 {
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
-	
+
     $datos = mysqli_query($conexion,$query);
-	$_fila = mysqli_fetch_assoc($datos);
     if ($nombretabla=="profesor")
     {
-<<<<<<< HEAD
-        $query2 = "select abreviatura,tutorpracticas,tutor from grupos where tutor='".$_fila['codigo']."' or tutorpracticas='".$_fila['codigo']."'";
-=======
         $query2 = "select abreviatura,tutor_practicas,tutor from grupos";
-        var_dump($query2);
->>>>>>> abe0991257c83d28444e71fa9b12292e907f0d1c
+        
         $done = mysqli_query($conexion,$query2);
         $grupo= mysqli_fetch_assoc($done);
         $j=array();
@@ -841,11 +834,10 @@ function busqueda($array,$nombretabla,$query)
             var_dump($query2);
             $j[]=array(
                 "abreviatura"=>$grupo["abreviatura"],
-                "tutorp"=>$grupo["tutorpracticas"],
+                "tutorp"=>$grupo["tutor_practicas"],
                 "tutor" =>$grupo["tutor"]
             );
             $grupo= mysqli_fetch_assoc($done);
-			
         }
 
     }
@@ -867,7 +859,7 @@ function busqueda($array,$nombretabla,$query)
             <?php
 
 
-           
+            $_fila = mysqli_fetch_assoc($datos);
             while ($_fila)
             {
 
@@ -1005,7 +997,7 @@ function delete($tabla)
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
     $query = "delete from ".$tabla." where codigo='".$_POST["codigo"]."'";
     $datos = mysqli_query($conexion,$query);
-    $resp=mysqli_affected_rows($datos);
+    $resp=mysqli_affected_rows($conexion);
     if($resp>0)
     {
         return "El elemento ha sido borrado correctamente";
@@ -1013,5 +1005,35 @@ function delete($tabla)
     else{
         return "El elemento no ha podido ser borrado o no existe";
     }
+}
+function modificar($tabla, $datos)
+{
+    $nombres = coger_nombres($tabla);
+    $query = "update " . $tabla ." set ";
+    /*UPDATE `empresas` SET `titularidad` = 'publica', `repempresa` = 'antonio', `personacontacto` = 'antonio' WHERE `empresas`.`codigo` = 2;*/
+    $contador = 1;
+    foreach ($datos as $i) {
+        if ($contador != 1) {
+            $query = $query . ", " . $i . " = '" . $_POST[$i] . "'";
+        } else {
+            $query = $query . $i . " = '" . $_POST[$i] . "'";
+        }
+        $contador++;
+
+    }
+    $query = $query . " where codigo = '" . $_POST['codigo'] . "'";
+    //var_dump($query);
+    $conexion = mysqli_connect("localhost", "root", "", "mydb");
+    $datos = mysqli_query($conexion,$query);
+    $resp=mysqli_affected_rows($conexion);
+    if($resp>0)
+    {
+        return "El elemento ha sido modificado correctamente";
+    }
+    else{
+        return "El elemento no ha podido ser modificado o no existe";
+    }
+
+
 }
 ?>
