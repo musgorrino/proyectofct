@@ -825,8 +825,8 @@ function busqueda($array,$nombretabla,$query)
     if ($nombretabla=="profesor")
     {
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
-        $query = "select abreviatura,tutor_practicas,tutor from grupos";
-        $done = mysqli_query($conexion,$query);
+        $query2 = "select abreviatura,tutor_practicas,tutor from grupos";
+        $done = mysqli_query($conexion,$query2);
         $grupo= mysqli_fetch_assoc($done);
         $j=array();
         while($grupo)
