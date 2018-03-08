@@ -666,6 +666,7 @@ function coger_nombres($nombretabla)
 	function ver_pie(){
 	?>
 		<div id="copyright" class="container">
+			<h3> <a href="../exit.php" class="button">CERRAR SESION</a> </h3>
 			 <a href="principal.php" class="button">Volver al Inicio</a> 
 			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
 		
@@ -1007,10 +1008,10 @@ function modificar($tabla, $datos)
 
     }
     $query = $query . " where codigo = '" . $_POST['codigo'] . "'";
-    //var_dump($query);
+    var_dump($query);
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
     $datos = mysqli_query($conexion,$query);
-    $resp=mysqli_affected_rows($datos);
+    $resp=mysqli_affected_rows($conexion);
     if($resp>0)
     {
         return "El elemento ha sido modificado correctamente";
