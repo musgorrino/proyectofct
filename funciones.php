@@ -19,7 +19,7 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
-    $u=1;
+    $u=2;
     $ad=0;
     if(isset($_SESSION["usuario"]))
     {
@@ -588,7 +588,7 @@ function coger_nombres($nombretabla)
 	function ver_menu(){
 	?>
 		<ul>
-				<li class="espacio">---------</li>
+				<li class="espacio">-</li>
 				  <li><a href="../Web/familias.php">Familias Profesionales</a></li>
 				  <li><a href="../Web/ciclos.php">Ciclos Formativos</a></li>
 				  <li><a href="../Web/grupos.php">Grupos</a></li>
@@ -598,6 +598,8 @@ function coger_nombres($nombretabla)
 				  <li><a href="../Web/empresas.php">Empresas</a></li>
 				  <li><a href="../Web/responsables.php">Responsables</a></li>
 				  <li><a href="../Web/buscador.php">Buscar</a></li>
+				   <li><?php if (ad==1){?><a href="../Web/usuarios2.php">Usuarios</a><?php}?></li>
+				  
 				</ul>
 	<?php
 	}
@@ -997,7 +999,7 @@ function delete($tabla)
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
     $query = "delete from ".$tabla." where codigo='".$_POST["codigo"]."'";
     $datos = mysqli_query($conexion,$query);
-    $resp=mysqli_affected_rows($conexion);
+    $resp=mysqli_affected_rows($datos);
     if($resp>0)
     {
         return "El elemento ha sido borrado correctamente";
@@ -1005,35 +1007,5 @@ function delete($tabla)
     else{
         return "El elemento no ha podido ser borrado o no existe";
     }
-}
-function modificar($tabla, $datos)
-{
-    $nombres = coger_nombres($tabla);
-    $query = "update " . $tabla ." set ";
-    /*UPDATE `empresas` SET `titularidad` = 'publica', `repempresa` = 'antonio', `personacontacto` = 'antonio' WHERE `empresas`.`codigo` = 2;*/
-    $contador = 1;
-    foreach ($datos as $i) {
-        if ($contador != 1) {
-            $query = $query . ", " . $i . " = '" . $_POST[$i] . "'";
-        } else {
-            $query = $query . $i . " = '" . $_POST[$i] . "'";
-        }
-        $contador++;
-
-    }
-    $query = $query . " where codigo = '" . $_POST['codigo'] . "'";
-    //var_dump($query);
-    $conexion = mysqli_connect("localhost", "root", "", "mydb");
-    $datos = mysqli_query($conexion,$query);
-    $resp=mysqli_affected_rows($conexion);
-    if($resp>0)
-    {
-        return "El elemento ha sido modificado correctamente";
-    }
-    else{
-        return "El elemento no ha podido ser modificado o no existe";
-    }
-
-
 }
 ?>

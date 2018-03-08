@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("grupos","Grupos","los Grupos","un grupo nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Grupos </h3>
+			<center><h3> Buscar informacion de los Grupos </h3>
 			<table>
 				<form action="buscargrupo.php" method="post">
 					<tr>
@@ -46,8 +46,9 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
-		<div>
+		<div><center>
 		<?php 
 $abreviatura=recoger($_POST['abreviatura']);
 $denominacion=recoger($_POST['denominacion']);
@@ -71,7 +72,7 @@ if($tutorpracticas==0){
 $busqueda[]="tutorpracticas";
 }
 preparar_busqueda("grupo",$busqueda);
-?>
+?></center>
 
 		</div>
 	</div>
@@ -99,7 +100,7 @@ else {
 	<div id="contenido">
 		<?php ver_buscar("grupos","Grupos","los Grupos","un grupo nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Grupos </h3>
+		<center>	<h3> Buscar informacion de los Grupos </h3>
 			<table>
 				<form action="buscargrupo.php" method="post">
 					<tr>
@@ -126,6 +127,7 @@ else {
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 	</div>
 		
