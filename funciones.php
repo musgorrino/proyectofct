@@ -586,6 +586,7 @@ function coger_nombres($nombretabla)
 		
 	// FUNCION QUE MUESTRA EL MENU DE LA WEB //						
 	function ver_menu(){
+    $ad=0;
 	?>
 		<ul>
 				<li class="espacio">---------</li>
