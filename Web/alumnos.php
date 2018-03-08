@@ -67,6 +67,6 @@ cabecera("Gestion FCT", "estilo.css");
     }
     else
     {
-        
+       header ("location:http://localhost/proyectofct/indice.php"); 
     }
 ?>
