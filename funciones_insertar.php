@@ -592,7 +592,7 @@ if(isset($_POST['enviar'])){
 
 	function modificar_alumnos(){
 	?>
-		<center></br><h3> MODIFICAR UN NUEVO ALUMNO </h3> </center>
+		<center></br><h3> MODIFICAR UN ALUMNO </h3> </center>
 			
 			<div id="insertar_modificar">
 		
@@ -821,6 +821,13 @@ if(isset($_POST['enviar'])){
 ?>	
 
 
+<?php
+if(isset($_POST['enviar'])){
+		modificar("alumno");
+	}
 
+
+
+?>
 
 
