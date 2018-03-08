@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("familia","Familias","las familias","una familia nueva");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de las Familias Profesionales </h3>
+			<center><h3> Buscar informacion de las Familias Profesionales </h3>
 			<table>
 				<form action="buscarfamilia.php" method="post">
 					<tr>
@@ -40,8 +40,9 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
-		<div>
+		<div><center>
 		<?php 
 
 $nombre=recoger($_POST['nombre']);
@@ -54,7 +55,7 @@ if($coordinador==0){
 $busqueda[]="coordinador";
 }
 preparar_busqueda("familia",$busqueda);
-?>
+?></center>
 </div>
 
 	</div>
@@ -82,7 +83,7 @@ else {
 	<div id="contenido">
 		<?php ver_buscar("familia","Familias","las familias","una familia nueva");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de las Familias Profesionales </h3>
+			<center><h3> Buscar informacion de las Familias Profesionales </h3>
 			<table>
 				<form action="buscarfamilia.php" method="post">
 					<tr>
@@ -103,6 +104,7 @@ else {
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 	</div>
 </div>

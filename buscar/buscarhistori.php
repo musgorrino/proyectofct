@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("historiales","Historiales","los historiales","un historial nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Historiales </h3>
+		<center>	<h3> Buscar informacion de los Historiales </h3>
 			<table>
 				<form action="buscarhistori.php" method="post">
 					<tr>
@@ -39,8 +39,9 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
-		<div>
+		<div><center>
 		<?php 
 $grupo=recoger($_POST['grupo']);
 $alumno=recoger($_POST['alumno']);
@@ -56,7 +57,7 @@ if($curso==0){
 $busqueda[]="curso";
 }
 preparar_busqueda("historial_alumnos",$busqueda);
-?>
+?></center>
 
 		</div>
 	</div>
@@ -84,7 +85,7 @@ else {
 	<div id="contenido">
 		<?php ver_buscar("historiales","Historiales","los historiales","un historial nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Historiales </h3>
+		<center>	<h3> Buscar informacion de los Historiales </h3>
 			<table>
 				<form action="buscarhistori.php" method="post">
 					<tr>
@@ -104,6 +105,7 @@ else {
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 	</div>
 		

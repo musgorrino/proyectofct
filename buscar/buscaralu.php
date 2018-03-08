@@ -20,8 +20,8 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<center><?php ver_buscar("alumnos","Alumnos","los alumnos","un alumno nuevo");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de alumnxs </h3>
-			<center>
+			<center><h3> Buscar informacion de alumnxs </h3>
+		
 			<table>
 				<form action="buscaralu.php" method="post">
 					<tr>
@@ -50,7 +50,7 @@ if(isset($_POST['enviar'])){
 			</table>
 			</center>
 		</div>
-		<div>
+		<div><center>
 <?php
 		
 $nombre=recoger($_POST['nombre']);
@@ -75,7 +75,7 @@ if($curso==0){
     $busqueda[]="curso";
 }
 preparar_busqueda("alumno",$busqueda);
-?>
+?></center>
 		</div>
 	</div>
 		
@@ -103,8 +103,7 @@ else {
 	<div id="contenido">
 	<center>	<?php ver_buscar("alumnos","Alumnos","los alumnos","un alumno nuevo");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de alumnxs </h3>
-			<center>
+			<center><h3> Buscar informacion de alumnxs </h3>
 			<table>
 				<form action="buscaralu.php" method="post">
 					<tr>

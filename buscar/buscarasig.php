@@ -20,8 +20,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<center><?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de las Asignaciones </h3>
-			<center>
+		<center>	<h3> Buscar informacion de las Asignaciones </h3>
 			<table>
 				<form action="buscarasig.php" method="post">
 					<tr>
@@ -49,7 +48,7 @@ if(isset($_POST['enviar'])){
 			</table>
 			</center>
 		</div>
-		<div><?php 
+		<div><center><?php 
 
 $empresa=recoger($_POST['empresa']);
 $contratacionalumno=recoger($_POST['contratado']);
@@ -69,7 +68,7 @@ if($abreviatura==0){
 $busqueda[]="abreviatura";
 }
 preparar_busqueda("asignacion",$busqueda);
-?>
+?></center>
 		</div>
 	</div>
 		
@@ -98,8 +97,8 @@ else {
 	<div id="contenido">
 	<center>	<?php ver_buscar("asignaciones","Asignaciones","las asignaciones","una asignacion");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de las Asignaciones </h3>
-			<center>
+		<center><h3> Buscar informacion de las Asignaciones </h3>
+			
 			<table>
 				<form action="buscarasig.php" method="post">
 					<tr>

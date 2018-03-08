@@ -19,8 +19,8 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("ciclo","Ciclos","Ciclos Formativos","un ciclo");?>
 		<div id="formbuscar">
-			&nbsp;&nbsp;&nbsp;<h3> Buscar informacion de los Ciclos Formativos </h3>
-			<center>
+			<center><h3> Buscar informacion de los Ciclos Formativos </h3>
+			
 			<table>
 				<form action="buscarcic.php" method="post">
 					<tr>	
@@ -42,7 +42,7 @@ if(isset($_POST['enviar'])){
 			</table>
 			</center>
 		</div>
-		<div>
+		<div><center>
 		<?php 
 
 $abreviatura=recoger($_POST['abreviatura']);
@@ -60,7 +60,7 @@ if($familia==0){
 }
 preparar_busqueda("ciclo",$busqueda);
 ?>
-
+</center>
 		</div>
 	</div>
 		
@@ -87,8 +87,8 @@ else {
 	<div id="contenido">
 		<?php ver_buscar("ciclo","Ciclos","Ciclos Formativos","un ciclo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Ciclos Formativos </h3>
-			<center>
+			<center><h3> Buscar informacion de los Ciclos Formativos </h3>
+			
 			<table>
 				<form action="buscarcic.php" method="post">
 					<tr>
