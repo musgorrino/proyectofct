@@ -599,7 +599,7 @@ function coger_nombres($nombretabla)
 				  <li><a href="../Web/empresas.php">Empresas</a></li>
 				  <li><a href="../Web/responsables.php">Responsables</a></li>
 				  <li><a href="../Web/buscador.php">Buscar</a></li>
-                  <? if($ad==0){?><li><a href="../Web/usua" }
+        <? if($ad==0){?><li><a href="../Web/usuarios2.php">Usuarios</a></li><?php}?>
 				</ul>
 	<?php
 	}
