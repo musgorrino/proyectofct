@@ -666,6 +666,7 @@ function coger_nombres($nombretabla)
 	function ver_pie(){
 	?>
 		<div id="copyright" class="container">
+			<h3> <a href="exit.php" class="button">CERRAR SESION</a> </h3>
 			 <a href="principal.php" class="button">Volver al Inicio</a> 
 			<p>PAGINA WEB DESIGNADA POR GAMUSINO</p>
 		
