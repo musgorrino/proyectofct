@@ -1,10 +1,26 @@
 <?php
 include "../funciones.php";
-$t=array();
+/*$t=array();
 $t[]="nombre";
 $t[]="tutor";
 
-modificar("alumnos",$t);
+modificar("alumnos",$t);*/
+$conexion = mysqli_connect("localhost", "root", "", "mydb");
+$query2 = "select abreviatura,tutor_practicas,tutor from grupos";
+$done = mysqli_query($conexion,$query2);
+$grupo= mysqli_fetch_assoc($done);
+$j=array();
+while($grupo)
+{
+    var_dump($grupo);
+    $j[]=array(
+        "abreviatura"=>$grupo["abreviatura"],
+        "tutorp"=>$grupo["tutor_practicas"],
+        "tutor" =>$grupo["tutor"]
+    );
+    $grupo= mysqli_fetch_assoc($done);
+}
+var_dump($query2);
 
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))
