@@ -17,9 +17,10 @@ if(isset($_POST['enviar'])){
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("profesores","Profesores","los profesores","un profesor nuevo");?>
+		<center><?php ver_buscar("profesores","Profesores","los profesores","un profesor nuevo");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de lxs Profesrxs </h3>
+			<center><h3> Buscar informacion de lxs Profesrxs </h3></center>
+			<center>
 			<table>
 				<form action="buscarprof.php" method="post">
 					<tr>
@@ -35,8 +36,10 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 		<div>
+		<center>
 		<?php 
 $codigointerprof=recoger($_POST['codigointerprof']);
 $nombre=recoger($_POST['nombre']);
@@ -49,7 +52,7 @@ $busqueda[]="nombre";
 }
 preparar_busqueda("profesor",$busqueda);
 ?>
-
+</center>
 		</div>
 	</div>
 		
@@ -74,9 +77,10 @@ else {
 	</div>
 	
 	<div id="contenido">
-		<?php ver_buscar("profesores","Profesores","los profesores","un profesor nuevo");?>
+		<center><?php ver_buscar("profesores","Profesores","los profesores","un profesor nuevo");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de lxs Profesrxs </h3>
+			<center><h3> Buscar informacion de lxs Profesrxs </h3></center>
+			<center>
 			<table>
 				<form action="buscarprof.php" method="post">
 					<tr>
@@ -92,6 +96,7 @@ else {
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 	</div>
 		
