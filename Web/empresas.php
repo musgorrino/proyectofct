@@ -1,9 +1,9 @@
 <?php 
 include("../funciones.php");
- 
 cabecera("Gestion FCT", "estilo.css");
-?>
-<div id="contenedor">
+ if($u==0)
+ {?>
+	 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
 		</div>
@@ -26,3 +26,11 @@ cabecera("Gestion FCT", "estilo.css");
 
 </body>
 </html>
+ <?php
+ }
+ else
+ {
+	 header("location:../indice.php");
+ }
+
+?>
