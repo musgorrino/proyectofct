@@ -827,12 +827,18 @@ function busqueda($array,$nombretabla,$query)
 	$_fila = mysqli_fetch_assoc($datos);
     if ($nombretabla=="profesor")
     {
+<<<<<<< HEAD
         $query2 = "select abreviatura,tutorpracticas,tutor from grupos where tutor='".$_fila['codigo']."' or tutorpracticas='".$_fila['codigo']."'";
+=======
+        $query2 = "select abreviatura,tutor_practicas,tutor from grupos";
+        var_dump($query2);
+>>>>>>> abe0991257c83d28444e71fa9b12292e907f0d1c
         $done = mysqli_query($conexion,$query2);
         $grupo= mysqli_fetch_assoc($done);
         $j=array();
         while($grupo)
         {
+            var_dump($query2);
             $j[]=array(
                 "abreviatura"=>$grupo["abreviatura"],
                 "tutorp"=>$grupo["tutorpracticas"],

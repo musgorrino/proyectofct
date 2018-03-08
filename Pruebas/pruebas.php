@@ -1,11 +1,11 @@
 <?php
 include "../funciones.php";
-/*$t=array();
-$t[]="nombre";
-$t[]="tutor";
+$datos=array();
+$datos[]="nombre";
 
-modificar("alumnos",$t);*/
-$conexion = mysqli_connect("localhost", "root", "", "mydb");
+
+/*modificar("alumnos",$t);*/
+/*$conexion = mysqli_connect("localhost", "root", "", "mydb");
 $query2 = "select abreviatura,tutor_practicas,tutor from grupos";
 $done = mysqli_query($conexion,$query2);
 $grupo= mysqli_fetch_assoc($done);
@@ -20,7 +20,9 @@ while($grupo)
     );
     $grupo= mysqli_fetch_assoc($done);
 }
-var_dump($query2);
+var_dump($query2);*/
+preparar_busqueda("profesor", $datos)
+
 
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))
@@ -86,7 +88,7 @@ var_dump($query2);
 <form method="post" action="pruebas.php">
     <input type="hidden" name="abreviatura" value="1">
     <input type="hidden" name="codigo" value="2">
-    <input type="hidden" name="nombre" value="12345678V">
+    <input type="hidden" name="nombre" value="eva">
     <input type="hidden" name="ciclo" value="1">
     <input type="hidden" name="tutor" value="1">
     <input type="hidden" name="tutor_practicas" value="1">
