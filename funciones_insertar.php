@@ -457,6 +457,21 @@ if(isset($_POST['enviar'])){
 
 	// MODIFICAR FAMILIA PROFESIONAL //
 		function modificar_familias_profesionales(){
+			
+if(isset($_POST['enviar'])){
+	
+	$nombre=recoger($_POST['nombre']);
+	$coordinador=recoger($_POST['coordinador']);
+
+	if($nombre==0){
+	$busqueda[]="nombre";
+	}
+	if($cordinador==0){
+		$busqueda[]="cordinador";
+	}
+			modificar("alumno",$busqueda);
+	}
+	
 	?>
 		<center></br><h3> MODIFICAR UNA FAMILIA PROFESIONAL </h3> </center>
 		<div id="insertar_modificar">
@@ -480,6 +495,7 @@ if(isset($_POST['enviar'])){
 	</div>
 	<?php
 	}
+		}
 	// MODIFICAR UN CICLO FORMATIVO //
 	function modificar_ciclos_formativos(){
 	?>
@@ -823,6 +839,7 @@ if(isset($_POST['enviar'])){
 
 <?php
 if(isset($_POST['enviar'])){
+	
 		modificar("alumno");
 	}
 
