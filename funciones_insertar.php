@@ -466,10 +466,10 @@ if(isset($_POST['enviar'])){
 	if($nombre==0){
 	$busqueda[]="nombre";
 	}
-	if($cordinador==0){
-		$busqueda[]="cordinador";
+	if($coordinador==0){
+		$busqueda[]="coordinador";
 	}
-			modificar("alumno",$busqueda);
+			modificar("familias_profesionales",$busqueda);
 	}
 	
 	?>
@@ -490,12 +490,12 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</table>
 		
-			<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
+			<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 	</form>
 	</div>
 	<?php
 	}
-		}
+		
 	// MODIFICAR UN CICLO FORMATIVO //
 	function modificar_ciclos_formativos(){
 	?>
@@ -836,15 +836,5 @@ if(isset($_POST['enviar'])){
 	}
 ?>	
 
-
-<?php
-if(isset($_POST['enviar'])){
-	
-		modificar("alumno");
-	}
-
-
-
-?>
 
 
