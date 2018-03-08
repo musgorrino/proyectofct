@@ -498,6 +498,30 @@ if(isset($_POST['enviar'])){
 		
 	// MODIFICAR UN CICLO FORMATIVO //
 	function modificar_ciclos_formativos(){
+		
+	if(isset($_POST['enviar'])){
+	
+	$nombre=recoger($_POST['nombre']);
+	$abreviatura=recoger($_POST['abreviatura']);
+	$grado=recoger($_POST['grado']);
+	$curso=recoger($_POST['curso']);
+	
+	
+	if($nombre==0){
+	$busqueda[]="nombre";
+	}
+	if($abreviatura==0){
+		$busqueda[]="abreviatura";
+	}
+	if($grado==0){
+		$busqueda[]="grado";
+	}
+	if($curso==0){
+		$busqueda[]="curso";
+	}
+			modificar("ciclos_formativos",$busqueda);
+	}
+	
 	?>
 	<center></br><h3> MODIFICAR UN CICLO FORMATIVO </h3> </center>
 	<div id="insertar_modificar">
@@ -527,13 +551,40 @@ if(isset($_POST['enviar'])){
 					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 				</tr>	
 			</table>
-				<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
+				<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 		</form>
 	</div>
 <?php
 }
 // MODIFICAR UN GRUPO //
 	function modificar_grupos(){
+	if(isset($_POST['enviar'])){
+	
+	
+	$abreviatura=recoger($_POST['abreviatura']);
+	$denominacion=recoger($_POST['denominacion']);
+	$tutor=recoger($_POST['tutor']);
+	$tutorpracticas=recoger($_POST['tutorpracticas']);
+	$ciclo=recoger($_POST['ciclo']);
+	
+	
+	if($abreviatura==0){
+	$busqueda[]="abreviatura";
+	}
+	if($denominacion==0){
+		$busqueda[]="denominacion";
+	}
+	if($tutor==0){
+		$busqueda[]="tutor";
+	}
+	if($tutorpracticas==0){
+		$busqueda[]="tutorpracticas";
+	}
+	if($ciclo==0){
+		$busqueda[]="ciclo";
+	}
+			modificar("grupos",$busqueda);
+	}
 	?>
 	<center></br><h3> MODIFICAR UN GRUPO </h3> </center>
 	<div id="insertar_modificar">
@@ -562,7 +613,7 @@ if(isset($_POST['enviar'])){
 					<td><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 				</tr>
 			</table>
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />	
+		<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />	
 </form>
 </div>
 
@@ -570,6 +621,34 @@ if(isset($_POST['enviar'])){
 }
 // MODIFICAR PROFESORES //
 	function modificar_profesores(){
+	
+	if(isset($_POST['enviar'])){
+	
+	$codigointernoprof=recoger($_POST['codigointernoprof']);
+	$nombre=recoger($_POST['nombre']);
+	$apellidos=recoger($_POST['apellidos']);
+	$telefono=recoger($_POST['telefono']);
+	$email=recoger($_POST['email']);
+	
+	
+	if($codigointernoprof==0){
+	$busqueda[]="abreviatura";
+	}
+	if($nombre==0){
+		$busqueda[]="nombre";
+	}
+	if($apellidos==0){
+		$busqueda[]="apellidos";
+	}
+	if($telefono==0){
+		$busqueda[]="telefono";
+	}
+	if($email==0){
+		$busqueda[]="email";
+	}
+			modificar("profesores",$busqueda);
+	}
+	
 	?>
 		<center></br><h3> MODIFICAR UN PROFESOR </h3> </center>
 			
@@ -599,7 +678,7 @@ if(isset($_POST['enviar'])){
 						<td><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 				</table>
 		
-			<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
+			<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 	</form>
 	</div>
 	<?php
@@ -607,6 +686,48 @@ if(isset($_POST['enviar'])){
 	// MODIFICAR ALUMNO //
 
 	function modificar_alumnos(){
+	if(isset($_POST['enviar'])){
+	
+	$nombre=recoger($_POST['nombre']);
+	$apellido=recoger($_POST['apellido']);
+	$fecnac=recoger($_POST['fecnac']);
+	$telefono=recoger($_POST['telefono']);
+	$email=recoger($_POST['email']);
+	$grupo=recoger($_POST['grupo']);
+	$euskera=recoger($_POST['euskera']);
+	$carnet=recoger($_POST['carnet']);
+	$curso=recoger($_POST['curso']);
+	
+	
+	if($nombre==0){
+	$busqueda[]="nombre";
+	}
+	if($apellido==0){
+		$busqueda[]="apellido";
+	}
+	if($fecnac==0){
+		$busqueda[]="fecnac";
+	}
+	if($telefono==0){
+		$busqueda[]="telefono";
+	}
+	if($email==0){
+		$busqueda[]="email";
+	}
+	if($grupo==0){
+	$busqueda[]="grupo";
+	}
+	if($euskera==0){
+		$busqueda[]="euskera";
+	}
+	if($carnet==0){
+		$busqueda[]="carnet";
+	}
+	if($curso==0){
+		$busqueda[]="curso";
+	}
+			modificar("alumnos",$busqueda);
+	}
 	?>
 		<center></br><h3> MODIFICAR UN ALUMNO </h3> </center>
 			
@@ -658,7 +779,7 @@ if(isset($_POST['enviar'])){
 						<td><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 					</tr>
 				</table>	
-						<input type="hidden" name="codigo" value="<?php echo $codigo; ?>" />
+						<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 				</form>
 			</div>
 		<?php
@@ -667,6 +788,41 @@ if(isset($_POST['enviar'])){
 		// MODIFICAR ASIGNACION //
 		
 		function modificar_asignaciones(){
+			if(isset($_POST['enviar'])){
+	
+	$empresa=recoger($_POST['empresa']);
+	$alumnos=recoger($_POST['alumnos']);
+	$curso=recoger($_POST['curso']);
+	$horario=recoger($_POST['horario']);
+	$observaciones=recoger($_POST['observaciones']);
+	$trabajodesempenado=recoger($_POST['trabajodesempenado']);
+	$contratacion=recoger($_POST['contratacion']);
+	
+	
+	if($empresa==0){
+	$busqueda[]="empresa";
+	}
+	if($alumnos==0){
+		$busqueda[]="alumnos";
+	}
+	if($curso==0){
+		$busqueda[]="curso";
+	}
+	if($horario==0){
+		$busqueda[]="horario";
+	}
+	if($observaciones==0){
+		$busqueda[]="observaciones";
+	}
+	if($trabajodesempenado==0){
+	$busqueda[]="trabajodesempenado";
+	}
+	if($contratacion==0){
+		$busqueda[]="contratacion";
+	}
+	modificar("asignaciones",$busqueda);
+	}
+			
 		?>
 		<center></br><h3> MODIFICAR ASIGNACIONES </h3> </center>
 			
@@ -717,7 +873,7 @@ if(isset($_POST['enviar'])){
 			<td><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 		</tr>
 </table>
-		<input type="hidden" name="codigo" value="<?php echo $codigo; ?>"/>
+		<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 </form>
 	</div>
 	<?php
@@ -799,13 +955,26 @@ if(isset($_POST['enviar'])){
 					<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 				</tr>
 	</table>
-			
+			<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 	</form>	
 	</div>
 	<?php
 	}
 	// MODIFICAR UN RESPONSABLE //
 	function modificar_responsable(){
+		if(isset($_POST['enviar'])){
+	
+	$nombre=recoger($_POST['nombre']);
+	$empresa=recoger($_POST['empresa']);
+	
+	if($nombre==0){
+	$busqueda[]="nombre";
+	}
+	if($empresa==0){
+		$busqueda[]="empresa";
+	}
+			modificar("responsables",$busqueda);
+	}
 	?>
 		<center></br><h3> MODIFICAR UN RESPONSABLE </h3> </center>
 		<div id="insertar_modificar">
@@ -829,7 +998,7 @@ if(isset($_POST['enviar'])){
 			<td colspan="2"><input class="botones" type="submit" id="enviar" name="enviar" value="Modificar" /></td>
 		</tr>
 		</table>
-
+	<input type="hidden" name="codigo" value="<?php echo $_POST['codigo']; ?>" />
 </form>
 </div>	
 <?php
