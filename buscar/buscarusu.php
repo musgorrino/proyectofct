@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de lxs Usuario </h3>
+		<center>	<h3> Buscar informacion de lxs Usuario </h3>
 			<table>
 				<form action="buscarusu.php" method="post">
 					<tr>
@@ -35,9 +35,10 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 		<div>
-		<?php 
+	<center>	<?php 
 $nombre=recoger($_POST['nombre']);
 $tipo=recoger($_POST['tipo']);
 $busqueda=array();
@@ -48,7 +49,7 @@ if($tipo==0){
 $busqueda[]="tipo";
 }
 preparar_busqueda("usuarios",$busqueda);
-?>
+?></center>
 
 				</div>
 	</div>
@@ -77,7 +78,7 @@ else {
 	<div id="contenido">
 		<?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de lxs Usuario </h3>
+		<center>	<h3> Buscar informacion de lxs Usuario </h3>
 			<table>
 				<form action="buscarusu.php" method="post">
 					<tr>
@@ -93,6 +94,7 @@ else {
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 	</div>
 </div>

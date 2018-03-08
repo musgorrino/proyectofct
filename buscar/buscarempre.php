@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<?php ver_buscar("empresas","Empresas","las empresas","una empresa nueva");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de las empresas </h3>
+		<center>	<h3> Buscar informacion de las empresas </h3>
 			<table>
 				<form action="buscarempre.php" method="post">
 					<tr>
@@ -45,8 +45,9 @@ if(isset($_POST['enviar'])){
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
-		<div>
+		<div><center>
 		<?php 
 
 $nombre=recoger($_POST['nombre']);
@@ -73,7 +74,7 @@ $busqueda[]="convenio";
 preparar_busqueda("empresas",$busqueda);
 ?>
 
-		</div>
+		</center></div>
 	</div>
 		
 	<div id="pie">
@@ -99,7 +100,7 @@ else {
 	<div id="contenido">
 		<?php ver_buscar("empresas","Empresas","las empresas","una empresa nueva");?>
 		<div id="formbuscar">
-			<h3> Buscar informacion de las empresas </h3>
+		<center>	<h3> Buscar informacion de las empresas </h3>
 			<table>
 				<form action="buscarempre.php" method="post">
 					<tr>
@@ -125,6 +126,7 @@ else {
 					</tr>
 				</form>
 			</table>
+			</center>
 		</div>
 	</div>
 		

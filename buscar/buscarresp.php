@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])){
 	<div id="contenido">
 		<center><?php ver_buscar("responsables","Responsables","los responsales","un responsable nuevo");?></center>
 		<div id="formbuscar">
-			<h3> Buscar informacion de los Responsables </h3>
+			<center><h3> Buscar informacion de los Responsables </h3>
 			<table>
 				<form action="buscarresp.php" method="post">
 					<tr>
@@ -33,12 +33,13 @@ if(isset($_POST['enviar'])){
 						<td><input type="hidden" name="" value=""></td>
 						
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
-						<td><input type="submit" name="Volver al menu" a href="../Web/buscador.php"></td>	
+							
 					</tr>
 				</form>
 			</table>
+		</center>
 		</div>
-		<div>
+		<div><center>
 		<?php 
 
 $nombre=recoger($_POST['nombre']);
@@ -52,7 +53,7 @@ $busqueda[]="empresa";
 }
 preparar_busqueda("responsaempre",$busqueda);
 ?>
-
+</center>
 		</div>
 	</div>
 		
@@ -80,6 +81,7 @@ else {
 		<?php ver_buscar("responsables","Responsables","los responsales","un responsable nuevo");?>
 		<div id="formbuscar">
 			<h3> Buscar informacion de los Responsables </h3>
+			<center>
 			<table>
 				<form action="buscarresp.php" method="post">
 					<tr>
@@ -93,10 +95,11 @@ else {
 						<td><input type="hidden" name="" value=""></td>
 						
 						<td><input type="submit" name="enviar" value="BUSCAR"/>
-						<td><input type="submit" name="Volver al menu" a href="../Web/buscador.php"></td>	
+							
 					</tr>
 				</form>
 			</table>
+		</center>
 		</div>
 	</div>
 		
