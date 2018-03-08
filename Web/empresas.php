@@ -1,9 +1,14 @@
 <?php 
 include("../funciones.php");
- 
-cabecera("Gestion FCT", "estilo.css");
-?>
-<div id="contenedor">
+session_start();
+    if(isset($_SESSION["usuario"]))
+    {
+        $usuario=unserialize($_SESSION["usuario"]);
+       
+    cabecera("Gestion FCT", "estilo.css");
+
+ ?>
+	 <div id="contenedor">
 	<div id="cabecera">
 		<div id="login">
 		</div>
@@ -26,3 +31,12 @@ cabecera("Gestion FCT", "estilo.css");
 
 </body>
 </html>
+ <?php
+ }
+ else
+ {
+	 header("location:../indice.php");
+ }
+
+
+?>
