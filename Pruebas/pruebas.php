@@ -1,10 +1,11 @@
 <?php
 include "../funciones.php";
-/*$t=array();
+$t=array();
 $t[]="nombre";
+$t[]="tutor";
 
-preparar_busqueda("alumnos",$t);*/
-insert_alumno();
+modificar("alumnos",$t);
+
 /*coger_tablas("profesor");*/
 /*if (isset($_POST["enviar"]))
 {
@@ -69,7 +70,7 @@ insert_alumno();
 <form method="post" action="pruebas.php">
     <input type="hidden" name="abreviatura" value="1">
     <input type="hidden" name="codigo" value="2">
-    <input type="hidden" name="dni" value="12345678V">
+    <input type="hidden" name="nombre" value="12345678V">
     <input type="hidden" name="ciclo" value="1">
     <input type="hidden" name="tutor" value="1">
     <input type="hidden" name="tutor_practicas" value="1">

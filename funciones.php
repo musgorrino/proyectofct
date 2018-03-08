@@ -19,7 +19,7 @@ function cabecera($titulo, $css)
 </head>
 <body>
 <?php
-    $u;
+    $u=1;
     $ad=0;
     if(isset($_SESSION["usuario"]))
     {
@@ -825,8 +825,8 @@ function busqueda($array,$nombretabla,$query)
     if ($nombretabla=="profesor")
     {
         $conexion = mysqli_connect("localhost", "root", "", "mydb");
-        $query = "select abreviatura,tutor_practicas,tutor from grupos";
-        $done = mysqli_query($conexion,$query);
+        $query2 = "select abreviatura,tutor_practicas,tutor from grupos";
+        $done = mysqli_query($conexion,$query2);
         $grupo= mysqli_fetch_assoc($done);
         $j=array();
         while($grupo)
@@ -996,7 +996,7 @@ function delete($tabla)
     $conexion = mysqli_connect("localhost", "root", "", "mydb");
     $query = "delete from ".$tabla." where codigo='".$_POST["codigo"]."'";
     $datos = mysqli_query($conexion,$query);
-    $resp=mysqli_affected_rows($datos);
+    $resp=mysqli_affected_rows($conexion);
     if($resp>0)
     {
         return "El elemento ha sido borrado correctamente";
@@ -1004,5 +1004,35 @@ function delete($tabla)
     else{
         return "El elemento no ha podido ser borrado o no existe";
     }
+}
+function modificar($tabla, $datos)
+{
+    $nombres = coger_nombres($tabla);
+    $query = "update " . $tabla ." set ";
+    /*UPDATE `empresas` SET `titularidad` = 'publica', `repempresa` = 'antonio', `personacontacto` = 'antonio' WHERE `empresas`.`codigo` = 2;*/
+    $contador = 1;
+    foreach ($datos as $i) {
+        if ($contador != 1) {
+            $query = $query . ", " . $i . " = '" . $_POST[$i] . "'";
+        } else {
+            $query = $query . $i . " = '" . $_POST[$i] . "'";
+        }
+        $contador++;
+
+    }
+    $query = $query . " where codigo = '" . $_POST['codigo'] . "'";
+    //var_dump($query);
+    $conexion = mysqli_connect("localhost", "root", "", "mydb");
+    $datos = mysqli_query($conexion,$query);
+    $resp=mysqli_affected_rows($conexion);
+    if($resp>0)
+    {
+        return "El elemento ha sido modificado correctamente";
+    }
+    else{
+        return "El elemento no ha podido ser modificado o no existe";
+    }
+
+
 }
 ?>
