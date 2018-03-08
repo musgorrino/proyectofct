@@ -21,8 +21,8 @@ session_start();
 	</div>
 	
 	<div id="contenido">
-		<?php ver_contenido("usuarios","Usuarios","los usuarios","un usuario nuevo");?>
-		<?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?>
+	<center>	<?php ver_contenido("usuarios","Usuarios","los usuarios","un usuario nuevo");?></center>
+		<center><?php ver_buscar("usuarios","Usuarios","los usuarios","un usuario nuevo");?></center>
 	</div>
 	<div id="formbuscar">
 	
