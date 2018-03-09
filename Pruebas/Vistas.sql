@@ -1,7 +1,7 @@
 /*Vista 1*/
 CREATE or replace VIEW `grupo` 
 AS SELECT g.codigo, g.abreviatura, denominacion, c.nombre as "Ciclo",p.nombre as "tutor",r.nombre as "tutorpracticas" 
-from grupos g,ciclos_formativos c,profesores p,profesores r where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutorpracticas=r.codigo
+from grupos g,ciclos_formativos c,profesores p,profesores r where g.ciclo=c.codigo and g.tutor=p.codigo and g.tutorpracticas=r.codigo;
 
 
 /*Vista 2*/
@@ -32,10 +32,10 @@ CREATE OR REPLACE VIEW `responsaempre`
 CREATE OR REPLACE VIEW `alumno`
  AS SELECT a.*,c.nombre as "Nombre de ciclo",g.abreviatura,g.denominacion as "Clase",h.curso,p.nombre "Tutor",n.nombre as "Tutor de practicas"
 from alumnos a,historial_alumnos h,grupos g,ciclos_formativos c,profesores p,profesores n
-where h.alumno=a.codigo and h.grupo=g.codigo and g.ciclo=c.codigo and g.tutor=p.codigo and g.tutor_practicas=n.codigo;
+where h.alumno=a.codigo and h.grupo=g.codigo and g.ciclo=c.codigo and g.tutor=p.codigo and g.tutorpracticas=n.codigo;
 
 /* Vista 7*/
 CREATE OR REPLACE VIEW `asignacion`
- AS select e.nombre as "empresa", a.nombre as "alumno", curso,horario,trabajodesempeñado as "trabajo",contratacionalumno as "contratado"
+ AS select e.nombre as "empresa", a.nombre as "alumno", curso,horario,trabajodesempenado as "trabajo",contratacionalumno as "contratado"
 from empresas e, alumnos a,asignaciones s
 where e.codigo=s.codigoempresa and a.codigo=s.codigoalumno;
