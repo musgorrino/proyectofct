@@ -593,7 +593,12 @@ function coger_nombres($nombretabla)
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;
         <?php echo strtoupper($titulo);?>
     </h3>
-		<?php coger_tablas("$tabla")?>
+		<?php
+        if(isset($_POST["enviborrar"]))
+        {
+           delete($tabla);
+        }
+    coger_tablas("$tabla") ?>
 		</br></br>
 		<div id="modificar">
 			<form action="modificar_<?php echo $tabla ?>.php" method="post">
@@ -615,7 +620,7 @@ function coger_nombres($nombretabla)
 		</form>
 		</br></br>
 		<div id="borrar">
-			<form action="" method="post">
+			<form action="<?php /*echo $tabla */?>" method="post">
 				<table class="borrar">
 					<tr>
 						<td><strong>Selecciona el codigo de <?php echo $descripcion ?> que deseas eliminar:</strong><td>
@@ -626,7 +631,7 @@ function coger_nombres($nombretabla)
 							</select>
 						</td>
 						<td>
-						  <input type="submit" value="Borrar">
+						  <input type="submit" value="Borrar" name="enviborrar">
 						</td>
 					</tr>
 				</table>
